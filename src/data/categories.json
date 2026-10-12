@@ -309,23 +309,23 @@
   },
   {
     "id": "remote-computer-tech-help",
-    "name": "Remote Computer & Tech Help",
+    "name": "Remote Software & Cloud Support",
     "group": "Tech Help",
     "icon": "Monitor",
     "startingPrice": 500,
-    "shortIntro": "Instant remote tech support via AnyDesk / TeamViewer for slow PCs, Windows updates, malware removal, printer fixes, and software setups.",
+    "shortIntro": "Instant 100% remote software assistance, slow PC optimization, virus cleanup, and cloud workspace setups. Zero physical hardware repairs or on-site visits.",
     "faqs": [
       {
-        "q": "How does remote computer support work?",
-        "a": "You share a secure temporary code using AnyDesk or TeamViewer. You watch our screen movements live, and the session ends the moment you close the app."
+        "q": "Do you repair physical hardware or replace laptop parts?",
+        "a": "No. We specialize strictly in 100% digital, remote software, system tune-ups, and cloud configurations. We do not repair broken screens, motherboards, or physical parts."
       },
       {
-        "q": "What if my problem is not fixed?",
-        "a": "We stand by our No-Fix, No-Fee promise on diagnostic sessions. If we can't solve your issue, you get a full refund."
+        "q": "How does remote software support work?",
+        "a": "You share a secure temporary code using AnyDesk, TeamViewer, or Google Meet screen share. You watch our screen movements live, and the session ends the moment you close the app."
       },
       {
-        "q": "What are your most popular flat-rate packages?",
-        "a": "Quick Fix (30 min - ₹500), Laptop Care Bundle (₹999), and New Laptop Setup Bundle (₹999)."
+        "q": "What if my software problem cannot be resolved?",
+        "a": "We stand by our No-Fix, No-Fee promise on diagnostic sessions. If we can't solve your software issue, you get a full refund."
       }
     ]
   },

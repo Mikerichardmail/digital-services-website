@@ -20,8 +20,7 @@ const heroKeywords = [
   'pdf toolkit bundle',
   'laptop care bundle',
   'slow pc / laptop optimization',
-  'new laptop setup bundle',
-  'wifi router setup',
+  'cloud workspace setup',
   'logo design',
   'visiting card design',
   'channel setup and branding',
@@ -66,6 +65,7 @@ const categoryMap = {
   '12. instagram & social media': 'instagram-social-media',
   '13. content writing': 'content-writing',
   '14. pdf & document services': 'pdf-document-services',
+  '15. remote software & cloud tech support': 'remote-computer-tech-help',
   '15. remote computer & tech help': 'remote-computer-tech-help',
   '16. account & digital setup assistance': 'account-digital-setup',
   '17. technical consultation': 'technical-consultation'

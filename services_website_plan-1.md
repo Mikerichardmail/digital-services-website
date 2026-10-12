@@ -223,42 +223,31 @@ All builds are mobile-responsive and SEO-ready by default (no separate line item
 | QR code, barcode or UPI QR creation | 500 | One-time | Link |
 | PDF Toolkit bundle (up to 5 tasks) | 999 | One-time | Link |
 
-### 15. Remote Computer & Tech Help
+### 15. Remote Software & Cloud Tech Support
 
-Flat-rate sessions (best sellers, simplest to sell):
+Flat-rate sessions (pure software & cloud support):
 
 | Service | Price (₹) | Type | Pay |
 |---|---|---|---|
 | Quick Fix (30 min remote session) | 500 | One-time | Link |
 | Standard Help (60 min remote session) | 999 | One-time | Link |
 | Laptop Care bundle (slow PC, storage cleanup, temp files, startup apps) | 999 | One-time | Link |
-| New Laptop Setup bundle (browser, Gmail, Drive, WhatsApp Web, password manager) | 999 | One-time | Link |
-| Sound and Camera Fix bundle (webcam, mic, sound, Zoom) | 999 | One-time | Link |
+| Cloud Workspace Setup bundle (browser, Gmail, Drive, WhatsApp Web, password manager) | 999 | One-time | Link |
 
-Individual problems:
+Individual problems (100% digital & remote only):
 
 | Service | Price (₹) | Type | Pay |
 |---|---|---|---|
 | Slow PC / laptop optimization and storage cleanup | 500–1,000 | One-time | Link |
-| Windows installation / reinstall | 1,000 | One-time | Link |
 | Windows update, boot or blue-screen troubleshooting | 600–800 | One-time | Link |
-| Driver install and update | 500 | One-time | Link |
 | Virus, malware and basic security cleanup | 800 | One-time | Link |
 | Antivirus setup, browser pop-up and extension cleanup | 500 | One-time | Link |
-| New PC / laptop setup with data transfer | 800–1,200 | One-time | Link |
-| Backup setup and deleted-file recovery guidance | 700–800 | One-time | Link |
-| Legitimate software installation | 500 | One-time | Link |
-| Webcam, mic, sound, Bluetooth, keyboard and display fixes | 500–600 | One-time | Link |
-| Printer and scanner setup or troubleshooting | 500 | One-time | Link |
-| Mobile phone help (storage, backup, transfer, setup) | 500–600 | One-time | Link |
-| WiFi router setup and slow internet troubleshooting | 600–700 | One-time | Link |
-| CCTV remote viewing setup | 1,200 | One-time | Link |
-| Smart TV WiFi and app setup | 500 | One-time | Link |
+| Backup setup and cloud data recovery guidance | 700–800 | One-time | Link |
+| Legitimate software configuration | 500 | One-time | Link |
 | Email, Outlook and Gmail setup or sync fix | 500 | One-time | Link |
 | Google Drive, OneDrive and Workspace setup | 600–1,500 | One-time | Link |
 | Zoom, Meet and Teams setup | 500 | One-time | Link |
 | WhatsApp Web and password manager setup | 500 | One-time | Link |
-| Tally / billing software install and shop setup | 800–1,500 | One-time | Link |
 | Monthly technical support plan | 1,000–2,000 /mo | Monthly | Sub |
 
 ### 16. Account & Digital Setup Assistance
@@ -290,6 +279,8 @@ Security rule: never request or store a customer's password, OTP, recovery code 
 
 ## 3. Services we do NOT offer (show on About, Terms and FAQ)
 
+- Physical hardware repair, parts replacement, or screen/motherboard fixes
+- On-site or physical device installations (CCTV, WiFi routers, printers, Smart TVs)
 - YouTube channel buying / selling
 - Fake or manipulated reviews
 - Unauthorized social media / account access
@@ -344,8 +335,8 @@ Razorpay usually asks for a live site with Contact, Terms, Privacy and Refund/Ca
 6. Chrome extension development
 7. PDF Toolkit
 8. Slow laptop / Laptop Care
-9. New Laptop Setup
-10. WiFi and router help
+9. Cloud Workspace Setup
+10. Business Email & Cloud Setup
 11. Logo and visiting card design
 12. YouTube channel setup
 13. WordPress fixing

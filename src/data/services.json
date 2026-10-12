@@ -1441,26 +1441,15 @@
     "hero": true
   },
   {
-    "id": "new-laptop-setup-bundle-browser-gmail-drive-whatsapp-web-password-manager",
+    "id": "cloud-workspace-setup-bundle-browser-gmail-drive-whatsapp-web-password-manager",
     "category": "remote-computer-tech-help",
-    "name": "New Laptop Setup bundle (browser, Gmail, Drive, WhatsApp Web, password manager)",
+    "name": "Cloud Workspace Setup bundle (browser, Gmail, Drive, WhatsApp Web, password manager)",
     "priceFrom": 999,
     "priceTo": 999,
     "priceDisplay": "₹999",
     "type": "one-time",
     "pay": "link",
     "hero": true
-  },
-  {
-    "id": "sound-and-camera-fix-bundle-webcam-mic-sound-zoom",
-    "category": "remote-computer-tech-help",
-    "name": "Sound and Camera Fix bundle (webcam, mic, sound, Zoom)",
-    "priceFrom": 999,
-    "priceTo": 999,
-    "priceDisplay": "₹999",
-    "type": "one-time",
-    "pay": "link",
-    "hero": false
   },
   {
     "id": "slow-pc-laptop-optimization-and-storage-cleanup",
@@ -1474,34 +1463,12 @@
     "hero": true
   },
   {
-    "id": "windows-installation-reinstall",
-    "category": "remote-computer-tech-help",
-    "name": "Windows installation / reinstall",
-    "priceFrom": 1000,
-    "priceTo": 1000,
-    "priceDisplay": "₹1,000",
-    "type": "one-time",
-    "pay": "link",
-    "hero": false
-  },
-  {
     "id": "windows-update-boot-or-blue-screen-troubleshooting",
     "category": "remote-computer-tech-help",
     "name": "Windows update, boot or blue-screen troubleshooting",
     "priceFrom": 600,
     "priceTo": 800,
     "priceDisplay": "₹600–800",
-    "type": "one-time",
-    "pay": "link",
-    "hero": false
-  },
-  {
-    "id": "driver-install-and-update",
-    "category": "remote-computer-tech-help",
-    "name": "Driver install and update",
-    "priceFrom": 500,
-    "priceTo": 500,
-    "priceDisplay": "₹500",
     "type": "one-time",
     "pay": "link",
     "hero": false
@@ -1529,20 +1496,9 @@
     "hero": false
   },
   {
-    "id": "new-pc-laptop-setup-with-data-transfer",
+    "id": "backup-setup-and-cloud-data-recovery-guidance",
     "category": "remote-computer-tech-help",
-    "name": "New PC / laptop setup with data transfer",
-    "priceFrom": 800,
-    "priceTo": 1200,
-    "priceDisplay": "₹800–1,200",
-    "type": "one-time",
-    "pay": "link",
-    "hero": false
-  },
-  {
-    "id": "backup-setup-and-deleted-file-recovery-guidance",
-    "category": "remote-computer-tech-help",
-    "name": "Backup setup and deleted-file recovery guidance",
+    "name": "Backup setup and cloud data recovery guidance",
     "priceFrom": 700,
     "priceTo": 800,
     "priceDisplay": "₹700–800",
@@ -1551,75 +1507,9 @@
     "hero": false
   },
   {
-    "id": "legitimate-software-installation",
+    "id": "legitimate-software-configuration",
     "category": "remote-computer-tech-help",
-    "name": "Legitimate software installation",
-    "priceFrom": 500,
-    "priceTo": 500,
-    "priceDisplay": "₹500",
-    "type": "one-time",
-    "pay": "link",
-    "hero": false
-  },
-  {
-    "id": "webcam-mic-sound-bluetooth-keyboard-and-display-fixes",
-    "category": "remote-computer-tech-help",
-    "name": "Webcam, mic, sound, Bluetooth, keyboard and display fixes",
-    "priceFrom": 500,
-    "priceTo": 600,
-    "priceDisplay": "₹500–600",
-    "type": "one-time",
-    "pay": "link",
-    "hero": false
-  },
-  {
-    "id": "printer-and-scanner-setup-or-troubleshooting",
-    "category": "remote-computer-tech-help",
-    "name": "Printer and scanner setup or troubleshooting",
-    "priceFrom": 500,
-    "priceTo": 500,
-    "priceDisplay": "₹500",
-    "type": "one-time",
-    "pay": "link",
-    "hero": false
-  },
-  {
-    "id": "mobile-phone-help-storage-backup-transfer-setup",
-    "category": "remote-computer-tech-help",
-    "name": "Mobile phone help (storage, backup, transfer, setup)",
-    "priceFrom": 500,
-    "priceTo": 600,
-    "priceDisplay": "₹500–600",
-    "type": "one-time",
-    "pay": "link",
-    "hero": false
-  },
-  {
-    "id": "wifi-router-setup-and-slow-internet-troubleshooting",
-    "category": "remote-computer-tech-help",
-    "name": "WiFi router setup and slow internet troubleshooting",
-    "priceFrom": 600,
-    "priceTo": 700,
-    "priceDisplay": "₹600–700",
-    "type": "one-time",
-    "pay": "link",
-    "hero": true
-  },
-  {
-    "id": "cctv-remote-viewing-setup",
-    "category": "remote-computer-tech-help",
-    "name": "CCTV remote viewing setup",
-    "priceFrom": 1200,
-    "priceTo": 1200,
-    "priceDisplay": "₹1,200",
-    "type": "one-time",
-    "pay": "link",
-    "hero": false
-  },
-  {
-    "id": "smart-tv-wifi-and-app-setup",
-    "category": "remote-computer-tech-help",
-    "name": "Smart TV WiFi and app setup",
+    "name": "Legitimate software configuration",
     "priceFrom": 500,
     "priceTo": 500,
     "priceDisplay": "₹500",
@@ -1667,17 +1557,6 @@
     "priceFrom": 500,
     "priceTo": 500,
     "priceDisplay": "₹500",
-    "type": "one-time",
-    "pay": "link",
-    "hero": false
-  },
-  {
-    "id": "tally-billing-software-install-and-shop-setup",
-    "category": "remote-computer-tech-help",
-    "name": "Tally / billing software install and shop setup",
-    "priceFrom": 800,
-    "priceTo": 1500,
-    "priceDisplay": "₹800–1,500",
     "type": "one-time",
     "pay": "link",
     "hero": false
