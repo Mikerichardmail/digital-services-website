@@ -1,0 +1,139 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import site from '../../data/site.json';
+---
+
+<Base
+  title={`Contact Us & Support | ${site.brandName}`}
+  description={`Reach ${site.brandName} via WhatsApp, email or phone. Instant technical support and project inquiries across NCR & India.`}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 space-y-16">
+    <Breadcrumbs items={[{ label: 'Contact' }]} />
+
+    <div class="max-w-3xl space-y-4">
+      <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Get In Touch</span>
+      <h1 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
+        Talk Directly With An Engineer
+      </h1>
+      <p class="text-base text-slate-600 leading-relaxed">
+        Whether you have an emergency computer issue, need a custom website quote, or have a question about payments, we are here to assist you promptly.
+      </p>
+    </div>
+
+    <!-- Contact Channels Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- WhatsApp Card -->
+      <div class="p-8 rounded-3xl bg-emerald-50 border border-emerald-200 flex flex-col justify-between space-y-6">
+        <div class="space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900">WhatsApp Chat</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Fastest response time. Chat with an engineer, share error screenshots, or request custom quotes.
+          </p>
+          <div class="text-sm font-bold text-emerald-800">{site.whatsappDisplay}</div>
+        </div>
+
+        <a
+          href={`https://wa.me/${site.whatsapp.replace('+', '')}?text=${encodeURIComponent("Hello! I have an inquiry.")}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-full text-center py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-sm transition-all"
+        >
+          Open WhatsApp Chat
+        </a>
+      </div>
+
+      <!-- Email Card -->
+      <div class="p-8 rounded-3xl bg-brand-50 border border-brand-200 flex flex-col justify-between space-y-6">
+        <div class="space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-brand-600 text-white flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900">Email Inquiries</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            For formal proposals, GST invoicing questions, or detailed project briefs.
+          </p>
+          <div class="text-sm font-bold text-brand-800">{site.email}</div>
+        </div>
+
+        <a
+          href={`mailto:${site.email}`}
+          class="w-full text-center py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs shadow-sm transition-all"
+        >
+          Send Email
+        </a>
+      </div>
+
+      <!-- Office Location Card -->
+      <div class="p-8 rounded-3xl bg-slate-100 border border-slate-200 flex flex-col justify-between space-y-6">
+        <div class="space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-slate-800 text-white flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900">NCR Office</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Headquartered in Noida, serving Delhi NCR and remote clients across India.
+          </p>
+          <div class="text-xs font-semibold text-slate-700 leading-relaxed">{site.address}</div>
+        </div>
+
+        <div class="text-xs text-slate-500 font-medium">
+          Support hours: Mon–Sat, 9:00 AM – 9:00 PM
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Quick Message Form -->
+    <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm max-w-3xl mx-auto space-y-6">
+      <div class="text-center space-y-2">
+        <h2 class="text-2xl font-bold text-slate-900">Send an Instant Message</h2>
+        <p class="text-xs text-slate-500">We respond to every submission within 2 working hours.</p>
+      </div>
+
+      <form class="space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Your Name</label>
+            <input type="text" required placeholder="Aman Sharma" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">WhatsApp / Phone</label>
+            <input type="tel" required placeholder="+91 98765 43210" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Email Address</label>
+          <input type="email" required placeholder="aman@example.com" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Message / Question</label>
+          <textarea rows="3" required placeholder="How can we help your business?" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 resize-none"></textarea>
+        </div>
+
+        <a
+          href={`https://wa.me/${site.whatsapp.replace('+', '')}?text=${encodeURIComponent("Hello! I submitted a contact inquiry.")}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-full block text-center py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-sm transition-all"
+        >
+          Submit via WhatsApp
+        </a>
+      </form>
+    </div>
+
+  </div>
+</Base>

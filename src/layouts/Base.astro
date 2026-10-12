@@ -1,0 +1,90 @@
+---
+import site from '../data/site.json';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import MobileBottomBar from '../components/MobileBottomBar.astro';
+import PaymentModal from '../components/PaymentModal.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+  schema?: Record<string, any>;
+}
+
+const {
+  title = `${site.brandName} - Fast Digital Services & Tech Support from ₹500`,
+  description = "Get business websites, Google Maps ranking, local SEO, Android apps, and instant remote computer tech help across NCR & India. 100% transparent pricing from ₹500.",
+  canonical = Astro.url.href,
+  ogImage = "/og-image.png",
+  schema
+} = Astro.props;
+
+const defaultSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": site.brandName,
+  "url": site.url,
+  "telephone": site.whatsapp,
+  "email": site.email,
+  "priceRange": "₹500 - ₹50,000",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": site.address,
+    "addressLocality": "Noida",
+    "addressRegion": "NCR",
+    "addressCountry": "IN"
+  },
+  "areaServed": ["Noida", "Gurgaon", "Delhi", "Ghaziabad", "Faridabad", "India"],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "09:00",
+    "closes": "21:00"
+  }
+};
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonical} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={ogImage} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#2563eb" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json" set:html={JSON.stringify(schema || defaultSchema)} />
+  </head>
+  <body class="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans antialiased selection:bg-brand-500 selection:text-white pb-16 md:pb-0">
+    <Header />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
+    <WhatsAppButton />
+    <MobileBottomBar />
+    <PaymentModal />
+  </body>
+</html>

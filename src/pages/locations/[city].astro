@@ -1,0 +1,125 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import FAQ from '../../components/FAQ.astro';
+import locations from '../../data/locations.json';
+import site from '../../data/site.json';
+
+export async function getStaticPaths() {
+  return locations.map((loc) => ({
+    params: { city: loc.slug },
+    props: { location: loc },
+  }));
+}
+
+const { location } = Astro.props;
+
+const otherCities = locations.filter((l) => l.slug !== location.slug);
+---
+
+<Base
+  title={`Digital & Tech Services in ${location.name} | ${site.brandName}`}
+  description={`${location.headline}. Website development, Google Maps ranking, and remote PC tech help from ₹500 in ${location.name}.`}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 space-y-16">
+    <Breadcrumbs 
+      items={[
+        { label: 'Locations', href: '/locations' },
+        { label: location.name }
+      ]} 
+    />
+
+    <!-- Hero Header -->
+    <div class="max-w-3xl space-y-4">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 border border-brand-100 text-xs font-bold text-brand-700">
+        <span>Local NCR Hub</span>
+        <span>•</span>
+        <span>{location.region}</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+        {location.headline}
+      </h1>
+
+      <p class="text-base text-slate-600 leading-relaxed">
+        {location.description}
+      </p>
+
+      <div class="pt-2 flex flex-wrap gap-3">
+        <a 
+          href={`https://wa.me/${site.whatsapp.replace('+', '')}?text=${encodeURIComponent(`Hello! I am a business owner in ${location.name} and need digital services.`)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md transition-all flex items-center gap-2"
+        >
+          <span>Chat with {location.name} Specialist</span>
+        </a>
+        <a href="/pricing" class="px-6 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 font-bold text-xs transition-all">
+          View Pricing from ₹500
+        </a>
+      </div>
+    </div>
+
+    <!-- Targeted Industries in City -->
+    <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm space-y-6">
+      <div class="border-b border-slate-100 pb-4">
+        <h2 class="text-xl font-bold text-slate-900">Key Business Sectors We Support in {location.name}</h2>
+        <p class="text-xs text-slate-500 mt-1">Tailored marketing, web structures, and remote tech support built for local commerce.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {location.topIndustries.map((ind) => (
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-brand-100 text-brand-600 font-bold flex items-center justify-center shrink-0 text-xs">
+              ✓
+            </span>
+            <span class="text-xs font-bold text-slate-800">{ind}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Most Popular Services in City -->
+    <div class="space-y-6">
+      <h2 class="text-2xl font-bold text-slate-900">Recommended Services for {location.name}</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {location.popularServices.map((srv, idx) => (
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-brand-50 text-brand-600 font-black flex items-center justify-center shrink-0">
+              0{idx + 1}
+            </div>
+            <div class="space-y-1">
+              <h3 class="font-bold text-slate-900 text-base">{srv}</h3>
+              <p class="text-xs text-slate-500 leading-relaxed">
+                Designed to outrank competitors and capture high-intent commercial calls in {location.name}.
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- City FAQs -->
+    {location.faq && location.faq.length > 0 && (
+      <div class="pt-6">
+        <FAQ items={location.faq} title={`${location.name} Business FAQs`} />
+      </div>
+    )}
+
+    <!-- Other Cities in NCR -->
+    <div class="pt-8 border-t border-slate-200 space-y-4">
+      <h3 class="text-lg font-bold text-slate-900">Other NCR Locations We Serve</h3>
+      <div class="flex flex-wrap gap-3">
+        {otherCities.map((other) => (
+          <a
+            href={`/locations/${other.slug}`}
+            class="px-4 py-2 rounded-xl bg-white border border-slate-200 text-xs font-bold text-slate-700 hover:border-brand-500 hover:text-brand-600 transition-all shadow-sm"
+          >
+            {other.name} Services &rarr;
+          </a>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</Base>

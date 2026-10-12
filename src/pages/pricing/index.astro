@@ -1,0 +1,226 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import PackageCard from '../../components/PackageCard.astro';
+import PayButton from '../../components/PayButton.astro';
+import QuoteButton from '../../components/QuoteButton.astro';
+import site from '../../data/site.json';
+import services from '../../data/services.json';
+
+const packages = [
+  {
+    name: "Basic Package",
+    price: "₹4,999",
+    period: "one-time",
+    description: "Ideal for new retail shops, local clinics, and service providers wanting to get found locally.",
+    features: [
+      "Google Business Profile creation & verification guidance",
+      "Google Maps exact pin calibration & hours setup",
+      "Interactive Digital Visiting Card with WhatsApp & Call buttons",
+      "1 Professional social media / festival ad creative",
+      "Review generation QR code ready for print"
+    ],
+    serviceId: "basic-package-google-business-profile-maps-digital-visiting-card-1-ad-design",
+    payType: "link" as const,
+    popular: false
+  },
+  {
+    name: "Standard Package",
+    price: "₹14,999",
+    period: "one-time",
+    description: "The complete digital foundation. A modern business website plus dominant Google Maps presence.",
+    features: [
+      "Full mobile-responsive Business Website (up to 5 pages)",
+      "Google Business Profile & Google Maps complete optimization",
+      "Basic On-Page SEO setup & Google Search Console indexing",
+      "3 high-impact ad creatives for WhatsApp & social media",
+      "Fast hosting setup & business email configuration",
+      "SSL Security Certificate & Contact form integration"
+    ],
+    serviceId: "standard-package-business-website-business-profile-and-maps-optimization-basic-seo-ad-creatives",
+    payType: "link" as const,
+    popular: true
+  },
+  {
+    name: "Premium Package",
+    price: "₹24,999",
+    period: "+ ₹5,999 /mo",
+    description: "End-to-end hands-off digital growth. We build, rank, and actively manage your online presence every month.",
+    features: [
+      "Everything in Standard Package included",
+      "Ongoing Local SEO & Monthly Google Maps ranking management",
+      "Weekly Google Business updates & 8 promotional posts/mo",
+      "Priority same-day technical support & website maintenance",
+      "Monthly performance & keyword ranking report",
+      "Direct WhatsApp dedicated manager support"
+    ],
+    serviceId: "premium-package-standard-local-seo-business-profile-management-monthly-digital-management",
+    payType: "quote" as const,
+    popular: false
+  }
+];
+
+const flatRateHelp = [
+  {
+    name: "Quick Fix Remote Session",
+    duration: "30 Mins",
+    price: "₹500",
+    desc: "Single urgent computer issue, printer fix, software install, or browser popup removal.",
+    serviceId: "quick-fix-30-min-remote-session"
+  },
+  {
+    name: "Standard Remote Help",
+    duration: "60 Mins",
+    price: "₹999",
+    desc: "Comprehensive diagnostic, blue screen error, slow performance, or driver problem.",
+    serviceId: "standard-help-60-min-remote-session"
+  },
+  {
+    name: "Laptop Care Bundle",
+    duration: "Complete Tune-up",
+    price: "₹999",
+    desc: "Deep temp cleaner, startup apps optimizer, malware scan, and storage recovery.",
+    serviceId: "laptop-care-bundle-slow-pc-storage-cleanup-temp-files-startup-apps"
+  },
+  {
+    name: "New Laptop Setup",
+    duration: "Full Config",
+    price: "₹999",
+    desc: "Chrome, Gmail, WhatsApp Web, Drive, PDF reader, and safe password manager setup.",
+    serviceId: "new-laptop-setup-bundle-browser-gmail-drive-whatsapp-web-password-manager"
+  },
+  {
+    name: "Technical Consultation",
+    duration: "60 Mins Call",
+    price: "₹1,500",
+    desc: "1-on-1 video call + written action summary for websites, apps, SEO & growth strategy.",
+    serviceId: "technical-consultation-60-min-video-call-written-action-summary-website-seo-google-maps-business-profile-android-app-computer-digital-business-or-local-growth"
+  }
+];
+---
+
+<Base
+  title={`Transparent Pricing & Packages | ${site.brandName}`}
+  description="Clear, honest pricing from ₹500. Local business packages, flat-rate remote tech support, and website plans across NCR and India."
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 space-y-16">
+    
+    <Breadcrumbs items={[{ label: 'Pricing' }]} />
+
+    <div class="text-center max-w-3xl mx-auto space-y-4">
+      <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Simple & Honest</span>
+      <h1 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
+        Zero Hidden Fees. 100% Transparent Rates.
+      </h1>
+      <p class="text-base text-slate-600">
+        Every service on our platform has upfront pricing starting from ₹500. No bait-and-switch quotes.
+      </p>
+    </div>
+
+    <!-- 3 Local Business Packages -->
+    <div class="space-y-6">
+      <div class="text-center">
+        <h2 class="text-2xl font-bold text-slate-900 tracking-tight">Local Business Growth Packages</h2>
+        <p class="text-xs text-slate-500 mt-1">Recommended for shops, clinics, showrooms, and local professionals.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch pt-4">
+        {packages.map((pkg) => (
+          <PackageCard {...pkg} />
+        ))}
+      </div>
+    </div>
+
+    <!-- Flat-Rate Remote Tech Help -->
+    <div class="space-y-6 pt-10 border-t border-slate-200">
+      <div class="text-center max-w-2xl mx-auto">
+        <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Fast Turnaround</span>
+        <h2 class="text-2xl font-bold text-slate-900 tracking-tight mt-1">Flat-Rate Remote Tech Help</h2>
+        <p class="text-xs text-slate-500 mt-1">Fixed sessions. We solve your computer & IT troubles via secure remote connection.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {flatRateHelp.map((item) => (
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs text-slate-400 mb-2 font-semibold">
+                <span>{item.duration}</span>
+                <span class="text-emerald-600 font-bold">No-Fix No-Fee</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-900">{item.name}</h3>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">{item.desc}</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-lg font-black text-slate-900">{item.price}</span>
+              <PayButton 
+                serviceId={item.serviceId} 
+                serviceName={item.name} 
+                priceDisplay={item.price}
+                size="sm"
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Comparison Table -->
+    <div class="space-y-6 pt-10 border-t border-slate-200">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="text-2xl font-bold text-slate-900 tracking-tight">Package Feature Comparison</h2>
+      </div>
+
+      <div class="overflow-x-auto bg-white rounded-2xl border border-slate-200 shadow-sm">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="bg-slate-50 border-b border-slate-200 text-slate-600 font-bold">
+              <th class="p-4 sm:p-5">Feature</th>
+              <th class="p-4 text-center">Basic (₹4,999)</th>
+              <th class="p-4 text-center bg-brand-50/50 text-brand-700">Standard (₹14,999)</th>
+              <th class="p-4 text-center">Premium (₹24,999 + mo)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            <tr>
+              <td class="p-4 font-semibold text-slate-800">Google Business Profile & Maps</td>
+              <td class="p-4 text-center text-emerald-600 font-bold">✓ Setup</td>
+              <td class="p-4 text-center text-emerald-600 font-bold bg-brand-50/20">✓ Full Optimization</td>
+              <td class="p-4 text-center text-emerald-600 font-bold">✓ Weekly Management</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-slate-800">Interactive Digital Card</td>
+              <td class="p-4 text-center text-emerald-600 font-bold">✓ Included</td>
+              <td class="p-4 text-center text-emerald-600 font-bold bg-brand-50/20">✓ Included</td>
+              <td class="p-4 text-center text-emerald-600 font-bold">✓ Included</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-slate-800">Professional Business Website</td>
+              <td class="p-4 text-center text-slate-400">—</td>
+              <td class="p-4 text-center text-emerald-600 font-bold bg-brand-50/20">✓ Up to 5 Pages</td>
+              <td class="p-4 text-center text-emerald-600 font-bold">✓ Custom Multi-Page</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-slate-800">On-Page SEO & GSC Indexing</td>
+              <td class="p-4 text-center text-slate-400">—</td>
+              <td class="p-4 text-center text-emerald-600 font-bold bg-brand-50/20">✓ Included</td>
+              <td class="p-4 text-center text-emerald-600 font-bold">✓ Advanced Monthly SEO</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-slate-800">Ad Creatives for Social / Ads</td>
+              <td class="p-4 text-center text-slate-700">1 Design</td>
+              <td class="p-4 text-center text-slate-700 bg-brand-50/20">3 Creatives</td>
+              <td class="p-4 text-center text-slate-700">8 Posts / Month</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-slate-800">Dedicated WhatsApp Manager</td>
+              <td class="p-4 text-center text-slate-400">—</td>
+              <td class="p-4 text-center text-slate-400 bg-brand-50/20">—</td>
+              <td class="p-4 text-center text-emerald-600 font-bold">✓ Priority Access</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</Base>

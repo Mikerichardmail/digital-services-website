@@ -1,0 +1,67 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import site from '../../data/site.json';
+---
+
+<Base
+  title={`Privacy Policy | ${site.brandName}`}
+  description={`Privacy Policy for ${site.brandName}. Learn how we collect, handle and protect your personal information.`}
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 space-y-10">
+    <Breadcrumbs items={[{ label: 'Privacy Policy' }]} />
+
+    <div class="space-y-3">
+      <h1 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">Privacy Policy</h1>
+      <p class="text-xs text-slate-500">Last Updated: October 2026</p>
+    </div>
+
+    <div class="prose prose-slate max-w-none text-xs sm:text-sm leading-relaxed space-y-6 text-slate-700 bg-white p-8 sm:p-12 rounded-3xl border border-slate-200 shadow-sm">
+      <h2 class="text-base sm:text-lg font-bold text-slate-900">1. Introduction</h2>
+      <p>
+        At <strong>{site.brandName}</strong> ("we", "our", or "us"), accessible via {site.domain}, we are committed to respecting and protecting the privacy of our website visitors, customers, and business partners. This Privacy Policy outlines what information we collect, how it is used, and the measures we take to keep it confidential.
+      </p>
+
+      <h2 class="text-base sm:text-lg font-bold text-slate-900">2. Strict Security & Zero-Password Rule</h2>
+      <p>
+        <strong>We NEVER ask for, store, or process your personal account passwords, banking PINs, or SMS OTPs.</strong> Any remote diagnostic assistance performed via screen sharing (AnyDesk, TeamViewer) is conducted transparently under your direct visual supervision and terminated immediately upon session conclusion.
+      </p>
+
+      <h2 class="text-base sm:text-lg font-bold text-slate-900">3. Information We Collect</h2>
+      <ul class="list-disc pl-5 space-y-1">
+        <li><strong>Contact Details:</strong> Your name, email address, phone/WhatsApp number provided during checkout or contact inquiries.</li>
+        <li><strong>Billing Details:</strong> Payment transaction identifiers, billing address, and GSTIN (if provided). Payment card and UPI credentials are processed directly by our RBI-licensed payment gateway partner, <strong>Razorpay</strong>, and never stored on our servers.</li>
+        <li><strong>Technical Information:</strong> Browser type, operating system, IP address, and anonymized usage analytics to ensure optimal site reliability.</li>
+      </ul>
+
+      <h2 class="text-base sm:text-lg font-bold text-slate-900">4. How We Use Your Information</h2>
+      <p>
+        We utilize the collected information strictly for:
+      </p>
+      <ul class="list-disc pl-5 space-y-1">
+        <li>Delivering purchased digital services and fulfilling technical support requests.</li>
+        <li>Generating accurate GST tax invoices and payment receipts.</li>
+        <li>Communicating milestone updates and responding to support inquiries via WhatsApp or email.</li>
+        <li>Complying with applicable Indian laws, tax regulations, and cyber security norms.</li>
+      </ul>
+
+      <h2 class="text-base sm:text-lg font-bold text-slate-900">5. Data Sharing & Third Parties</h2>
+      <p>
+        We do not sell, rent, or trade your personal information to third parties. Data is shared exclusively with necessary infrastructure providers:
+      </p>
+      <ul class="list-disc pl-5 space-y-1">
+        <li><strong>Razorpay Software Private Limited:</strong> for secure payment processing.</li>
+        <li><strong>Cloudflare Inc.:</strong> for edge hosting, DNS protection, and DDoS mitigation.</li>
+      </ul>
+
+      <h2 class="text-base sm:text-lg font-bold text-slate-900">6. Contact Information</h2>
+      <p>
+        If you have questions regarding this Privacy Policy, please reach out to us:
+        <br />
+        Email: <a href={`mailto:${site.email}`} class="text-brand-600 font-semibold">{site.email}</a>
+        <br />
+        Address: {site.address}
+      </p>
+    </div>
+  </div>
+</Base>

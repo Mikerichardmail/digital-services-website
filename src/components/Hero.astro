@@ -1,0 +1,97 @@
+---
+import site from '../data/site.json';
+---
+
+<section class="relative overflow-hidden bg-gradient-to-b from-brand-50/60 via-white to-slate-50 pt-16 pb-20 sm:pt-24 sm:pb-28 border-b border-slate-200">
+  <!-- Subtle decorative background blurs -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-tr from-brand-200/30 via-emerald-100/20 to-transparent blur-3xl pointer-events-none -z-10"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+    
+    <!-- Trust Pill -->
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-brand-200/80 shadow-sm text-xs font-semibold text-slate-800 animate-in fade-in slide-in-from-top-2">
+      <span class="flex h-2 w-2 rounded-full bg-emerald-500"></span>
+      <span>162+ Transparent Digital Services</span>
+      <span class="text-slate-300">|</span>
+      <span class="text-brand-600 font-bold">Starts at just ₹500</span>
+    </div>
+
+    <!-- Main Headline & Promise -->
+    <div class="max-w-3xl mx-auto space-y-4">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.12]">
+        Get your business online and <span class="bg-gradient-to-r from-brand-600 to-emerald-600 bg-clip-text text-transparent">found on Google.</span>
+      </h1>
+      <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
+        Fast, mobile-ready websites, #1 Google Maps ranking, local SEO, native apps, and instant remote computer tech support across NCR and India.
+      </p>
+    </div>
+
+    <!-- CTA Action Group -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+      <a
+        href={`https://wa.me/${site.whatsapp.replace('+', '')}?text=${encodeURIComponent("Hello! I want to get my business online.")}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-lg shadow-emerald-600/20 active:scale-95 transition-all"
+      >
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+        </svg>
+        <span>Instant WhatsApp Chat</span>
+      </a>
+
+      <a
+        href="/pricing"
+        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-2xl bg-white hover:bg-slate-50 text-slate-800 font-bold text-sm border border-slate-200 shadow-sm hover:border-slate-300 transition-all"
+      >
+        <span>See Packages & Pricing</span>
+        <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      </a>
+
+      <a
+        href="/services/technical-consultation"
+        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-brand-50 hover:bg-brand-100 text-brand-700 font-bold text-sm border border-brand-200 transition-all"
+      >
+        <span>Book Consultation (₹1,500)</span>
+      </a>
+    </div>
+
+    <!-- Quick Highlights Strip -->
+    <div class="pt-8 border-t border-slate-200/80 max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-lg bg-brand-100 text-brand-600 flex items-center justify-center shrink-0 font-bold text-xs">⚡</div>
+        <div>
+          <div class="text-xs font-bold text-slate-900">Same-Day Fixes</div>
+          <div class="text-[11px] text-slate-500">Remote tech support</div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 font-bold text-xs">🔒</div>
+        <div>
+          <div class="text-xs font-bold text-slate-900">Zero Password Rule</div>
+          <div class="text-[11px] text-slate-500">100% privacy protected</div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 font-bold text-xs">₹</div>
+        <div>
+          <div class="text-xs font-bold text-slate-900">Fixed Transparent Rates</div>
+          <div class="text-[11px] text-slate-500">No hidden surprises</div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center shrink-0 font-bold text-xs">📍</div>
+        <div>
+          <div class="text-xs font-bold text-slate-900">NCR Local Focus</div>
+          <div class="text-[11px] text-slate-500">Serving all of India</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

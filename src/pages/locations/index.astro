@@ -1,0 +1,70 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import locations from '../../data/locations.json';
+import site from '../../data/site.json';
+---
+
+<Base
+  title={`NCR Service Locations | ${site.brandName}`}
+  description="Local digital services & remote computer tech help in Noida, Gurgaon, Delhi, Ghaziabad, and Faridabad."
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 space-y-12">
+    <Breadcrumbs items={[{ label: 'Locations' }]} />
+
+    <div class="max-w-3xl space-y-4">
+      <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Service Coverage</span>
+      <h1 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
+        Local Focus in NCR, Serving All of India
+      </h1>
+      <p class="text-base text-slate-600 leading-relaxed">
+        We specialize in local SEO, Google Maps rankings, and digital setups tailored to the unique business hubs across the National Capital Region.
+      </p>
+    </div>
+
+    <!-- City Hubs Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {locations.map((loc) => (
+        <a
+          href={`/locations/${loc.slug}`}
+          class="group p-6 rounded-2xl bg-white border border-slate-200 hover:border-brand-500 hover:shadow-lg transition-all flex flex-col justify-between"
+        >
+          <div>
+            <div class="flex items-center justify-between text-xs text-slate-400 mb-2 font-semibold">
+              <span class="text-brand-600 font-bold">{loc.region}</span>
+              <span>NCR Hub</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 group-hover:text-brand-600 transition-colors">
+              {loc.name}
+            </h3>
+            <p class="text-xs text-slate-600 mt-2 line-clamp-3 leading-relaxed">
+              {loc.description}
+            </p>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-brand-600">
+            <span>Explore {loc.name} Services</span>
+            <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <!-- Pan-India Note -->
+    <div class="p-8 rounded-3xl bg-slate-900 text-white flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div>
+        <h3 class="text-xl font-bold">Outside the NCR region?</h3>
+        <p class="text-xs sm:text-sm text-slate-300 mt-1 max-w-xl">
+          We provide remote computer tech help, website engineering, and Google SEO for businesses throughout India with instant online payments.
+        </p>
+      </div>
+      <a 
+        href="/contact" 
+        class="shrink-0 px-6 py-3 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-bold text-xs transition-all"
+      >
+        Get in Touch
+      </a>
+    </div>
+
+  </div>
+</Base>

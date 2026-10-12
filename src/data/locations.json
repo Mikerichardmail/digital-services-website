@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "noida",
+    "name": "Noida",
+    "region": "Uttar Pradesh / NCR",
+    "headline": "Digital & Tech Services for Businesses in Noida & Greater Noida",
+    "description": "Helping retail shops in Sector 18, healthcare clinics in Sector 62, manufacturing units in Phase 2, and tech startups across Expressway build high-converting websites, rank #1 on Google Maps, and resolve tech bottlenecks.",
+    "topIndustries": ["IT & Tech Startups", "Healthcare & Clinics", "Retail & Malls (Sector 18)", "Industrial & Logistics"],
+    "popularServices": [
+      "Google Business Profile & Maps Ranking",
+      "Business Website Development",
+      "Fast Remote Computer Support & Office IT Setup",
+      "Local SEO for NCR Customers"
+    ],
+    "faq": [
+      {
+        "q": "Do you serve businesses in Greater Noida and Noida Expressway?",
+        "a": "Yes, we serve clients across all sectors of Noida, Greater Noida West (Noida Extension), and Expressway tech hubs remotely and on-demand."
+      },
+      {
+        "q": "Can you help our Noida shop appear when nearby customers search on Google Maps?",
+        "a": "Yes, our local SEO and Google Maps optimization ensures your listing dominates local search queries in your sector and surrounding neighborhoods."
+      }
+    ]
+  },
+  {
+    "slug": "gurgaon",
+    "name": "Gurgaon (Gurugram)",
+    "region": "Haryana / NCR",
+    "headline": "Fast Website, Local SEO & IT Services for Gurugram Businesses",
+    "description": "From Cyber City startups to salons and restaurants on Golf Course Road and Sohna Road, we deliver sleek modern web design, top Google Maps rankings, and remote tech assistance.",
+    "topIndustries": ["Corporate & Consultancies", "Fine Dining & Cafes", "Real Estate & Co-working", "Clinics & Wellness Centers"],
+    "popularServices": [
+      "High-Converting Landing Pages & Portfolios",
+      "Local SEO & Review Strategy",
+      "Executive Laptop & Home Office Tech Fixes",
+      "Social Media Content Packages"
+    ],
+    "faq": [
+      {
+        "q": "Why is Local SEO crucial for Gurugram businesses?",
+        "a": "Gurgaon is one of India's most competitive markets. Ranking in the top 3 on Google Maps brings high-intent commercial inquiries directly to your phone."
+      },
+      {
+        "q": "Do you provide urgent website maintenance for corporate teams?",
+        "a": "Yes, we handle WordPress fixes, security hardening, and page speed optimization with same-day turnaround."
+      }
+    ]
+  },
+  {
+    "slug": "delhi",
+    "name": "Delhi",
+    "region": "National Capital Territory",
+    "headline": "Digital Growth & Computer Solutions for Delhi Traders & Professionals",
+    "description": "Empowering Chandni Chowk wholesalers, Connaught Place professionals, South Delhi clinics, and Karol Bagh merchants with digital visiting cards, e-commerce portals, and instant remote PC repair.",
+    "topIndustries": ["Wholesale & Retail Traders", "Lawyers, CAs & Consultants", "Specialty Doctors & Clinics", "Educational & Coaching Institutes"],
+    "popularServices": [
+      "Local Business Starter Package (₹4,999)",
+      "E-commerce & WhatsApp Catalog Websites",
+      "Tally & Billing PC Support",
+      "Fast Logo & Visiting Card Design"
+    ],
+    "faq": [
+      {
+        "q": "Can you help traditional Delhi retail shops sell online?",
+        "a": "Yes, we build simple WhatsApp-ordering catalogs and clean e-commerce websites with Razorpay and UPI payment links."
+      },
+      {
+        "q": "How does remote PC repair work for busy Delhi offices?",
+        "a": "You don't need to take your desktop or laptop to Nehru Place. Connect with us in 2 minutes via AnyDesk, and we resolve errors, viruses, and printer setups remotely."
+      }
+    ]
+  },
+  {
+    "slug": "ghaziabad",
+    "name": "Ghaziabad",
+    "region": "Uttar Pradesh / NCR",
+    "headline": "Affordable Digital Marketing & Tech Help in Ghaziabad",
+    "description": "Supporting manufacturers in Mohan Nagar, schools in Raj Nagar, and local retailers in Indirapuram and Vaishali with budget-friendly web development, Maps setup, and computer maintenance.",
+    "topIndustries": ["Manufacturing & Fabrication", "Schools & Coaching Classes", "Residential Hub Services", "Automobile Workshops"],
+    "popularServices": [
+      "Google Maps Pin Setup & Verification",
+      "Budget Business Website (from ₹8,000)",
+      "Slow PC & Laptop Cleanup",
+      "PDF & Document Conversion Services"
+    ],
+    "faq": [
+      {
+        "q": "Do you offer doorstep support in Ghaziabad?",
+        "a": "Our tech support is delivered 100% securely and quickly via remote screen-sharing (AnyDesk/TeamViewer), saving you time and travel fees."
+      },
+      {
+        "q": "What is the most affordable way to take my Ghaziabad shop online?",
+        "a": "Our Basic Local Business Package at ₹4,999 gives you Google Business Profile setup, Google Maps ranking, a digital visiting card, and an ad design."
+      }
+    ]
+  },
+  {
+    "slug": "faridabad",
+    "name": "Faridabad",
+    "region": "Haryana / NCR",
+    "headline": "Digital Engineering & Tech Support for Faridabad Enterprises",
+    "description": "Tailored for industrial suppliers in Sector 24, retailers in NIT Faridabad, and professional services along Mathura Road. Fast web redesigns, Google verification, and IT support.",
+    "topIndustries": ["Industrial Engineering & Auto Parts", "Commercial Traders (NIT)", "Healthcare Clinics", "Education Centers"],
+    "popularServices": [
+      "Industrial & B2B Company Websites",
+      "Google Search Console & Indexing Error Fixes",
+      "Windows Troubleshooting & Network Setup",
+      "Google Business Profile Optimization"
+    ],
+    "faq": [
+      {
+        "q": "Can you help our industrial company get found by B2B buyers?",
+        "a": "Yes, we structure your product catalogs, optimize for B2B search keywords, and configure your Google Business Profile for corporate searchers."
+      },
+      {
+        "q": "How do we pay for services?",
+        "a": "We accept secure payments via Razorpay (UPI, Credit/Debit cards, Net Banking) with instant GST invoices."
+      }
+    ]
+  }
+]

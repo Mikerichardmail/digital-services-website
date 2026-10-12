@@ -1,0 +1,60 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import site from '../../data/site.json';
+---
+
+<Base
+  title={`Refund & Cancellation Policy | ${site.brandName}`}
+  description={`Refund and cancellation terms for digital services and remote tech support provided by ${site.brandName}.`}
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 space-y-10">
+    <Breadcrumbs items={[{ label: 'Refund Policy' }]} />
+
+    <div class="space-y-3">
+      <h1 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">Refund & Cancellation Policy</h1>
+      <p class="text-xs text-slate-500">Last Updated: October 2026</p>
+    </div>
+
+    <div class="prose prose-slate max-w-none text-xs sm:text-sm leading-relaxed space-y-6 text-slate-700 bg-white p-8 sm:p-12 rounded-3xl border border-slate-200 shadow-sm">
+      <h2 class="text-base sm:text-lg font-bold text-slate-900">1. Overview</h2>
+      <p>
+        At <strong>{site.brandName}</strong>, we stand firmly behind the quality and integrity of our digital services and technical solutions. We strive for 100% client satisfaction and operate with clear, transparent cancellation and refund guidelines.
+      </p>
+
+      <h2 class="text-base sm:text-lg font-bold text-slate-900">2. "No-Fix, No-Fee" Guarantee (Remote Tech Support)</h2>
+      <p>
+        For remote diagnostic and computer repair sessions (e.g. Quick Fix ₹500, Standard Help ₹999):
+      </p>
+      <ul class="list-disc pl-5 space-y-1">
+        <li>If our engineering specialist determines that your technical issue cannot be resolved remotely (for instance, due to permanent hardware failure), <strong>you are entitled to a 100% full refund</strong>.</li>
+        <li>Refunds under this guarantee are initiated within 24 hours of session conclusion.</li>
+      </ul>
+
+      <h2 class="text-base sm:text-lg font-bold text-slate-900">3. Project Cancellations & Milestone Refunds</h2>
+      <p>
+        For web development, custom software, and package designs:
+      </p>
+      <ul class="list-disc pl-5 space-y-1">
+        <li><strong>Prior to Work Initiation:</strong> If you request cancellation before work has commenced, a 100% refund is processed minus payment gateway transaction fees (if applicable).</li>
+        <li><strong>During Development:</strong> If cancelled after initial drafts/mockups have been delivered, advance payments cover consumed engineering hours and completed milestones.</li>
+        <li><strong>After Final Delivery & Approval:</strong> Once final deliverables, domain setups, or code repositories have been handed over to the client, fees are non-refundable.</li>
+      </ul>
+
+      <h2 class="text-base sm:text-lg font-bold text-slate-900">4. Monthly Subscriptions & Retainers</h2>
+      <p>
+        Monthly retainers (SEO, website maintenance, Google Business management) can be paused or cancelled at any time with a 7-day notice prior to the next billing cycle. No fees are charged for subsequent months.
+      </p>
+
+      <h2 class="text-base sm:text-lg font-bold text-slate-900">5. Refund Processing Timeline</h2>
+      <p>
+        Approved refunds are credited directly back to the original source account (UPI, Debit/Credit Card, or Net Banking) via <strong>Razorpay</strong> within <strong>5 to 7 business days</strong>, in accordance with standard Indian banking clearance timelines.
+      </p>
+
+      <h2 class="text-base sm:text-lg font-bold text-slate-900">6. Requesting a Refund</h2>
+      <p>
+        To request a refund or cancellation, message us on WhatsApp at <strong>{site.whatsappDisplay}</strong> or email <strong>{site.email}</strong> with your payment reference ID.
+      </p>
+    </div>
+  </div>
+</Base>

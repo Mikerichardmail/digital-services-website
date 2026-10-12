@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+---
+
+<Base
+  title={`Page Not Found (404) | ${site.brandName}`}
+  description="The page you requested was not found. Browse our services or return to the homepage."
+>
+  <div class="max-w-2xl mx-auto px-4 py-24 text-center space-y-6">
+    <div class="text-6xl font-black text-brand-600">404</div>
+    <h1 class="text-3xl font-bold text-slate-900 tracking-tight">Page Not Found</h1>
+    <p class="text-sm text-slate-600">
+      The link you clicked may be broken or the page may have been moved. You can explore all our services or return home.
+    </p>
+    <div class="pt-4 flex items-center justify-center gap-3">
+      <a href="/" class="px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs shadow-sm transition-all">
+        Back to Home
+      </a>
+      <a href="/services" class="px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs transition-colors">
+        View All 162 Services
+      </a>
+    </div>
+  </div>
+</Base>

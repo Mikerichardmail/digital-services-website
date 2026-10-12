@@ -1,0 +1,87 @@
+---
+import PayButton from './PayButton.astro';
+import QuoteButton from './QuoteButton.astro';
+
+interface Props {
+  name: string;
+  price: string;
+  period?: string;
+  description: string;
+  features: string[];
+  serviceId?: string;
+  payType?: 'link' | 'quote';
+  popular?: boolean;
+}
+
+const {
+  name,
+  price,
+  period,
+  description,
+  features,
+  serviceId,
+  payType = 'link',
+  popular = false
+} = Astro.props;
+---
+
+<div class={`relative rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 ${
+  popular 
+    ? 'bg-gradient-to-b from-brand-900 to-slate-900 text-white shadow-xl shadow-brand-900/20 ring-2 ring-brand-500 scale-100 lg:-translate-y-2' 
+    : 'bg-white text-slate-900 border border-slate-200 shadow-sm hover:shadow-md'
+}`}>
+  {popular && (
+    <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-500 to-emerald-500 text-white text-[11px] font-black uppercase tracking-wider py-1 px-4 rounded-full shadow-md">
+      Most Popular Choice
+    </div>
+  )}
+
+  <div>
+    <h3 class="text-xl font-bold tracking-tight">{name}</h3>
+    <p class={`text-xs mt-2 leading-relaxed ${popular ? 'text-slate-300' : 'text-slate-500'}`}>
+      {description}
+    </p>
+
+    <div class="mt-6 flex items-baseline gap-1">
+      <span class="text-3xl sm:text-4xl font-extrabold tracking-tight">{price}</span>
+      {period && (
+        <span class={`text-xs font-medium ${popular ? 'text-slate-400' : 'text-slate-500'}`}>{period}</span>
+      )}
+    </div>
+
+    <div class={`mt-6 pt-6 border-t ${popular ? 'border-slate-800' : 'border-slate-100'}`}>
+      <span class={`text-xs font-bold uppercase tracking-wider block mb-3 ${popular ? 'text-slate-400' : 'text-slate-400'}`}>
+        Everything Included:
+      </span>
+      <ul class="space-y-3 text-xs sm:text-sm">
+        {features.map((feat) => (
+          <li class="flex items-start gap-2.5">
+            <svg class={`w-4 h-4 shrink-0 mt-0.5 ${popular ? 'text-emerald-400' : 'text-emerald-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class={popular ? 'text-slate-200' : 'text-slate-700'}>{feat}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <div class="mt-8 pt-6">
+    {payType === 'link' && serviceId ? (
+      <PayButton 
+        serviceId={serviceId} 
+        serviceName={`${name} Local Package`} 
+        priceDisplay={price}
+        text={`Get ${name} Now`}
+        size="lg"
+      />
+    ) : (
+      <QuoteButton 
+        serviceName={`${name} Package`} 
+        priceDisplay={price}
+        text="Discuss & Get Started"
+        size="lg"
+      />
+    )}
+  </div>
+</div>

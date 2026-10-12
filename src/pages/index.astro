@@ -1,0 +1,433 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import PackageCard from '../components/PackageCard.astro';
+import FAQ from '../components/FAQ.astro';
+import PayButton from '../components/PayButton.astro';
+import QuoteButton from '../components/QuoteButton.astro';
+import site from '../data/site.json';
+import categories from '../data/categories.json';
+import services from '../data/services.json';
+
+// Top 6 service cards
+const featuredHeroServices = [
+  {
+    title: "Local Business Packages",
+    desc: "Complete bundle: Google Maps listing, Business Profile, digital card & promotional ad.",
+    price: "From ₹4,999",
+    href: "/services/local-business-packages",
+    badge: "Best Seller",
+    icon: "🏪"
+  },
+  {
+    title: "Business Website",
+    desc: "Mobile-responsive, ultra-fast website designed to turn visitors into paying customers.",
+    price: "From ₹8,000",
+    href: "/services/website-development",
+    badge: "SEO Ready",
+    icon: "💻"
+  },
+  {
+    title: "Google Maps & Profile Setup",
+    desc: "Get your shop or clinic ranking on top of local Google search & Google Maps.",
+    price: "From ₹1,000",
+    href: "/services/google-business-maps",
+    badge: "Local SEO",
+    icon: "📍"
+  },
+  {
+    title: "Laptop Care & Slow PC Fix",
+    desc: "Deep junk cleaning, virus eradication, startup speedup, and remote performance tune-up.",
+    price: "₹999 Bundle",
+    href: "/services/remote-computer-tech-help",
+    badge: "Remote Fix",
+    icon: "⚡"
+  },
+  {
+    title: "PDF Toolkit Bundle",
+    desc: "Up to 5 document tasks: conversions, OCR, compression, merge/split & formatting.",
+    price: "₹999 Flat",
+    href: "/services/pdf-document-services",
+    badge: "5-in-1",
+    icon: "📄"
+  },
+  {
+    title: "Technical Consultation",
+    desc: "60-minute 1-on-1 video call + written action summary for websites, apps, and IT strategy.",
+    price: "₹1,500 Flat",
+    href: "/services/technical-consultation",
+    badge: "1-on-1 Call",
+    icon: "🎯"
+  }
+];
+
+// 3 packages
+const packages = [
+  {
+    name: "Basic Package",
+    price: "₹4,999",
+    period: "one-time",
+    description: "Ideal for new retail shops, local clinics, and service providers wanting to get found locally.",
+    features: [
+      "Google Business Profile creation & verification guidance",
+      "Google Maps exact pin calibration & hours setup",
+      "Interactive Digital Visiting Card with WhatsApp & Call buttons",
+      "1 Professional social media / festival ad creative",
+      "Review generation QR code ready for print"
+    ],
+    serviceId: "basic-package-google-business-profile-maps-digital-visiting-card-1-ad-design",
+    payType: "link" as const,
+    popular: false
+  },
+  {
+    name: "Standard Package",
+    price: "₹14,999",
+    period: "one-time",
+    description: "The complete digital foundation. A modern business website plus dominant Google Maps presence.",
+    features: [
+      "Full mobile-responsive Business Website (up to 5 pages)",
+      "Google Business Profile & Google Maps complete optimization",
+      "Basic On-Page SEO setup & Google Search Console indexing",
+      "3 high-impact ad creatives for WhatsApp & social media",
+      "Fast hosting setup & business email configuration",
+      "SSL Security Certificate & Contact form integration"
+    ],
+    serviceId: "standard-package-business-website-business-profile-and-maps-optimization-basic-seo-ad-creatives",
+    payType: "link" as const,
+    popular: true
+  },
+  {
+    name: "Premium Package",
+    price: "₹24,999",
+    period: "+ ₹5,999 /mo",
+    description: "End-to-end hands-off digital growth. We build, rank, and actively manage your online presence every month.",
+    features: [
+      "Everything in Standard Package included",
+      "Ongoing Local SEO & Monthly Google Maps ranking management",
+      "Weekly Google Business updates & 8 promotional posts/mo",
+      "Priority same-day technical support & website maintenance",
+      "Monthly performance & keyword ranking report",
+      "Direct WhatsApp dedicated manager support"
+    ],
+    serviceId: "premium-package-standard-local-seo-business-profile-management-monthly-digital-management",
+    payType: "quote" as const,
+    popular: false
+  }
+];
+
+// Testimonials
+const reviews = [
+  {
+    name: "Dr. Alok Verma",
+    business: "Dental Clinic, Noida Sector 62",
+    comment: "Our Google Maps profile went from nowhere to the top 3 in our sector within 3 weeks. New patient inquiries via WhatsApp have doubled.",
+    rating: 5
+  },
+  {
+    name: "Manish Aggarwal",
+    business: "Wholesale Textiles, Chandni Chowk, Delhi",
+    comment: "My office billing laptop was freezing constantly. They connected via AnyDesk and cleaned everything in 45 minutes flat. Exceptional service!",
+    rating: 5
+  },
+  {
+    name: "Pooja Malhotra",
+    business: "Boutique Fashion, Gurgaon",
+    comment: "Got our 5-page catalogue website and Instagram creatives done under the Standard Package. Clean, fast, and delivered ahead of schedule.",
+    rating: 5
+  }
+];
+
+// FAQs
+const homeFaqs = [
+  {
+    q: "How do payments work?",
+    a: "We offer 100% transparent pricing starting from ₹500. For fixed-scope tasks, click 'Pay Now' to complete your order securely via Razorpay (UPI, Credit/Debit cards, Net Banking). For custom development, we discuss on WhatsApp first and provide a standard 50% advance invoice."
+  },
+  {
+    q: "What is your refund policy?",
+    a: "We offer a 'No-Fix, No-Fee' guarantee on diagnostic tech support. If we cannot resolve your computer or website issue remotely, you receive a prompt full refund. For custom development projects, payments are milestone-backed."
+  },
+  {
+    q: "How are services delivered?",
+    a: "All services are delivered 100% digitally and remotely. Tech support is conducted live via AnyDesk / TeamViewer while you watch your screen. Web and graphic assets are delivered via private cloud links and email."
+  },
+  {
+    q: "Do you ever ask for passwords or OTPs?",
+    a: "Strict Rule: NEVER. We never ask for, handle, or store your personal passwords, SMS OTPs, or authentication credentials. For setup work, we guide your screen or use official delegated access permissions (e.g. Google Business Profile manager access)."
+  }
+];
+---
+
+<Base 
+  title={`${site.brandName} - Web Development, Local SEO & Remote Tech Help from ₹500`}
+  description="Get your business online and found on Google. Professional websites, Google Maps ranking, Android apps, and instant remote computer tech support across NCR & India."
+>
+  <!-- Hero Section -->
+  <Hero />
+
+  <!-- 6 Top Service Cards Section -->
+  <section class="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Most Requested Services</span>
+      <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mt-1">High-Impact Solutions for Your Business</h2>
+      <p class="text-sm text-slate-600 mt-2">Choose an individual service or browse all 17 categories.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {featuredHeroServices.map((card) => (
+        <a 
+          href={card.href}
+          class="group p-6 rounded-2xl bg-white border border-slate-200 hover:border-brand-500 hover:shadow-lg transition-all flex flex-col justify-between"
+        >
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-3xl">{card.icon}</span>
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-brand-50 text-brand-700 border border-brand-100">
+                {card.badge}
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition-colors">
+              {card.title}
+            </h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              {card.desc}
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-sm font-extrabold text-slate-900">{card.price}</span>
+            <span class="text-xs font-bold text-brand-600 group-hover:translate-x-1 transition-transform flex items-center gap-1">
+              Explore &rarr;
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <div class="mt-8 text-center">
+      <a href="/services" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs shadow transition-all">
+        <span>Browse All 162 Services in 17 Categories</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Quick Fix Strip -->
+  <section class="bg-gradient-to-r from-brand-600 via-brand-700 to-indigo-700 text-white py-10 shadow-inner">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="space-y-1 text-center md:text-left">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs font-semibold backdrop-blur-sm">
+          <span>⚡ Emergency Tech Support</span>
+        </div>
+        <h3 class="text-2xl sm:text-3xl font-black tracking-tight">Computer problem? Fixed remotely from ₹500.</h3>
+        <p class="text-sm text-brand-100 max-w-xl">
+          Slow laptop, Windows crash, WiFi errors, virus removal, or printer troubles. Connect in 2 minutes via AnyDesk.
+        </p>
+      </div>
+
+      <div class="flex items-center gap-3 shrink-0">
+        <a 
+          href="/services/remote-computer-tech-help" 
+          class="px-6 py-3 rounded-xl bg-white text-brand-700 hover:bg-brand-50 font-bold text-xs shadow-md transition-all"
+        >
+          Book Quick Fix (₹500)
+        </a>
+        <a 
+          href={`https://wa.me/${site.whatsapp.replace('+', '')}?text=${encodeURIComponent("Hello! My computer has a problem and I need urgent remote help.")}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-5 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs shadow-md transition-all flex items-center gap-1.5"
+        >
+          <span>WhatsApp Now</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 Local Business Packages -->
+  <section id="packages" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">All-in-One Bundles</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-1">Complete Local Business Packages</h2>
+      <p class="text-sm text-slate-600 mt-2">Everything a shop, clinic, restaurant or local service needs to start capturing nearby customers.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+      {packages.map((pkg) => (
+        <PackageCard {...pkg} />
+      ))}
+    </div>
+  </section>
+
+  <!-- How It Works (4 Steps) -->
+  <section class="py-16 bg-white border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Simple & Transparent</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mt-1">How It Works in 4 Steps</h2>
+        <p class="text-sm text-slate-600 mt-2">Zero complexity. Get expert results without hassle.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 text-center relative">
+          <div class="w-12 h-12 rounded-2xl bg-brand-600 text-white font-black text-lg flex items-center justify-center mx-auto mb-4 shadow-md shadow-brand-500/20">
+            1
+          </div>
+          <h3 class="font-bold text-slate-900 text-base">Choose Service</h3>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Pick from 162 fixed-price services, ready-made packages, or tell us your unique problem.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 text-center relative">
+          <div class="w-12 h-12 rounded-2xl bg-brand-600 text-white font-black text-lg flex items-center justify-center mx-auto mb-4 shadow-md shadow-brand-500/20">
+            2
+          </div>
+          <h3 class="font-bold text-slate-900 text-base">Pay or Get Quote</h3>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Click 'Pay Now' with Razorpay UPI/Cards for fixed tasks, or get an instant WhatsApp quote.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 text-center relative">
+          <div class="w-12 h-12 rounded-2xl bg-brand-600 text-white font-black text-lg flex items-center justify-center mx-auto mb-4 shadow-md shadow-brand-500/20">
+            3
+          </div>
+          <h3 class="font-bold text-slate-900 text-base">We Work Safely</h3>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            We work live via remote screen or develop your site with strict zero-password security.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 text-center relative">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-600 text-white font-black text-lg flex items-center justify-center mx-auto mb-4 shadow-md shadow-emerald-500/20">
+            4
+          </div>
+          <h3 class="font-bold text-slate-900 text-base">Delivery & Support</h3>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Receive clean deliverables, review with our team, and enjoy guaranteed after-sales support.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Proof (Own Products) -->
+  <section class="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Engineered by Us</span>
+      <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mt-1">Our In-House Proof of Work</h2>
+      <p class="text-sm text-slate-600 mt-2">We build and maintain real-world software used daily by Indian businesses.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+        <div>
+          <span class="text-xs font-bold text-emerald-600 uppercase">Android App</span>
+          <h3 class="text-lg font-bold text-slate-900 mt-1">SmartScan Scanner</h3>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            High-speed document scanner app for Android with offline OCR, auto edge detection, and PDF generation with 50K+ downloads.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+          <span>Kotlin • Jetpack • ML Kit</span>
+          <a href="/portfolio" class="font-bold text-brand-600 hover:underline">View details &rarr;</a>
+        </div>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+        <div>
+          <span class="text-xs font-bold text-brand-600 uppercase">Web Utility</span>
+          <h3 class="text-lg font-bold text-slate-900 mt-1">SmartQR & UPI Generator</h3>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Dynamic branded UPI QR generator with custom logos, amounts, and bill tracking for Indian merchant counters.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+          <span>Astro • Tailwind • Cloudflare</span>
+          <a href="/portfolio" class="font-bold text-brand-600 hover:underline">View details &rarr;</a>
+        </div>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+        <div>
+          <span class="text-xs font-bold text-purple-600 uppercase">Browser Extension</span>
+          <h3 class="text-lg font-bold text-slate-900 mt-1">SmartPDF Compressor</h3>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Client-side WebAssembly PDF compressor reducing file sizes by up to 80% without uploading sensitive data to any server.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+          <span>Chrome MV3 • WebAssembly</span>
+          <a href="/portfolio" class="font-bold text-brand-600 hover:underline">View details &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Real Reviews -->
+  <section class="py-16 bg-slate-100/60 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Client Stories</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mt-1">Trusted by Businesses Across NCR</h2>
+        <p class="text-sm text-slate-600 mt-2">Real feedback from clients who value honesty, speed, and clean code.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {reviews.map((rev) => (
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex text-amber-400 mb-3">
+                {Array.from({ length: rev.rating }).map(() => (
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              <p class="text-xs sm:text-sm text-slate-700 leading-relaxed italic">
+                "{rev.comment}"
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100">
+              <div class="font-bold text-xs text-slate-900">{rev.name}</div>
+              <div class="text-[11px] text-slate-500">{rev.business}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <FAQ items={homeFaqs} />
+  </section>
+
+  <!-- Final CTA Strip -->
+  <section class="pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="rounded-3xl bg-gradient-to-r from-slate-900 via-brand-950 to-slate-900 text-white p-8 sm:p-12 text-center space-y-6 shadow-xl">
+      <h2 class="text-2xl sm:text-4xl font-black tracking-tight">Ready to take your business online?</h2>
+      <p class="text-sm text-slate-300 max-w-xl mx-auto">
+        Speak directly with an engineer. No sales pitch, no automated chatbots. Instant WhatsApp answers.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+        <a 
+          href={`https://wa.me/${site.whatsapp.replace('+', '')}?text=${encodeURIComponent("Hello! I'd like to get started with your digital services.")}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-8 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm shadow-md transition-all flex items-center gap-2"
+        >
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+          </svg>
+          <span>Chat on WhatsApp ({site.whatsappDisplay})</span>
+        </a>
+        <a href="/pricing" class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm transition-colors">
+          View All Packages
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>

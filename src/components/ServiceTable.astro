@@ -1,0 +1,104 @@
+---
+import PayButton from './PayButton.astro';
+import QuoteButton from './QuoteButton.astro';
+
+interface Service {
+  id: string;
+  category: string;
+  name: string;
+  priceFrom: number;
+  priceTo: number;
+  priceDisplay: string;
+  type: string;
+  pay: string;
+  hero?: boolean;
+}
+
+interface Props {
+  services: Service[];
+  title?: string;
+  showCategoryBadge?: boolean;
+}
+
+const { services, title, showCategoryBadge = false } = Astro.props;
+---
+
+<div class="space-y-4">
+  {title && (
+    <h3 class="text-xl font-bold text-slate-900 tracking-tight">{title}</h3>
+  )}
+
+  <div class="overflow-hidden bg-white rounded-2xl border border-slate-200 shadow-sm">
+    <div class="overflow-x-auto">
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="bg-slate-50/80 border-b border-slate-200 text-[11px] font-bold text-slate-500 uppercase tracking-wider">
+            <th class="py-3.5 px-4 sm:px-6">Service Name</th>
+            <th class="py-3.5 px-4">Price</th>
+            <th class="py-3.5 px-4 hidden sm:table-cell">Type</th>
+            <th class="py-3.5 px-4 sm:px-6 text-right">Action</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100 text-sm">
+          {services.map((item) => (
+            <tr class="hover:bg-slate-50/80 transition-colors group">
+              <td class="py-4 px-4 sm:px-6 font-medium text-slate-900">
+                <div class="flex items-center gap-2">
+                  <span>{item.name}</span>
+                  {item.hero && (
+                    <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800">
+                      Popular
+                    </span>
+                  )}
+                </div>
+              </td>
+              <td class="py-4 px-4 font-semibold text-slate-800 whitespace-nowrap">
+                {item.priceDisplay}
+              </td>
+              <td class="py-4 px-4 hidden sm:table-cell text-xs text-slate-500 capitalize">
+                <span class={`inline-block px-2.5 py-1 rounded-md text-[11px] font-medium ${
+                  item.type === 'monthly' ? 'bg-purple-50 text-purple-700' :
+                  item.type === 'custom' ? 'bg-indigo-50 text-indigo-700' :
+                  'bg-slate-100 text-slate-700'
+                }`}>
+                  {item.type}
+                </span>
+              </td>
+              <td class="py-4 px-4 sm:px-6 text-right whitespace-nowrap">
+                {item.pay === 'link' ? (
+                  <PayButton 
+                    serviceId={item.id} 
+                    serviceName={item.name} 
+                    priceDisplay={item.priceDisplay}
+                    size="sm"
+                  />
+                ) : item.pay === 'quote' ? (
+                  <QuoteButton 
+                    serviceName={item.name} 
+                    priceDisplay={item.priceDisplay} 
+                    text="Get Quote"
+                    size="sm"
+                  />
+                ) : item.pay === 'sub' ? (
+                  <QuoteButton 
+                    serviceName={item.name} 
+                    priceDisplay={item.priceDisplay} 
+                    text="Subscribe"
+                    size="sm"
+                  />
+                ) : (
+                  <QuoteButton 
+                    serviceName={item.name} 
+                    priceDisplay={item.priceDisplay} 
+                    text="Discuss"
+                    size="sm"
+                  />
+                )}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

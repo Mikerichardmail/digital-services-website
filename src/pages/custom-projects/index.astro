@@ -1,0 +1,98 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import QuoteButton from '../../components/QuoteButton.astro';
+import services from '../../data/services.json';
+import site from '../../data/site.json';
+
+const customServices = services.filter((s) => s.type === 'custom');
+---
+
+<Base
+  title={`Custom Projects & Bespoke Software | ${site.brandName}`}
+  description="Custom web applications, native Android apps, tailored Chrome extensions, and full digital setups built to your exact specifications."
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 space-y-16">
+    <Breadcrumbs items={[{ label: 'Custom Projects' }]} />
+
+    <div class="max-w-3xl space-y-4">
+      <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Enterprise & Tailored</span>
+      <h1 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
+        Custom Software & Dedicated Digital Setups
+      </h1>
+      <p class="text-base text-slate-600 leading-relaxed">
+        Have unique business requirements? We build scalable, high-performance web applications, native Android apps, and custom tools with clear milestones and milestone-based invoicing.
+      </p>
+    </div>
+
+    <!-- Custom Services Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {customServices.map((item) => (
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold text-indigo-600 uppercase">Tailored Scope</span>
+            <h3 class="text-lg font-bold text-slate-900 mt-2">{item.name}</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Complete architectural consultation, custom development, rigorous testing, and cloud deployment.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-sm font-extrabold text-slate-900">{item.priceDisplay}</span>
+            <QuoteButton serviceName={item.name} priceDisplay={item.priceDisplay} text="Request Scope" size="sm" />
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Custom Project Inquiry Form -->
+    <div class="bg-gradient-to-br from-slate-900 to-brand-950 rounded-3xl p-8 sm:p-12 text-white shadow-xl">
+      <div class="max-w-2xl mx-auto text-center space-y-3 mb-8">
+        <h2 class="text-2xl sm:text-3xl font-black tracking-tight">Tell Us About Your Project</h2>
+        <p class="text-xs sm:text-sm text-slate-300">
+          Share your idea or technical specifications. We review requirements and reply with a breakdown within 24 hours.
+        </p>
+      </div>
+
+      <form class="max-w-xl mx-auto space-y-4 text-slate-900">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <input 
+            type="text" 
+            placeholder="Your Name *" 
+            required 
+            class="w-full px-4 py-3 rounded-xl bg-white text-sm focus:outline-none focus:ring-2 focus:ring-brand-400"
+          />
+          <input 
+            type="tel" 
+            placeholder="WhatsApp / Phone *" 
+            required 
+            class="w-full px-4 py-3 rounded-xl bg-white text-sm focus:outline-none focus:ring-2 focus:ring-brand-400"
+          />
+        </div>
+
+        <input 
+          type="email" 
+          placeholder="Email Address *" 
+          required 
+          class="w-full px-4 py-3 rounded-xl bg-white text-sm focus:outline-none focus:ring-2 focus:ring-brand-400"
+        />
+
+        <textarea 
+          rows="4" 
+          placeholder="Describe your project, features required, and target launch timeline..." 
+          required
+          class="w-full px-4 py-3 rounded-xl bg-white text-sm focus:outline-none focus:ring-2 focus:ring-brand-400 resize-none"
+        ></textarea>
+
+        <a
+          href={`https://wa.me/${site.whatsapp.replace('+', '')}?text=${encodeURIComponent("Hello! I want to discuss a custom software project.")}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-full block text-center py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm shadow-md transition-all"
+        >
+          Send Project Inquiry via WhatsApp
+        </a>
+      </form>
+    </div>
+
+  </div>
+</Base>

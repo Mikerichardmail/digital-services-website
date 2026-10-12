@@ -1,0 +1,46 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ServiceTable from '../../components/ServiceTable.astro';
+import services from '../../data/services.json';
+import site from '../../data/site.json';
+
+const monthlyServices = services.filter((s) => s.type === 'monthly');
+---
+
+<Base
+  title={`Monthly Maintenance & Management Plans | ${site.brandName}`}
+  description="Ongoing monthly digital management for websites, SEO, Google Business Profile, social media, and IT support."
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 space-y-12">
+    <Breadcrumbs items={[{ label: 'Monthly Plans' }]} />
+
+    <div class="max-w-3xl space-y-4">
+      <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Ongoing Support</span>
+      <h1 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
+        Monthly Digital Management Plans
+      </h1>
+      <p class="text-base text-slate-600 leading-relaxed">
+        Let our engineering and marketing team handle your day-to-day digital operations. Website security, ranking maintenance, fresh social creatives, and remote tech assistance on auto-pilot.
+      </p>
+    </div>
+
+    <!-- Monthly Services Table -->
+    <div class="space-y-4">
+      <div class="flex items-center justify-between">
+        <h2 class="text-xl font-bold text-slate-900">All Monthly Retainers ({monthlyServices.length})</h2>
+        <span class="text-xs text-slate-500">Cancel or pause anytime</span>
+      </div>
+
+      <ServiceTable services={monthlyServices} />
+    </div>
+
+    <!-- Subscriptions Note -->
+    <div class="p-6 rounded-2xl bg-slate-100 border border-slate-200 text-xs sm:text-sm text-slate-600 space-y-2">
+      <h4 class="font-bold text-slate-900 text-sm">How Monthly Retainers Work:</h4>
+      <p>1. Connect with us on WhatsApp or click "Subscribe" to confirm your exact scope and requirements.</p>
+      <p>2. We generate an initial payment link for month 1, and configure your recurring Razorpay subscription.</p>
+      <p>3. Transparent monthly progress reports and dedicated priority communication throughout.</p>
+    </div>
+  </div>
+</Base>

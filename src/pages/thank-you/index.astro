@@ -1,0 +1,72 @@
+---
+import Base from '../../layouts/Base.astro';
+import site from '../../data/site.json';
+---
+
+<Base
+  title={`Payment Received | Thank You | ${site.brandName}`}
+  description="Your payment has been successfully received. Our engineering team will contact you shortly."
+>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-center space-y-8">
+    
+    <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto shadow-inner animate-in zoom-in-75">
+      <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+      </svg>
+    </div>
+
+    <div class="space-y-3">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
+        Payment Successfully Verified
+      </span>
+      <h1 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
+        Thank You! Your Order is Confirmed.
+      </h1>
+      <p class="text-base text-slate-600 max-w-lg mx-auto">
+        Your Razorpay payment transaction was successful. An official tax invoice and confirmation receipt have been dispatched to your email.
+      </p>
+    </div>
+
+    <!-- Next Steps Card -->
+    <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm text-left space-y-4">
+      <h3 class="text-base font-bold text-slate-900">What Happens Next?</h3>
+      <ol class="space-y-3 text-xs sm:text-sm text-slate-600">
+        <li class="flex items-start gap-3">
+          <span class="w-6 h-6 rounded-full bg-brand-100 text-brand-700 font-bold flex items-center justify-center shrink-0 text-xs">1</span>
+          <span>An assigned engineer is reviewing your booking details right now.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="w-6 h-6 rounded-full bg-brand-100 text-brand-700 font-bold flex items-center justify-center shrink-0 text-xs">2</span>
+          <span>We will message you on WhatsApp within <strong class="text-slate-800">15–30 minutes</strong> to initiate your session or collect project assets.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="w-6 h-6 rounded-full bg-brand-100 text-brand-700 font-bold flex items-center justify-center shrink-0 text-xs">3</span>
+          <span>Need immediate attention? Reach out directly via the button below.</span>
+        </li>
+      </ol>
+    </div>
+
+    <!-- Direct Connect CTA -->
+    <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+      <a
+        href={`https://wa.me/${site.whatsapp.replace('+', '')}?text=${encodeURIComponent("Hello! I just completed my payment on the website and would like to start.")}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md transition-all"
+      >
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+        </svg>
+        <span>Connect on WhatsApp Now</span>
+      </a>
+
+      <a
+        href="/"
+        class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-sm transition-colors"
+      >
+        Return to Homepage
+      </a>
+    </div>
+
+  </div>
+</Base>

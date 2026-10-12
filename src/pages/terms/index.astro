@@ -1,0 +1,59 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import site from '../../data/site.json';
+---
+
+<Base
+  title={`Terms of Service | ${site.brandName}`}
+  description={`Terms and conditions governing digital services, consultations, and software development provided by ${site.brandName}.`}
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 space-y-10">
+    <Breadcrumbs items={[{ label: 'Terms of Service' }]} />
+
+    <div class="space-y-3">
+      <h1 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">Terms of Service</h1>
+      <p class="text-xs text-slate-500">Last Updated: October 2026</p>
+    </div>
+
+    <div class="prose prose-slate max-w-none text-xs sm:text-sm leading-relaxed space-y-6 text-slate-700 bg-white p-8 sm:p-12 rounded-3xl border border-slate-200 shadow-sm">
+      <h2 class="text-base sm:text-lg font-bold text-slate-900">1. Acceptance of Terms</h2>
+      <p>
+        By accessing the website at {site.domain} or purchasing any digital service, consultation, or technical support from <strong>{site.brandName}</strong>, you agree to be bound by these Terms of Service. If you disagree with any part of these terms, please do not use our services.
+      </p>
+
+      <h2 class="text-base sm:text-lg font-bold text-slate-900">2. Scope of Services</h2>
+      <p>
+        We provide professional digital services including website development, Google Maps & Local SEO setup, Android app development, Chrome extensions, document processing, and remote technical support. All services are digital and remote in nature.
+      </p>
+
+      <h2 class="text-base sm:text-lg font-bold text-slate-900">3. Services We Strictly Prohibit & Decline</h2>
+      <p>
+        Clients shall not request, nor will {site.brandName} provide, any of the following:
+      </p>
+      <ul class="list-disc pl-5 space-y-1">
+        <li>Buying or selling YouTube channels, fake followers, or subscriber bots.</li>
+        <li>Posting or soliciting fraudulent, fake, or manipulated Google reviews.</li>
+        <li>Unauthorized access or hacking into social media, email, or third-party accounts.</li>
+        <li>Handling, storing, or receiving passwords or two-factor authentication codes.</li>
+        <li>Creating spam or duplicate Google Business Profiles.</li>
+        <li>Bypassing software licenses, Windows activation hacks, or digital copyright piracy.</li>
+      </ul>
+
+      <h2 class="text-base sm:text-lg font-bold text-slate-900">4. Payment Terms & Invoicing</h2>
+      <p>
+        For fixed-scope services, payments are processed upfront via Razorpay Payment Links. For custom projects, an advance deposit (typically 50%) is required prior to project kickoff, with the balance due upon delivery. All prices are in Indian Rupees (INR).
+      </p>
+
+      <h2 class="text-base sm:text-lg font-bold text-slate-900">5. Client Cooperation & Remote Access</h2>
+      <p>
+        For remote technical support, clients agree to install legitimate remote assistance software (AnyDesk or TeamViewer) and supervise the engineer's session. The client may disconnect the session at any time.
+      </p>
+
+      <h2 class="text-base sm:text-lg font-bold text-slate-900">6. Governing Law & Jurisdiction</h2>
+      <p>
+        These terms are governed by and construed in accordance with the laws of India. Any disputes arising shall be subject to the exclusive jurisdiction of the courts located in Gautam Buddha Nagar / Noida, Uttar Pradesh, India.
+      </p>
+    </div>
+  </div>
+</Base>

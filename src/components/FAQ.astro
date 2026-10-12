@@ -1,0 +1,45 @@
+---
+interface FAQItem {
+  q: string;
+  a: string;
+}
+
+interface Props {
+  items: FAQItem[];
+  title?: string;
+  subtitle?: string;
+}
+
+const {
+  items,
+  title = "Frequently Asked Questions",
+  subtitle = "Everything you need to know about our services, delivery, and payments."
+} = Astro.props;
+---
+
+<div class="space-y-6">
+  {(title || subtitle) && (
+    <div class="text-center max-w-2xl mx-auto">
+      {title && <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">{title}</h2>}
+      {subtitle && <p class="text-sm text-slate-600 mt-2">{subtitle}</p>}
+    </div>
+  )}
+
+  <div class="max-w-3xl mx-auto divide-y divide-slate-200 rounded-2xl bg-white border border-slate-200 shadow-sm overflow-hidden">
+    {items.map((item, idx) => (
+      <details class="group p-5 sm:p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+        <summary class="flex items-center justify-between text-left font-bold text-slate-900 text-sm sm:text-base group-hover:text-brand-600 transition-colors">
+          <span>{item.q}</span>
+          <span class="ml-4 shrink-0 rounded-full bg-slate-100 p-1.5 text-slate-500 group-open:-rotate-180 group-open:bg-brand-50 group-open:text-brand-600 transition-all">
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </span>
+        </summary>
+        <div class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pr-6">
+          <p>{item.a}</p>
+        </div>
+      </details>
+    ))}
+  </div>
+</div>

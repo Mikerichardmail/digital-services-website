@@ -1,0 +1,148 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ServiceTable from '../../components/ServiceTable.astro';
+import FAQ from '../../components/FAQ.astro';
+import categories from '../../data/categories.json';
+import services from '../../data/services.json';
+import site from '../../data/site.json';
+
+export async function getStaticPaths() {
+  return categories.map((cat) => {
+    const catServices = services.filter((s) => s.category === cat.id);
+    return {
+      params: { category: cat.id },
+      props: { category: cat, categoryServices: catServices },
+    };
+  });
+}
+
+const { category, categoryServices } = Astro.props;
+
+// Related categories
+const relatedCategories = categories
+  .filter((c) => c.id !== category.id && (c.group === category.group || Math.random() > 0.5))
+  .slice(0, 3);
+---
+
+<Base
+  title={`${category.name} Services - Starting from ₹${category.startingPrice.toLocaleString('en-IN')} | ${site.brandName}`}
+  description={`${category.shortIntro} Fixed price from ₹${category.startingPrice.toLocaleString('en-IN')}. Fast turnaround across NCR & India.`}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12">
+    
+    <!-- Breadcrumbs -->
+    <Breadcrumbs 
+      items={[
+        { label: 'Services', href: '/services' },
+        { label: category.name }
+      ]} 
+    />
+
+    <!-- Header Section -->
+    <div class="max-w-3xl space-y-4">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 border border-brand-100 text-xs font-bold text-brand-700">
+        <span>{category.group} Category</span>
+        <span>•</span>
+        <span>Starting from ₹{category.startingPrice.toLocaleString('en-IN')}</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+        {category.name}
+      </h1>
+
+      <p class="text-base text-slate-600 leading-relaxed">
+        {category.shortIntro}
+      </p>
+    </div>
+
+    <!-- Services Table Section -->
+    <div class="space-y-4">
+      <div class="flex items-center justify-between">
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">Available Services & Rates</h2>
+        <span class="text-xs font-medium text-slate-500">{categoryServices.length} Total Services</span>
+      </div>
+
+      <ServiceTable services={categoryServices} />
+    </div>
+
+    <!-- What You Get & Delivery Timeline -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
+      <div class="space-y-3">
+        <div class="flex items-center gap-2 text-brand-600 font-bold text-sm">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+          <span class="text-slate-900 font-extrabold text-base">What You Always Get</span>
+        </div>
+        <ul class="space-y-2 text-xs sm:text-sm text-slate-600">
+          <li class="flex items-center gap-2">
+            <span class="text-emerald-500 font-bold">✓</span> Direct 1-on-1 engineer communication via WhatsApp
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-emerald-500 font-bold">✓</span> 100% transparent pricing with zero surprise charges
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-emerald-500 font-bold">✓</span> Strict zero-password handling security guarantee
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-emerald-500 font-bold">✓</span> Post-delivery check & complete handover documentation
+          </li>
+        </ul>
+      </div>
+
+      <div class="space-y-3">
+        <div class="flex items-center gap-2 text-brand-600 font-bold text-sm">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span class="text-slate-900 font-extrabold text-base">Fast Turnaround Time</span>
+        </div>
+        <ul class="space-y-2 text-xs sm:text-sm text-slate-600">
+          <li class="flex items-center gap-2">
+            <span class="text-brand-500 font-bold">•</span> Tech fixes & diagnostics: <strong class="text-slate-800">Same-day (1–4 hours)</strong>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-brand-500 font-bold">•</span> Designs & PDF tasks: <strong class="text-slate-800">24 to 48 hours</strong>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-brand-500 font-bold">•</span> Websites & Local Packages: <strong class="text-slate-800">3 to 7 working days</strong>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-brand-500 font-bold">•</span> Custom Apps & Extensions: <strong class="text-slate-800">Milestone-based delivery</strong>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Category FAQs -->
+    {category.faqs && category.faqs.length > 0 && (
+      <div class="pt-6">
+        <FAQ items={category.faqs} title={`${category.name} FAQs`} />
+      </div>
+    )}
+
+    <!-- Related Categories -->
+    {relatedCategories.length > 0 && (
+      <div class="space-y-6 pt-6 border-t border-slate-200">
+        <h3 class="text-lg font-bold text-slate-900">Explore Related Categories</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {relatedCategories.map((rel) => (
+            <a
+              href={`/services/${rel.id}`}
+              class="p-5 rounded-2xl bg-white border border-slate-200 hover:border-brand-500 hover:shadow-md transition-all flex flex-col justify-between"
+            >
+              <div>
+                <span class="text-xs font-bold text-brand-600">From ₹{rel.startingPrice}</span>
+                <h4 class="font-bold text-slate-900 text-sm mt-1">{rel.name}</h4>
+                <p class="text-xs text-slate-500 mt-1 line-clamp-2">{rel.shortIntro}</p>
+              </div>
+              <span class="text-xs font-bold text-brand-600 mt-4">&rarr; View Services</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+
+  </div>
+</Base>
