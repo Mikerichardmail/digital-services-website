@@ -1353,17 +1353,6 @@
     "hero": false
   },
   {
-    "id": "legitimate-software-configuration",
-    "category": "remote-computer-tech-help",
-    "name": "Legitimate software configuration",
-    "priceFrom": 500,
-    "priceTo": 500,
-    "priceDisplay": "₹500",
-    "type": "one-time",
-    "pay": "link",
-    "hero": false
-  },
-  {
     "id": "email-outlook-and-gmail-setup-or-sync-fix",
     "category": "remote-computer-tech-help",
     "name": "Email, Outlook and Gmail setup or sync fix",
@@ -1455,28 +1444,6 @@
     "id": "website-account-verification",
     "category": "account-digital-setup",
     "name": "Website account verification",
-    "priceFrom": 500,
-    "priceTo": 500,
-    "priceDisplay": "₹500",
-    "type": "one-time",
-    "pay": "link",
-    "hero": false
-  },
-  {
-    "id": "official-account-recovery-guidance",
-    "category": "account-digital-setup",
-    "name": "Official account recovery guidance",
-    "priceFrom": 500,
-    "priceTo": 1000,
-    "priceDisplay": "₹500–1,000",
-    "type": "one-time",
-    "pay": "link",
-    "hero": false
-  },
-  {
-    "id": "two-step-verification-setup-guidance",
-    "category": "account-digital-setup",
-    "name": "Two-step verification setup guidance",
     "priceFrom": 500,
     "priceTo": 500,
     "priceDisplay": "₹500",

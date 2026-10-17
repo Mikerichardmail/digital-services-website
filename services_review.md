@@ -181,7 +181,7 @@
 - [ ] **QR code, barcode or UPI QR creation** | Price: ₹500 | Type: one-time | ID: `qr-code-barcode-or-upi-qr-creation`
 - [ ] **PDF Toolkit bundle (up to 5 tasks)** | Price: ₹999 | Type: one-time | ID: `pdf-toolkit-bundle-up-to-5-tasks`
 
-## 15. Remote Software & Cloud Support (14 Services)
+## 15. Remote Software & Cloud Support (13 Services)
 *Category ID: `remote-computer-tech-help`*
 
 - [ ] **Quick Fix (30 min remote session)** | Price: ₹500 | Type: one-time | ID: `quick-fix-30-min-remote-session`
@@ -192,22 +192,19 @@
 - [ ] **Virus, malware and basic security cleanup** | Price: ₹800 | Type: one-time | ID: `virus-malware-and-basic-security-cleanup`
 - [ ] **Antivirus setup, browser pop-up and extension cleanup** | Price: ₹500 | Type: one-time | ID: `antivirus-setup-browser-pop-up-and-extension-cleanup`
 - [ ] **Backup setup and cloud data recovery guidance** | Price: ₹700–800 | Type: one-time | ID: `backup-setup-and-cloud-data-recovery-guidance`
-- [ ] **Legitimate software configuration** | Price: ₹500 | Type: one-time | ID: `legitimate-software-configuration`
 - [ ] **Email, Outlook and Gmail setup or sync fix** | Price: ₹500 | Type: one-time | ID: `email-outlook-and-gmail-setup-or-sync-fix`
 - [ ] **Google Drive, OneDrive and Workspace setup** | Price: ₹600–1,500 | Type: one-time | ID: `google-drive-onedrive-and-workspace-setup`
 - [ ] **Zoom, Meet and Teams setup** | Price: ₹500 | Type: one-time | ID: `zoom-meet-and-teams-setup`
 - [ ] **WhatsApp Web and password manager setup** | Price: ₹500 | Type: one-time | ID: `whatsapp-web-and-password-manager-setup`
 - [ ] **Monthly technical support plan** | Price: ₹1,000–2,000 /mo | Type: monthly | ID: `monthly-technical-support-plan`
 
-## 16. Account & Digital Setup Assistance (7 Services)
+## 16. Account & Digital Setup Assistance (5 Services)
 *Category ID: `account-digital-setup`*
 
 - [ ] **Google account setup** | Price: ₹500 | Type: one-time | ID: `google-account-setup`
 - [ ] **Social media account setup** | Price: ₹500–1,500 | Type: one-time | ID: `social-media-account-setup`
 - [ ] **Business profile setup** | Price: ₹500–1,500 | Type: one-time | ID: `business-profile-setup`
 - [ ] **Website account verification** | Price: ₹500 | Type: one-time | ID: `website-account-verification`
-- [ ] **Official account recovery guidance** | Price: ₹500–1,000 | Type: one-time | ID: `official-account-recovery-guidance`
-- [ ] **Two-step verification setup guidance** | Price: ₹500 | Type: one-time | ID: `two-step-verification-setup-guidance`
 - [ ] **Digital account troubleshooting** | Price: ₹500–1,000 | Type: one-time | ID: `digital-account-troubleshooting`
 
 ## 17. Technical Consultation (1 Services)
