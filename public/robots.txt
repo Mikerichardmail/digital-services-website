@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://digifix.in/sitemap-index.xml
+Sitemap: https://helpit.in/sitemap-index.xml
