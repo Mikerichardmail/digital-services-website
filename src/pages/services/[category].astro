@@ -23,11 +23,58 @@ const { category, categoryServices } = Astro.props;
 const relatedCategories = categories
   .filter((c) => c.id !== category.id && (c.group === category.group || Math.random() > 0.5))
   .slice(0, 3);
+
+// Structured Data for Google Rich Snippets
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": `${category.name} Services`,
+  "description": category.shortIntro,
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": site.brandName,
+    "url": site.url,
+    "telephone": site.whatsapp
+  },
+  "areaServed": ["Noida", "Gurgaon", "Delhi", "Ghaziabad", "Faridabad", "India"],
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "INR",
+    "lowPrice": category.startingPrice,
+    "offerCount": categoryServices.length
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": site.url },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": `${site.url}/services` },
+    { "@type": "ListItem", "position": 3, "name": category.name, "item": `${site.url}/services/${category.id}` }
+  ]
+};
+
+const faqSchema = category.faqs && category.faqs.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": category.faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a
+    }
+  }))
+} : null;
+
+const pageSchemas = [serviceSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])];
 ---
 
 <Base
-  title={`${category.name} Services - Starting from ₹${category.startingPrice.toLocaleString('en-IN')} | ${site.brandName}`}
-  description={`${category.shortIntro} Fixed price from ₹${category.startingPrice.toLocaleString('en-IN')}. Fast turnaround across NCR & India.`}
+  title={`${category.name} in Delhi NCR & India (From ₹${category.startingPrice.toLocaleString('en-IN')}) | ${site.brandName}`}
+  description={`${category.shortIntro} 100% transparent rates starting from ₹${category.startingPrice.toLocaleString('en-IN')}. Fast remote delivery across NCR & India.`}
+  schema={pageSchemas}
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12">
     

@@ -15,11 +15,57 @@ export async function getStaticPaths() {
 const { location } = Astro.props;
 
 const otherCities = locations.filter((l) => l.slug !== location.slug);
+
+// Localized Structured Data
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": `${site.brandName} - ${location.name}`,
+  "url": `${site.url}/locations/${location.slug}`,
+  "telephone": site.whatsapp,
+  "email": site.email,
+  "description": location.description,
+  "areaServed": location.name,
+  "priceRange": "₹500 - ₹50,000",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": site.address,
+    "addressLocality": location.name,
+    "addressRegion": "NCR",
+    "addressCountry": "IN"
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": site.url },
+    { "@type": "ListItem", "position": 2, "name": "Locations", "item": `${site.url}/locations` },
+    { "@type": "ListItem", "position": 3, "name": location.name, "item": `${site.url}/locations/${location.slug}` }
+  ]
+};
+
+const faqSchema = location.faq && location.faq.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": location.faq.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a
+    }
+  }))
+} : null;
+
+const citySchemas = [localBusinessSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])];
 ---
 
 <Base
-  title={`Digital & Tech Services in ${location.name} | ${site.brandName}`}
-  description={`${location.headline}. Website development, Google Maps ranking, and remote PC tech help from ₹500 in ${location.name}.`}
+  title={`${location.headline} | ${site.brandName}`}
+  description={`${location.description} Transparent pricing starting at ₹500 for ${location.name} businesses.`}
+  schema={citySchemas}
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 space-y-16">
     <Breadcrumbs 

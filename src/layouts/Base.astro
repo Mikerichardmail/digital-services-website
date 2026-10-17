@@ -18,7 +18,7 @@ const {
   title = `${site.brandName} - Fast Digital Services & Tech Support from ₹500`,
   description = "Get business websites, Google Maps ranking, local SEO, Android apps, and instant remote computer tech help across NCR & India. 100% transparent pricing from ₹500.",
   canonical = Astro.url.href,
-  ogImage = "/og-image.png",
+  ogImage = "/og-image.svg",
   schema
 } = Astro.props;
 
@@ -55,27 +55,37 @@ const defaultSchema = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content={site.brandName} />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.brandName} />
+    <meta property="og:locale" content="en_IN" />
     <meta property="og:url" content={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content={new URL(ogImage, site.url).href} />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={canonical} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={ogImage} />
+    <meta property="twitter:image" content={new URL(ogImage, site.url).href} />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="theme-color" content="#2563eb" />
 
     <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json" set:html={JSON.stringify(schema || defaultSchema)} />
+    {Array.isArray(schema) ? (
+      schema.map((s) => (
+        <script type="application/ld+json" set:html={JSON.stringify(s)} />
+      ))
+    ) : (
+      <script type="application/ld+json" set:html={JSON.stringify(schema || defaultSchema)} />
+    )}
   </head>
   <body class="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans antialiased selection:bg-brand-500 selection:text-white pb-16 md:pb-0">
     <Header />
