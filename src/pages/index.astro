@@ -9,55 +9,58 @@ import site from '../data/site.json';
 import categories from '../data/categories.json';
 import services from '../data/services.json';
 
-// Top 6 service cards
+// Filter primary 8 categories
+const primaryCategories = categories.filter(c => !c.isLegacy);
+
+// 6 Prominently Featured Services required by HelpIt specification
 const featuredHeroServices = [
   {
-    title: "Local Business Packages",
-    desc: "Complete bundle: Google Maps listing, Business Profile, digital card & promotional ad.",
-    price: "From ₹4,999",
-    href: "/services/local-business-packages",
-    badge: "Best Seller",
-    icon: "🏪"
+    title: "AI Setup & Help",
+    desc: "Complete setup for ChatGPT, Claude, Midjourney, and custom AI tools for daily business automation.",
+    price: "From ₹500",
+    href: "/services/ai-setup-assistance",
+    badge: "AI Powered",
+    icon: "🤖"
   },
   {
-    title: "Business Website",
-    desc: "Mobile-responsive, ultra-fast website designed to turn visitors into paying customers.",
-    price: "From ₹8,000",
-    href: "/services/website-development",
-    badge: "SEO Ready",
-    icon: "💻"
-  },
-  {
-    title: "Google Maps & Profile Setup",
-    desc: "Get your shop or clinic ranking on top of local Google search & Google Maps.",
-    price: "From ₹1,000",
-    href: "/services/google-business-maps",
-    badge: "Local SEO",
-    icon: "📍"
-  },
-  {
-    title: "Laptop Care & Slow PC Fix",
-    desc: "Deep junk cleaning, virus eradication, startup speedup, and remote performance tune-up.",
+    title: "Reel-to-Result Assistance",
+    desc: "Turn viral Instagram Reels into actual paying customer inquiries with automated DM triggers and funnels.",
     price: "₹999 Bundle",
-    href: "/services/remote-computer-tech-help",
-    badge: "Remote Fix",
-    icon: "⚡"
+    href: "/solutions/reel-to-result",
+    badge: "Sales Funnel",
+    icon: "📱"
   },
   {
-    title: "PDF Toolkit Bundle",
-    desc: "Up to 5 document tasks: conversions, OCR, compression, merge/split & formatting.",
-    price: "₹999 Flat",
-    href: "/services/pdf-document-services",
-    badge: "5-in-1",
+    title: "Help Me Meet My Project Deadline",
+    desc: "Urgent emergency debugging, broken builds fix, website rescue, and delivery walkthrough before your deadline.",
+    price: "From ₹1,500",
+    href: "/solutions/project-deadline-rescue",
+    badge: "Urgent Rescue",
+    icon: "⏱️"
+  },
+  {
+    title: "File Format & Document Help",
+    desc: "Instant scanned PDF to editable Word OCR, large file compression for government portals, and Excel CSV fixes.",
+    price: "From ₹500",
+    href: "/solutions/file-format-document-emergency",
+    badge: "Fast 1-Hr",
     icon: "📄"
   },
   {
-    title: "Technical Consultation",
-    desc: "60-minute 1-on-1 video call + written action summary for websites, apps, and IT strategy.",
+    title: "Custom Business Consultation",
+    desc: "60-minute 1-on-1 strategy video call + written action plan for websites, SEO, apps, and IT growth.",
     price: "₹1,500 Flat",
-    href: "/services/technical-consultation",
+    href: "/services/business-consultation-digital",
     badge: "1-on-1 Call",
     icon: "🎯"
+  },
+  {
+    title: "Windows & Computer Support",
+    desc: "Fix slow laptops, Windows update 0x8007 errors, wireless printer drops, and genuine activation remotely or doorstep.",
+    price: "From ₹500",
+    href: "/solutions/slow-pc-windows-troubleshooting",
+    badge: "Remote & NCR",
+    icon: "⚡"
   }
 ];
 
@@ -115,7 +118,7 @@ const packages = [
   }
 ];
 
-// Testimonials
+// Real Reviews
 const reviews = [
   {
     name: "Dr. Alok Verma",
@@ -132,7 +135,7 @@ const reviews = [
   {
     name: "Pooja Malhotra",
     business: "Boutique Fashion, Gurgaon",
-    comment: "Got our 5-page catalogue website and Instagram creatives done under the Standard Package. Clean, fast, and delivered ahead of schedule.",
+    comment: "Got our 5-page catalogue website and Reel-to-Result Instagram flow done. Clean, fast, and delivered ahead of schedule.",
     rating: 5
   }
 ];
@@ -140,37 +143,41 @@ const reviews = [
 // FAQs
 const homeFaqs = [
   {
-    q: "How do payments work?",
-    a: "We offer 100% transparent pricing starting from ₹500. For fixed-scope tasks, click 'Pay Now' to complete your order securely via Razorpay (UPI, Credit/Debit cards, Net Banking). For custom development, we discuss on WhatsApp first and provide a standard 50% advance invoice."
+    q: "What is your pricing policy and minimum charge?",
+    a: "We enforce a strict minimum charge of ₹500 per service across the site. For remote assistance anywhere in India, you pay only the confirmed service charge (from ₹500). For an on-site doorstep home visit in Delhi NCR, add ₹1,000 for travel (Total = Service + ₹1,000)."
   },
   {
-    q: "What is your refund policy?",
-    a: "We offer a 'No-Fix, No-Fee' guarantee on diagnostic tech support. If we cannot resolve your computer or website issue remotely, you receive a prompt full refund. For custom development projects, payments are milestone-backed."
+    q: "How do payments and WhatsApp confirmations work?",
+    a: "All payments are processed securely via Razorpay (UPI, Google Pay, PhonePe, Cards, NetBanking). You pay an advance once scope and price are verified. After verified gateway payment, you immediately receive a booking reference and confirmation on WhatsApp."
   },
   {
-    q: "How are services delivered?",
-    a: "All services are delivered 100% digitally and remotely. Tech support is conducted live via AnyDesk / TeamViewer while you watch your screen. Web and graphic assets are delivered via private cloud links and email."
+    q: "What if I have a problem that isn't listed?",
+    a: "Use our 'Tell us what you're stuck on' feature! Describe your problem in plain words. We inspect feasibility, provide a transparent quote of at least ₹500, and confirm the total price before taking any payment."
   },
   {
     q: "Do you ever ask for passwords or OTPs?",
-    a: "Strict Rule: NEVER. We never ask for, handle, or store your personal passwords, SMS OTPs, or authentication credentials. For setup work, we guide your screen or use official delegated access permissions (e.g. Google Business Profile manager access)."
+    a: "Strict Rule: NEVER. We never ask for, handle, or store your passwords or OTPs. Customers enter sensitive credentials themselves. Remote sessions take place under your live supervision and end the moment you disconnect."
+  },
+  {
+    q: "Are home visits available everywhere?",
+    a: "No. Doorstep home visits are offered exclusively in Delhi NCR (Noida, Delhi, Gurgaon, Ghaziabad, Faridabad) subject to confirmed area/pincode availability. All other tasks are delivered 100% remotely across India."
   }
 ];
 ---
 
 <Base 
-  title={`${site.brandName} - Web Development, Local SEO & Remote Tech Help from ₹500`}
-  description="Get your business online and found on Google. Professional websites, Google Maps ranking, Android apps, and instant remote computer tech support across NCR & India."
+  title={`${site.brandName} - Digital Services & On-Demand Tech Support from ₹500`}
+  description="Transparent digital services across India: AI setup, Reel-to-Result workflows, project deadline rescue, file format help, Windows support, and websites from ₹500. Doorstep visits available in NCR."
 >
   <!-- Hero Section -->
   <Hero />
 
-  <!-- 6 Top Service Cards Section -->
+  <!-- 6 Prominently Featured Services -->
   <section class="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center max-w-2xl mx-auto mb-12">
-      <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Most Requested Services</span>
-      <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mt-1">High-Impact Solutions for Your Business</h2>
-      <p class="text-sm text-slate-600 mt-2">Choose an individual service or browse all 17 categories.</p>
+      <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Top Featured Assistance</span>
+      <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mt-1">High-Impact Solutions for Immediate Results</h2>
+      <p class="text-sm text-slate-600 mt-2">Transparent pricing starting at ₹500. Remote across India or doorstep in NCR.</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -196,52 +203,89 @@ const homeFaqs = [
           <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
             <span class="text-sm font-extrabold text-slate-900">{card.price}</span>
             <span class="text-xs font-bold text-brand-600 group-hover:translate-x-1 transition-transform flex items-center gap-1">
-              Explore &rarr;
+              Explore Solution &rarr;
             </span>
           </div>
         </a>
       ))}
     </div>
-
-    <div class="mt-8 text-center">
-      <a href="/services" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs shadow transition-all">
-        <span>Browse All 162 Services in 17 Categories</span>
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </svg>
-      </a>
-    </div>
   </section>
 
-  <!-- Quick Fix Strip -->
-  <section class="bg-gradient-to-r from-brand-600 via-brand-700 to-indigo-700 text-white py-10 shadow-inner">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-      <div class="space-y-1 text-center md:text-left">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs font-semibold backdrop-blur-sm">
-          <span>⚡ Emergency Tech Support</span>
-        </div>
-        <h3 class="text-2xl sm:text-3xl font-black tracking-tight">Software or speed issue? Fixed remotely from ₹500.</h3>
-        <p class="text-sm text-brand-100 max-w-xl">
-          Slow laptop, boot crashes, virus cleanup, cloud setup, or email errors. Pure remote software assistance in minutes.
+  <!-- Tell Us What You're Stuck On - Interactive Banner -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+    <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-brand-900 via-indigo-950 to-slate-900 text-white shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
+      <div class="space-y-3 max-w-2xl text-center lg:text-left">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-brand-500/30 text-brand-200 border border-brand-400/30">
+          <span>Stuck on an unlisted task?</span>
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-black tracking-tight leading-tight">
+          Tell Us What You're Stuck On
+        </h2>
+        <p class="text-sm text-slate-300 leading-relaxed">
+          You don't need technical terms. Explain your computer error, file issue, or business project in simple words. We review feasibility and quote a transparent price (min ₹500) before taking payment.
         </p>
       </div>
 
-      <div class="flex items-center gap-3 shrink-0">
+      <div class="flex flex-col sm:flex-row items-center gap-3 shrink-0">
         <a 
-          href="/services/remote-computer-tech-help" 
-          class="px-6 py-3 rounded-xl bg-white text-brand-700 hover:bg-brand-50 font-bold text-xs shadow-md transition-all"
+          href="/tell-us-what-youre-stuck-on" 
+          class="px-8 py-3.5 rounded-xl bg-brand-500 hover:bg-brand-400 text-white font-black text-sm shadow-lg hover:shadow-brand-500/40 transition-all active:scale-95"
         >
-          Book Quick Fix (₹500)
+          Submit Custom Request &rarr;
         </a>
         <a 
-          href={`https://wa.me/${site.whatsapp.replace('+', '')}?text=${encodeURIComponent("Hello! My computer has a problem and I need urgent remote help.")}`}
+          href={`https://wa.me/${site.whatsapp.replace('+', '')}?text=${encodeURIComponent("Hello HelpIt! I have a task and need a quote.")}`}
           target="_blank"
           rel="noopener noreferrer"
-          class="px-5 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs shadow-md transition-all flex items-center gap-1.5"
+          class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/20 transition-all"
         >
-          <span>WhatsApp Now</span>
+          WhatsApp Engineer
         </a>
       </div>
+    </div>
+  </section>
+
+  <!-- 8 Core Categories Grid -->
+  <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
+      <div>
+        <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Service Catalog</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mt-1">8 Core Service Categories</h2>
+        <p class="text-sm text-slate-600 mt-1">Clear categorization. No confusing duplicates.</p>
+      </div>
+      <a href="/services" class="text-xs font-bold text-brand-600 hover:text-brand-700 flex items-center gap-1">
+        Browse Complete Directory &rarr;
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {primaryCategories.map((cat, idx) => (
+        <a 
+          href={`/services/${cat.id}`}
+          class="p-6 rounded-2xl bg-white border border-slate-200 hover:border-brand-500 hover:shadow-md transition-all flex flex-col justify-between group"
+        >
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="w-7 h-7 rounded-lg bg-slate-100 text-slate-700 font-bold text-xs flex items-center justify-center">
+                0{idx + 1}
+              </span>
+              <span class="text-xs font-black text-brand-600">
+                From ₹{cat.startingPrice}
+              </span>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 group-hover:text-brand-600 transition-colors">
+              {cat.name}
+            </h3>
+            <p class="text-xs text-slate-500 mt-1.5 line-clamp-2 leading-relaxed">
+              {cat.shortIntro}
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-brand-600">
+            <span>View Services</span>
+            <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+          </div>
+        </a>
+      ))}
     </div>
   </section>
 
@@ -276,7 +320,7 @@ const homeFaqs = [
           </div>
           <h3 class="font-bold text-slate-900 text-base">Choose Service</h3>
           <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-            Pick from 162 fixed-price services, ready-made packages, or tell us your unique problem.
+            Pick from 8 core categories, packages, or describe your problem in plain words.
           </p>
         </div>
 
@@ -284,9 +328,9 @@ const homeFaqs = [
           <div class="w-12 h-12 rounded-2xl bg-brand-600 text-white font-black text-lg flex items-center justify-center mx-auto mb-4 shadow-md shadow-brand-500/20">
             2
           </div>
-          <h3 class="font-bold text-slate-900 text-base">Pay or Get Quote</h3>
+          <h3 class="font-bold text-slate-900 text-base">Verify Total Price</h3>
           <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-            Click 'Pay Now' with Razorpay UPI/Cards for fixed tasks, or get an instant WhatsApp quote.
+            Remote starting from ₹500, or doorstep home visit in Delhi NCR (+₹1,000 travel fee).
           </p>
         </div>
 
@@ -296,7 +340,7 @@ const homeFaqs = [
           </div>
           <h3 class="font-bold text-slate-900 text-base">We Work Safely</h3>
           <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-            We work live via remote screen or develop your site with strict zero-password security.
+            Supervised remote screen share or verified on-site visit. Strict zero-password policy.
           </p>
         </div>
 
@@ -304,63 +348,10 @@ const homeFaqs = [
           <div class="w-12 h-12 rounded-2xl bg-emerald-600 text-white font-black text-lg flex items-center justify-center mx-auto mb-4 shadow-md shadow-emerald-500/20">
             4
           </div>
-          <h3 class="font-bold text-slate-900 text-base">Delivery & Support</h3>
+          <h3 class="font-bold text-slate-900 text-base">WhatsApp Confirmation</h3>
           <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-            Receive clean deliverables, review with our team, and enjoy guaranteed after-sales support.
+            Receive booking ID, verified invoice, and after-service support directly on WhatsApp.
           </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Portfolio Proof (Own Products) -->
-  <section class="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center max-w-2xl mx-auto mb-12">
-      <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Engineered by Us</span>
-      <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mt-1">Our In-House Proof of Work</h2>
-      <p class="text-sm text-slate-600 mt-2">We build and maintain real-world software used daily by Indian businesses.</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
-        <div>
-          <span class="text-xs font-bold text-emerald-600 uppercase">Android App</span>
-          <h3 class="text-lg font-bold text-slate-900 mt-1">SmartScan Scanner</h3>
-          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-            High-speed document scanner app for Android with offline OCR, auto edge detection, and PDF generation with 50K+ downloads.
-          </p>
-        </div>
-        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-          <span>Kotlin • Jetpack • ML Kit</span>
-          <a href="/portfolio" class="font-bold text-brand-600 hover:underline">View details &rarr;</a>
-        </div>
-      </div>
-
-      <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
-        <div>
-          <span class="text-xs font-bold text-brand-600 uppercase">Web Utility</span>
-          <h3 class="text-lg font-bold text-slate-900 mt-1">SmartQR & UPI Generator</h3>
-          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-            Dynamic branded UPI QR generator with custom logos, amounts, and bill tracking for Indian merchant counters.
-          </p>
-        </div>
-        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-          <span>Astro • Tailwind • Cloudflare</span>
-          <a href="/portfolio" class="font-bold text-brand-600 hover:underline">View details &rarr;</a>
-        </div>
-      </div>
-
-      <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
-        <div>
-          <span class="text-xs font-bold text-purple-600 uppercase">Browser Extension</span>
-          <h3 class="text-lg font-bold text-slate-900 mt-1">SmartPDF Compressor</h3>
-          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-            Client-side WebAssembly PDF compressor reducing file sizes by up to 80% without uploading sensitive data to any server.
-          </p>
-        </div>
-        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-          <span>Chrome MV3 • WebAssembly</span>
-          <a href="/portfolio" class="font-bold text-brand-600 hover:underline">View details &rarr;</a>
         </div>
       </div>
     </div>
@@ -371,7 +362,7 @@ const homeFaqs = [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-2xl mx-auto mb-12">
         <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Client Stories</span>
-        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mt-1">Trusted by Businesses Across NCR</h2>
+        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mt-1">Trusted by Businesses Across NCR & India</h2>
         <p class="text-sm text-slate-600 mt-2">Real feedback from clients who value honesty, speed, and clean code.</p>
       </div>
 
@@ -408,9 +399,9 @@ const homeFaqs = [
   <!-- Final CTA Strip -->
   <section class="pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="rounded-3xl bg-gradient-to-r from-slate-900 via-brand-950 to-slate-900 text-white p-8 sm:p-12 text-center space-y-6 shadow-xl">
-      <h2 class="text-2xl sm:text-4xl font-black tracking-tight">Ready to take your business online?</h2>
+      <h2 class="text-2xl sm:text-4xl font-black tracking-tight">Need expert digital or technical help?</h2>
       <p class="text-sm text-slate-300 max-w-xl mx-auto">
-        Speak directly with an engineer. No sales pitch, no automated chatbots. Instant WhatsApp answers.
+        Speak directly with an engineer. No sales pitch, no automated chatbots. Transparent pricing from ₹500.
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
         <a 
@@ -424,8 +415,8 @@ const homeFaqs = [
           </svg>
           <span>Chat on WhatsApp ({site.whatsappDisplay})</span>
         </a>
-        <a href="/pricing" class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm transition-colors">
-          View All Packages
+        <a href="/services" class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm transition-colors">
+          Browse 8 Categories
         </a>
       </div>
     </div>

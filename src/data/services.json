@@ -1,5 +1,821 @@
 [
   {
+    "id": "ai-tool-setup-troubleshooting",
+    "category": "ai-setup-assistance",
+    "name": "AI Tool Setup & Troubleshooting",
+    "priceFrom": 500,
+    "priceTo": 2000,
+    "priceDisplay": "₹500–2,000",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Complete setup, API keys, and troubleshooting for ChatGPT, Claude, Midjourney, and Perplexity.",
+    "searchTerms": "ai setup chatgpt claude midjourney perplexity api"
+  },
+  {
+    "id": "custom-ai-prompts-workflows",
+    "category": "ai-setup-assistance",
+    "name": "Custom AI Prompts & Workflows",
+    "priceFrom": 800,
+    "priceTo": 3000,
+    "priceDisplay": "₹800–3,000",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Bespoke prompt libraries and automated workflows to handle sales, email replies, and marketing.",
+    "searchTerms": "prompt engineering custom prompts automated workflows"
+  },
+  {
+    "id": "ai-image-video-creation",
+    "category": "ai-setup-assistance",
+    "name": "AI Image & Video Creation Assistance",
+    "priceFrom": 500,
+    "priceTo": 2500,
+    "priceDisplay": "₹500–2,500",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Generate ultra-realistic product visuals, digital avatars, and marketing clips using AI.",
+    "searchTerms": "ai images midjourney leonardo ai video sora run"
+  },
+  {
+    "id": "ai-tools-for-business",
+    "category": "ai-setup-assistance",
+    "name": "AI Tools Setup for Business",
+    "priceFrom": 1500,
+    "priceTo": 5000,
+    "priceDisplay": "₹1,500–5,000",
+    "type": "one-time",
+    "pay": "quote",
+    "hero": true,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Integrate AI chatbots, automated customer responses, and document summarizers for your company.",
+    "searchTerms": "ai business tools customer service bot automation"
+  },
+  {
+    "id": "reel-to-result-assistance",
+    "category": "ai-setup-assistance",
+    "name": "Reel-to-Result Assistance",
+    "priceFrom": 999,
+    "priceTo": 3500,
+    "priceDisplay": "₹999–3,500",
+    "type": "one-time",
+    "pay": "link",
+    "hero": true,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Turn viral Instagram Reels into qualified leads with automated DM funnels, scripts, and video editing.",
+    "searchTerms": "reel to result instagram reels leads dm automation viral"
+  },
+  {
+    "id": "help-me-meet-my-project-deadline",
+    "category": "project-deadline-assistance",
+    "name": "Help Me Meet My Project Deadline",
+    "priceFrom": 1500,
+    "priceTo": 6000,
+    "priceDisplay": "₹1,500–6,000",
+    "type": "one-time",
+    "pay": "quote",
+    "hero": true,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Emergency hands-on technical assistance, debugging, and delivery guidance before your deadline.",
+    "searchTerms": "project deadline emergency coding bug urgent submission"
+  },
+  {
+    "id": "project-troubleshooting",
+    "category": "project-deadline-assistance",
+    "name": "Project Troubleshooting & Error Resolution",
+    "priceFrom": 1000,
+    "priceTo": 4000,
+    "priceDisplay": "₹1,000–4,000",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Find and fix runtime bugs, syntax errors, database connection failures, and deployment crashes.",
+    "searchTerms": "project troubleshooting debug fix error stacktrace"
+  },
+  {
+    "id": "website-technical-project-assistance",
+    "category": "project-deadline-assistance",
+    "name": "Website or Technical Project Assistance",
+    "priceFrom": 1500,
+    "priceTo": 5000,
+    "priceDisplay": "₹1,500–5,000",
+    "type": "one-time",
+    "pay": "quote",
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Expert technical guidance, architecture review, and code refactoring for existing projects.",
+    "searchTerms": "technical project website architecture refactoring"
+  },
+  {
+    "id": "custom-project-feasibility-assessment",
+    "category": "project-deadline-assistance",
+    "name": "Custom Project Feasibility & Scope Assessment",
+    "priceFrom": 500,
+    "priceTo": 1500,
+    "priceDisplay": "₹500–1,500",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Thorough assessment of technical feasibility, budget, timeline, and deliverables before you commit.",
+    "searchTerms": "feasibility assessment project scope technical planning"
+  },
+  {
+    "id": "pdf-word-conversion",
+    "category": "file-format-document-help",
+    "name": "PDF and Word Conversion",
+    "priceFrom": 500,
+    "priceTo": 1000,
+    "priceDisplay": "₹500–1,000",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Lossless conversion between PDF, Word, and editable documents preserving original fonts and layout.",
+    "searchTerms": "pdf to word convert word to pdf docx editable"
+  },
+  {
+    "id": "image-format-conversion",
+    "category": "file-format-document-help",
+    "name": "Image Format Conversion",
+    "priceFrom": 500,
+    "priceTo": 800,
+    "priceDisplay": "₹500",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Convert between WebP, PNG, SVG, JPG, HEIC, TIFF, and EPS without compression artifacts.",
+    "searchTerms": "convert image webp to jpg heic to jpg svg png"
+  },
+  {
+    "id": "excel-csv-conversion",
+    "category": "file-format-document-help",
+    "name": "Excel and CSV Conversion & Formatting",
+    "priceFrom": 500,
+    "priceTo": 1500,
+    "priceDisplay": "₹500–1,500",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Format messy CSV data, fix formula errors, split columns, and convert between Excel and Google Sheets.",
+    "searchTerms": "excel csv conversion format formula cleanup spreadsheet"
+  },
+  {
+    "id": "file-size-reduction",
+    "category": "file-format-document-help",
+    "name": "File Size Reduction & Compression",
+    "priceFrom": 500,
+    "priceTo": 800,
+    "priceDisplay": "₹500",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Compress large PDFs, videos, and images down to portal upload limits while keeping text razor sharp.",
+    "searchTerms": "compress pdf reduce file size kb mb portal upload"
+  },
+  {
+    "id": "scanned-pdf-ocr-assistance",
+    "category": "file-format-document-help",
+    "name": "Scanned PDF and OCR Assistance",
+    "priceFrom": 500,
+    "priceTo": 1200,
+    "priceDisplay": "₹500–1,200",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Extract typed or handwritten text from scanned PDFs and photos into searchable, editable text.",
+    "searchTerms": "ocr scanned pdf extract text image to text hindi english"
+  },
+  {
+    "id": "document-formatting",
+    "category": "file-format-document-help",
+    "name": "Document Formatting & Polishing",
+    "priceFrom": 500,
+    "priceTo": 2000,
+    "priceDisplay": "₹500–2,000",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Format business reports, resumes, legal drafts, and thesis documents to clean typographic standards.",
+    "searchTerms": "document formatting word document polish layout styling"
+  },
+  {
+    "id": "batch-file-conversion",
+    "category": "file-format-document-help",
+    "name": "Batch File Conversion",
+    "priceFrom": 800,
+    "priceTo": 2500,
+    "priceDisplay": "₹800–2,500",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Bulk conversion of dozens or hundreds of files at once with custom naming and folder structure.",
+    "searchTerms": "batch file conversion bulk convert pdf images docs"
+  },
+  {
+    "id": "file-opening-compatibility-troubleshooting",
+    "category": "file-format-document-help",
+    "name": "File Opening & Compatibility Troubleshooting",
+    "priceFrom": 500,
+    "priceTo": 1500,
+    "priceDisplay": "₹500–1,500",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Fix unopenable, corrupted, or incompatible files and restore access to damaged documents.",
+    "searchTerms": "corrupted file cannot open file compatibility fix error"
+  },
+  {
+    "id": "file-backup-transfer-assistance",
+    "category": "file-format-document-help",
+    "name": "File Backup & Transfer Assistance",
+    "priceFrom": 500,
+    "priceTo": 2000,
+    "priceDisplay": "₹500–2,000",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Safely transfer files between old/new laptops, external drives, or setup Google Drive / OneDrive sync.",
+    "searchTerms": "backup transfer google drive onedrive migrate laptop data"
+  },
+  {
+    "id": "windows-activation-troubleshooting",
+    "category": "windows-computer-support",
+    "name": "Windows Activation Troubleshooting (Genuine License)",
+    "priceFrom": 500,
+    "priceTo": 1500,
+    "priceDisplay": "₹500–1,500",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Resolve genuine Microsoft digital license and activation error codes (0xC004C003, 0x803FA067).",
+    "searchTerms": "windows activation troubleshooting genuine product key error"
+  },
+  {
+    "id": "windows-product-key-assistance",
+    "category": "windows-computer-support",
+    "name": "Windows Product Key Assistance",
+    "priceFrom": 500,
+    "priceTo": 1000,
+    "priceDisplay": "₹500–1,000",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Locate existing OEM digital product keys tied to your motherboard and reactivate Windows cleanly.",
+    "searchTerms": "windows product key recover find oem key digital license"
+  },
+  {
+    "id": "windows-update-error-fixes",
+    "category": "windows-computer-support",
+    "name": "Windows Update Error Fixes",
+    "priceFrom": 500,
+    "priceTo": 1500,
+    "priceDisplay": "₹500–1,500",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Fix stuck Windows updates, failed cumulative patches, and 0x80070002 / 0x80240034 errors.",
+    "searchTerms": "windows update error fix stuck update 0x8007 failed patch"
+  },
+  {
+    "id": "slow-laptop-optimization",
+    "category": "windows-computer-support",
+    "name": "Slow Laptop Optimization & Performance Tune-Up",
+    "priceFrom": 999,
+    "priceTo": 2500,
+    "priceDisplay": "₹999–2,500",
+    "type": "one-time",
+    "pay": "link",
+    "hero": true,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Deep junk file purge, startup optimization, bloatware removal, and disk speedup without deleting personal files.",
+    "searchTerms": "slow laptop tune up speedup pc optimize windows freezing"
+  },
+  {
+    "id": "driver-installation-troubleshooting",
+    "category": "windows-computer-support",
+    "name": "Driver Installation & Troubleshooting",
+    "priceFrom": 500,
+    "priceTo": 1500,
+    "priceDisplay": "₹500–1,500",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Fix missing or broken audio, display, Bluetooth, graphics, and network adapter drivers.",
+    "searchTerms": "driver installation audio driver wifi driver display graphics"
+  },
+  {
+    "id": "software-installation-setup",
+    "category": "windows-computer-support",
+    "name": "Software Installation & Setup",
+    "priceFrom": 500,
+    "priceTo": 1500,
+    "priceDisplay": "₹500–1,500",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Clean installation, configuration, and environment setup for office, development, or creative software.",
+    "searchTerms": "software installation setup install office configure app"
+  },
+  {
+    "id": "printer-wifi-troubleshooting",
+    "category": "windows-computer-support",
+    "name": "Printer & Wi-Fi Troubleshooting",
+    "priceFrom": 500,
+    "priceTo": 1500,
+    "priceDisplay": "₹500–1,500",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Connect wireless printers (HP, Canon, Epson, Brother) and resolve Wi-Fi connection drops.",
+    "searchTerms": "printer offline wifi troubleshooting wireless print canon hp epson"
+  },
+  {
+    "id": "computer-boot-startup-errors",
+    "category": "windows-computer-support",
+    "name": "Computer Boot & Startup Errors",
+    "priceFrom": 800,
+    "priceTo": 2500,
+    "priceDisplay": "₹800–2,500",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Resolve blue screen (BSOD) errors, infinite reboot loops, and startup repair failures.",
+    "searchTerms": "blue screen bsod boot error startup repair windows crash"
+  },
+  {
+    "id": "browser-extension-troubleshooting",
+    "category": "windows-computer-support",
+    "name": "Browser & Extension Troubleshooting",
+    "priceFrom": 500,
+    "priceTo": 1200,
+    "priceDisplay": "₹500–1,200",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Remove rogue browser extensions, redirect malware, and fix persistent Chrome/Edge crashes.",
+    "searchTerms": "browser crash chrome edge remove malware adware extension"
+  },
+  {
+    "id": "custom-business-consultation",
+    "category": "business-consultation-digital",
+    "name": "Custom Business Consultation (60-Min Video Call + Roadmap)",
+    "priceFrom": 1500,
+    "priceTo": 1500,
+    "priceDisplay": "₹1,500 Flat",
+    "type": "one-time",
+    "pay": "link",
+    "hero": true,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "1-on-1 strategy session reviewing your online presence, tools, and growth plan with a written action roadmap.",
+    "searchTerms": "custom business consultation 1 on 1 advisory digital roadmap"
+  },
+  {
+    "id": "digital-business-setup",
+    "category": "business-consultation-digital",
+    "name": "Digital Business Setup Package",
+    "priceFrom": 4999,
+    "priceTo": 12000,
+    "priceDisplay": "₹4,999–12,000",
+    "type": "one-time",
+    "pay": "quote",
+    "hero": true,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Complete starter pack: Google Business Profile, WhatsApp Business, digital visiting card, and logo.",
+    "searchTerms": "digital business setup package local business starter kit"
+  },
+  {
+    "id": "business-workflow-improvement",
+    "category": "business-consultation-digital",
+    "name": "Business Workflow Improvement & Automation",
+    "priceFrom": 2500,
+    "priceTo": 8000,
+    "priceDisplay": "₹2,500–8,000",
+    "type": "one-time",
+    "pay": "quote",
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Automate repetitive customer queries, invoice generation, lead tracking, and internal team processes.",
+    "searchTerms": "workflow improvement business automation lead tracking"
+  },
+  {
+    "id": "product-catalogue-setup",
+    "category": "business-consultation-digital",
+    "name": "Product Catalogue Setup (WhatsApp / PDF / Web)",
+    "priceFrom": 1500,
+    "priceTo": 4000,
+    "priceDisplay": "₹1,500–4,000",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Build professional product catalogs with prices, photos, descriptions, and direct WhatsApp order links.",
+    "searchTerms": "product catalogue whatsapp catalog pdf price list menu"
+  },
+  {
+    "id": "software-tool-selection",
+    "category": "business-consultation-digital",
+    "name": "Software & SaaS Tool Selection Advisory",
+    "priceFrom": 1000,
+    "priceTo": 2500,
+    "priceDisplay": "₹1,000–2,500",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Unbiased expert advisory to pick the best CRM, billing software, hosting, or productivity apps.",
+    "searchTerms": "software selection saas crm billing tool advisory"
+  },
+  {
+    "id": "custom-digital-solution-planning",
+    "category": "business-consultation-digital",
+    "name": "Custom Digital Solution Planning & Architecture",
+    "priceFrom": 2500,
+    "priceTo": 10000,
+    "priceDisplay": "₹2,500–10,000",
+    "type": "custom",
+    "pay": "custom",
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Detailed technical architecture, database schema, and timeline for launching custom web or mobile apps.",
+    "searchTerms": "custom digital solution architecture planning spec"
+  },
+  {
+    "id": "google-business-profile-assistance",
+    "category": "business-consultation-digital",
+    "name": "Google Business Profile Assistance & Optimization",
+    "priceFrom": 1000,
+    "priceTo": 2500,
+    "priceDisplay": "₹1,000–2,500",
+    "type": "one-time",
+    "pay": "link",
+    "hero": true,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Profile creation, category optimization, pin accuracy on Google Maps, and legitimate review QR card.",
+    "searchTerms": "google business profile verification google maps ranking"
+  },
+  {
+    "id": "whatsapp-business-setup",
+    "category": "business-consultation-digital",
+    "name": "WhatsApp Business Setup & Automation",
+    "priceFrom": 1000,
+    "priceTo": 3000,
+    "priceDisplay": "₹1,000–3,000",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Setup automated greetings, away messages, quick reply shortcuts, catalog links, and payment UPI QR.",
+    "searchTerms": "whatsapp business setup catalog auto reply away message"
+  },
+  {
+    "id": "ecommerce-product-listing-assistance",
+    "category": "business-consultation-digital",
+    "name": "E-commerce Product Listing Assistance",
+    "priceFrom": 1500,
+    "priceTo": 5000,
+    "priceDisplay": "₹1,500–5,000",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Upload and format product titles, bullet points, tags, and images across Amazon, Flipkart, Meesho, and Shopify.",
+    "searchTerms": "ecommerce product listing amazon flipkart meesho shopify upload"
+  },
+  {
+    "id": "website-creation",
+    "category": "website-seo-services",
+    "name": "Business Website Creation",
+    "priceFrom": 8000,
+    "priceTo": 20000,
+    "priceDisplay": "₹8,000–20,000",
+    "type": "one-time",
+    "pay": "quote",
+    "hero": true,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Custom, ultra-fast mobile-responsive website built with SEO schema and contact forms to get clients.",
+    "searchTerms": "website creation business website design fast mobile"
+  },
+  {
+    "id": "website-troubleshooting-repairs",
+    "category": "website-seo-services",
+    "name": "Website Troubleshooting & Emergency Repairs",
+    "priceFrom": 500,
+    "priceTo": 2500,
+    "priceDisplay": "₹500–2,500",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Instant fix for WordPress white screen, broken layouts, 404/500 errors, form errors, and mobile glitches.",
+    "searchTerms": "website bug fixing troubleshooting wordpress error broken layout"
+  },
+  {
+    "id": "domain-dns-configuration",
+    "category": "website-seo-services",
+    "name": "Domain and DNS Configuration",
+    "priceFrom": 500,
+    "priceTo": 1500,
+    "priceDisplay": "₹500–1,500",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Connect domains to hosting, setup Cloudflare CDN, configure MX/SPF/DKIM email records and free SSL.",
+    "searchTerms": "domain dns pointing cloudflare ssl mx records godaddy hostinger"
+  },
+  {
+    "id": "seo-audit-keyword-research",
+    "category": "website-seo-services",
+    "name": "SEO Audit and Low-Competition Keyword Research",
+    "priceFrom": 1500,
+    "priceTo": 4000,
+    "priceDisplay": "₹1,500–4,000",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Identify high-volume, low-competition keywords in your niche and get a step-by-step ranking action plan.",
+    "searchTerms": "seo audit keyword research low competition search terms ranking"
+  },
+  {
+    "id": "social-media-post-design",
+    "category": "design-images-video",
+    "name": "Social Media Post Design",
+    "priceFrom": 500,
+    "priceTo": 2000,
+    "priceDisplay": "₹500–2,000",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "High-impact creatives and carousel posts for Instagram, Facebook, and LinkedIn in ready-to-post formats.",
+    "searchTerms": "social media post design instagram creative banner"
+  },
+  {
+    "id": "promotional-banners-posters",
+    "category": "design-images-video",
+    "name": "Promotional Banners and Posters",
+    "priceFrom": 500,
+    "priceTo": 1500,
+    "priceDisplay": "₹500–1,500",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Eye-catching digital banners, festival greetings, and sale posters tailored to your brand colors.",
+    "searchTerms": "promotional banner poster festival creative sale offer"
+  },
+  {
+    "id": "logo-basic-branding",
+    "category": "design-images-video",
+    "name": "Logo Design and Basic Branding",
+    "priceFrom": 1500,
+    "priceTo": 5000,
+    "priceDisplay": "₹1,500–5,000",
+    "type": "one-time",
+    "pay": "quote",
+    "hero": true,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Distinctive logo design with vector master files, transparent PNGs, color palette, and font guidelines.",
+    "searchTerms": "logo design branding brand identity vector svg"
+  },
+  {
+    "id": "video-captions-subtitles",
+    "category": "design-images-video",
+    "name": "Video Captions and Subtitles",
+    "priceFrom": 500,
+    "priceTo": 2000,
+    "priceDisplay": "₹500–2,000",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Accurate, eye-catching animated captions for Instagram Reels, YouTube Shorts, and promotional ads.",
+    "searchTerms": "video captions subtitles shorts reels animated subtitles"
+  },
+  {
+    "id": "youtube-thumbnails",
+    "category": "design-images-video",
+    "name": "High-CTR YouTube Thumbnails",
+    "priceFrom": 500,
+    "priceTo": 1500,
+    "priceDisplay": "₹500–1,500",
+    "type": "one-time",
+    "pay": "link",
+    "hero": true,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Clickable, custom YouTube thumbnails designed using proven color psychology and bold typography.",
+    "searchTerms": "youtube thumbnail design ctr clickable thumbnail creator"
+  },
+  {
+    "id": "product-image-editing",
+    "category": "design-images-video",
+    "name": "Product Image Editing & Background Removal",
+    "priceFrom": 500,
+    "priceTo": 2000,
+    "priceDisplay": "₹500–2,000",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Crisp white background isolation, shadow enhancement, and color correction for e-commerce listings.",
+    "searchTerms": "product image editing white background removal retouching"
+  },
+  {
+    "id": "ai-image-video-creation-assistance",
+    "category": "design-images-video",
+    "name": "AI Image & Video Creation Assistance",
+    "priceFrom": 500,
+    "priceTo": 2500,
+    "priceDisplay": "₹500–2,500",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "AI-generated marketing visuals, background swaps, and voiceover synchronization.",
+    "searchTerms": "ai image video creation generator midjourney dall-e"
+  },
+  {
+    "id": "android-app-listing-assistance",
+    "category": "android-app-digital-tools",
+    "name": "Android App Listing Assistance",
+    "priceFrom": 1500,
+    "priceTo": 4000,
+    "priceDisplay": "₹1,500–4,000",
+    "type": "one-time",
+    "pay": "link",
+    "hero": true,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "End-to-end guidance for Google Play Console submission, questionnaire completion, and rollout.",
+    "searchTerms": "android app listing play console submit app publish"
+  },
+  {
+    "id": "app-listing-content-asset-prep",
+    "category": "android-app-digital-tools",
+    "name": "App Listing Content & Asset Preparation",
+    "priceFrom": 1500,
+    "priceTo": 3500,
+    "priceDisplay": "₹1,500–3,500",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Craft Google Play descriptions, 512px app icon, 1024x500 feature graphic, and device screenshots.",
+    "searchTerms": "play store screenshots feature graphic app icon copy"
+  },
+  {
+    "id": "app-browser-extension-troubleshooting",
+    "category": "android-app-digital-tools",
+    "name": "Browser & Extension Troubleshooting",
+    "priceFrom": 500,
+    "priceTo": 1500,
+    "priceDisplay": "₹500–1,500",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Debug extension crashes, manifest v3 permissions, content script errors, and store policy flags.",
+    "searchTerms": "chrome extension debug manifest v3 store review"
+  },
+  {
+    "id": "app-software-tool-selection",
+    "category": "android-app-digital-tools",
+    "name": "Software and Digital Tool Selection",
+    "priceFrom": 1000,
+    "priceTo": 2500,
+    "priceDisplay": "₹1,000–2,500",
+    "type": "one-time",
+    "pay": "link",
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Expert advisory for picking the best mobile & desktop productivity tools and integrations.",
+    "searchTerms": "software selection tools productivity apps setup"
+  },
+  {
     "id": "landing-page",
     "category": "website-development",
     "name": "Landing page",
@@ -8,7 +824,12 @@
     "priceDisplay": "₹3,000–6,000",
     "type": "one-time",
     "pay": "quote",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Landing page service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "landing page website-development"
   },
   {
     "id": "business-website",
@@ -19,7 +840,12 @@
     "priceDisplay": "₹8,000–20,000",
     "type": "one-time",
     "pay": "quote",
-    "hero": true
+    "hero": true,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Business website service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "business website website-development"
   },
   {
     "id": "portfolio-website",
@@ -30,7 +856,12 @@
     "priceDisplay": "₹5,000–12,000",
     "type": "one-time",
     "pay": "quote",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Portfolio website service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "portfolio website website-development"
   },
   {
     "id": "blog-news-website",
@@ -41,7 +872,12 @@
     "priceDisplay": "₹6,000–15,000",
     "type": "one-time",
     "pay": "quote",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Blog / news website service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "blog / news website website-development"
   },
   {
     "id": "custom-web-tool-calculator",
@@ -52,7 +888,12 @@
     "priceDisplay": "₹3,000–15,000",
     "type": "one-time",
     "pay": "quote",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Custom web tool / calculator service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "custom web tool / calculator website-development"
   },
   {
     "id": "pdf-converter-tool-website",
@@ -63,7 +904,12 @@
     "priceDisplay": "₹8,000–25,000",
     "type": "one-time",
     "pay": "quote",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "PDF converter / tool website service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "pdf converter / tool website website-development"
   },
   {
     "id": "ai-powered-website",
@@ -74,7 +920,12 @@
     "priceDisplay": "₹12,000–40,000",
     "type": "one-time",
     "pay": "quote",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "AI-powered website service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "ai-powered website website-development"
   },
   {
     "id": "custom-web-application",
@@ -85,7 +936,12 @@
     "priceDisplay": "₹25,000+",
     "type": "custom",
     "pay": "custom",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Custom web application service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "custom web application website-development"
   },
   {
     "id": "website-bug-fixing-and-troubleshooting-incl-mobile-issues",
@@ -96,7 +952,12 @@
     "priceDisplay": "₹500–2,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Website bug fixing and troubleshooting (incl. mobile issues) service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "website bug fixing and troubleshooting (incl. mobile issues) website-support-fixes"
   },
   {
     "id": "website-speed-optimization",
@@ -107,7 +968,12 @@
     "priceDisplay": "₹1,500–4,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Website speed optimization service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "website speed optimization website-support-fixes"
   },
   {
     "id": "wordpress-installation-and-setup",
@@ -118,7 +984,12 @@
     "priceDisplay": "₹1,500–3,500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "WordPress installation and setup service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "wordpress installation and setup website-support-fixes"
   },
   {
     "id": "wordpress-customization",
@@ -129,7 +1000,12 @@
     "priceDisplay": "₹2,000–8,000",
     "type": "one-time",
     "pay": "quote",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "WordPress customization service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "wordpress customization website-support-fixes"
   },
   {
     "id": "wordpress-error-fixing-login-plugin-conflict-white-screen",
@@ -140,7 +1016,12 @@
     "priceDisplay": "₹500–2,000",
     "type": "one-time",
     "pay": "link",
-    "hero": true
+    "hero": true,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "WordPress error fixing (login, plugin conflict, white screen) service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "wordpress error fixing (login, plugin conflict, white screen) website-support-fixes"
   },
   {
     "id": "website-security-and-basic-cleanup",
@@ -151,7 +1032,12 @@
     "priceDisplay": "₹1,500–4,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Website security and basic cleanup service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "website security and basic cleanup website-support-fixes"
   },
   {
     "id": "website-backup-setup",
@@ -162,7 +1048,12 @@
     "priceDisplay": "₹1,000–2,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Website backup setup service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "website backup setup website-support-fixes"
   },
   {
     "id": "ssl-https-troubleshooting",
@@ -173,7 +1064,12 @@
     "priceDisplay": "₹500–1,500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "SSL / HTTPS troubleshooting service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "ssl / https troubleshooting website-support-fixes"
   },
   {
     "id": "quick-content-logo-or-link-fix",
@@ -184,7 +1080,12 @@
     "priceDisplay": "₹500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Quick content, logo or link fix service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "quick content, logo or link fix website-support-fixes"
   },
   {
     "id": "whatsapp-chat-button-or-google-map-embed",
@@ -195,7 +1096,12 @@
     "priceDisplay": "₹500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "WhatsApp chat button or Google Map embed service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "whatsapp chat button or google map embed website-support-fixes"
   },
   {
     "id": "contact-form-setup-or-fix",
@@ -206,7 +1112,12 @@
     "priceDisplay": "₹600–1,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Contact form setup or fix service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "contact form setup or fix website-support-fixes"
   },
   {
     "id": "301-redirect-setup",
@@ -217,7 +1128,12 @@
     "priceDisplay": "₹500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "301 redirect setup service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "301 redirect setup website-support-fixes"
   },
   {
     "id": "razorpay-upi-payment-button-on-client-site",
@@ -228,7 +1144,12 @@
     "priceDisplay": "₹1,500–5,000",
     "type": "one-time",
     "pay": "quote",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Razorpay / UPI payment button on client site service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "razorpay / upi payment button on client site website-support-fixes"
   },
   {
     "id": "privacy-policy-and-cookie-banner-setup",
@@ -239,7 +1160,12 @@
     "priceDisplay": "₹500–1,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Privacy policy and cookie banner setup service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "privacy policy and cookie banner setup website-support-fixes"
   },
   {
     "id": "website-maintenance",
@@ -250,7 +1176,12 @@
     "priceDisplay": "₹1,000–3,000 /mo",
     "type": "monthly",
     "pay": "sub",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Website maintenance service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "website maintenance website-support-fixes"
   },
   {
     "id": "domain-purchase-and-setup-assistance",
@@ -261,7 +1192,12 @@
     "priceDisplay": "₹500–1,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Domain purchase and setup assistance service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "domain purchase and setup assistance domain-hosting-setup"
   },
   {
     "id": "hosting-setup",
@@ -272,7 +1208,12 @@
     "priceDisplay": "₹1,000–2,500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Hosting setup service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "hosting setup domain-hosting-setup"
   },
   {
     "id": "dns-setup-domain-pointing-fix",
@@ -283,7 +1224,12 @@
     "priceDisplay": "₹500–1,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "DNS setup / domain pointing fix service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "dns setup / domain pointing fix domain-hosting-setup"
   },
   {
     "id": "business-email-setup-incl-phone-and-laptop",
@@ -294,7 +1240,12 @@
     "priceDisplay": "₹1,000–2,500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Business email setup (incl. phone and laptop) service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "business email setup (incl. phone and laptop) domain-hosting-setup"
   },
   {
     "id": "email-domain-troubleshooting",
@@ -305,7 +1256,12 @@
     "priceDisplay": "₹500–1,500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Email / domain troubleshooting service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "email / domain troubleshooting domain-hosting-setup"
   },
   {
     "id": "website-verification",
@@ -316,7 +1272,12 @@
     "priceDisplay": "₹500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Website verification service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "website verification domain-hosting-setup"
   },
   {
     "id": "google-search-console-and-analytics-setup",
@@ -327,7 +1288,12 @@
     "priceDisplay": "₹1,000–2,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Google Search Console and Analytics setup service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "google search console and analytics setup domain-hosting-setup"
   },
   {
     "id": "google-indexing-and-search-console-error-fixing",
@@ -338,7 +1304,12 @@
     "priceDisplay": "₹1,000–3,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Google indexing and Search Console error fixing service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "google indexing and search console error fixing domain-hosting-setup"
   },
   {
     "id": "simple-utility-calculator-converter-app",
@@ -349,7 +1320,12 @@
     "priceDisplay": "₹10,000–25,000",
     "type": "one-time",
     "pay": "quote",
-    "hero": true
+    "hero": true,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Simple utility / calculator / converter app service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "simple utility / calculator / converter app android-app-development"
   },
   {
     "id": "business-company-app",
@@ -360,7 +1336,12 @@
     "priceDisplay": "₹20,000–60,000",
     "type": "one-time",
     "pay": "quote",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Business / company app service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "business / company app android-app-development"
   },
   {
     "id": "offline-app",
@@ -371,7 +1352,12 @@
     "priceDisplay": "₹12,000–30,000",
     "type": "one-time",
     "pay": "quote",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Offline app service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "offline app android-app-development"
   },
   {
     "id": "ai-powered-app",
@@ -382,7 +1368,12 @@
     "priceDisplay": "₹25,000–70,000",
     "type": "one-time",
     "pay": "quote",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "AI-powered app service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "ai-powered app android-app-development"
   },
   {
     "id": "photo-image-editing-app",
@@ -393,7 +1384,12 @@
     "priceDisplay": "₹15,000–50,000",
     "type": "one-time",
     "pay": "quote",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Photo / image editing app service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "photo / image editing app android-app-development"
   },
   {
     "id": "pdf-document-app",
@@ -404,7 +1400,12 @@
     "priceDisplay": "₹15,000–50,000",
     "type": "one-time",
     "pay": "quote",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "PDF / document app service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "pdf / document app android-app-development"
   },
   {
     "id": "app-ui-design",
@@ -415,7 +1416,12 @@
     "priceDisplay": "₹5,000–15,000",
     "type": "one-time",
     "pay": "quote",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "App UI / design service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "app ui / design android-app-development"
   },
   {
     "id": "admob-integration",
@@ -426,7 +1432,12 @@
     "priceDisplay": "₹1,500–3,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "AdMob integration service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "admob integration android-app-development"
   },
   {
     "id": "google-play-billing-subscription-integration",
@@ -437,7 +1448,12 @@
     "priceDisplay": "₹3,000–6,000",
     "type": "one-time",
     "pay": "quote",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Google Play Billing / subscription integration service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "google play billing / subscription integration android-app-development"
   },
   {
     "id": "google-play-publishing-assistance",
@@ -448,7 +1464,12 @@
     "priceDisplay": "₹1,500–3,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Google Play publishing assistance service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "google play publishing assistance android-app-development"
   },
   {
     "id": "app-customization-and-updates",
@@ -459,7 +1480,12 @@
     "priceDisplay": "₹2,000–10,000",
     "type": "one-time",
     "pay": "quote",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "App customization and updates service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "app customization and updates android-app-development"
   },
   {
     "id": "app-bug-fixing",
@@ -470,7 +1496,12 @@
     "priceDisplay": "₹1,000–5,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "App bug fixing service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "app bug fixing android-app-development"
   },
   {
     "id": "custom-android-app-for-clients",
@@ -481,7 +1512,12 @@
     "priceDisplay": "₹30,000+",
     "type": "custom",
     "pay": "custom",
-    "hero": true
+    "hero": true,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Custom Android app for clients service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "custom android app for clients android-app-development"
   },
   {
     "id": "android-app-play-store-launch-package",
@@ -492,7 +1528,12 @@
     "priceDisplay": "₹40,000+",
     "type": "custom",
     "pay": "custom",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Android app + Play Store launch package service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "android app + play store launch package android-app-development"
   },
   {
     "id": "chrome-extension-development",
@@ -503,7 +1544,12 @@
     "priceDisplay": "₹5,000–25,000",
     "type": "one-time",
     "pay": "quote",
-    "hero": true
+    "hero": true,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Chrome extension development service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "chrome extension development chrome-extensions"
   },
   {
     "id": "extension-customization",
@@ -514,7 +1560,12 @@
     "priceDisplay": "₹1,500–6,000",
     "type": "one-time",
     "pay": "quote",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Extension customization service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "extension customization chrome-extensions"
   },
   {
     "id": "extension-bug-fixing",
@@ -525,7 +1576,12 @@
     "priceDisplay": "₹1,000–3,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Extension bug fixing service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "extension bug fixing chrome-extensions"
   },
   {
     "id": "chrome-web-store-publishing-assistance",
@@ -536,7 +1592,12 @@
     "priceDisplay": "₹1,000–2,500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Chrome Web Store publishing assistance service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "chrome web store publishing assistance chrome-extensions"
   },
   {
     "id": "store-listing-optimization",
@@ -547,7 +1608,12 @@
     "priceDisplay": "₹1,500–3,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Store listing optimization service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "store listing optimization chrome-extensions"
   },
   {
     "id": "extension-updates-and-maintenance",
@@ -558,7 +1624,12 @@
     "priceDisplay": "₹1,500–4,000 /mo",
     "type": "monthly",
     "pay": "sub",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Extension updates and maintenance service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "extension updates and maintenance chrome-extensions"
   },
   {
     "id": "custom-extension-for-business",
@@ -569,7 +1640,12 @@
     "priceDisplay": "₹15,000+",
     "type": "custom",
     "pay": "custom",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Custom extension for business service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "custom extension for business chrome-extensions"
   },
   {
     "id": "website-seo-audit",
@@ -580,7 +1656,12 @@
     "priceDisplay": "₹2,000–5,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Website SEO audit service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "website seo audit seo-local-seo"
   },
   {
     "id": "keyword-research",
@@ -591,7 +1672,12 @@
     "priceDisplay": "₹1,500–3,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Keyword research service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "keyword research seo-local-seo"
   },
   {
     "id": "on-page-seo",
@@ -602,7 +1688,12 @@
     "priceDisplay": "₹3,000–8,000",
     "type": "one-time",
     "pay": "quote",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "On-page SEO service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "on-page seo seo-local-seo"
   },
   {
     "id": "local-seo-setup",
@@ -613,7 +1704,12 @@
     "priceDisplay": "₹3,000–6,000",
     "type": "one-time",
     "pay": "quote",
-    "hero": true
+    "hero": true,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Local SEO setup service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "local seo setup seo-local-seo"
   },
   {
     "id": "local-business-seo-audit",
@@ -624,7 +1720,12 @@
     "priceDisplay": "₹1,500–3,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Local business SEO audit service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "local business seo audit seo-local-seo"
   },
   {
     "id": "local-ranking-optimization",
@@ -635,7 +1736,12 @@
     "priceDisplay": "₹2,000–5,000",
     "type": "one-time",
     "pay": "quote",
-    "hero": true
+    "hero": true,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Local ranking optimization service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "local ranking optimization seo-local-seo"
   },
   {
     "id": "monthly-seo",
@@ -646,7 +1752,12 @@
     "priceDisplay": "₹5,000–15,000 /mo",
     "type": "monthly",
     "pay": "sub",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Monthly SEO service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "monthly seo seo-local-seo"
   },
   {
     "id": "monthly-local-seo",
@@ -657,7 +1768,12 @@
     "priceDisplay": "₹3,000–8,000 /mo",
     "type": "monthly",
     "pay": "sub",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Monthly local SEO service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "monthly local seo seo-local-seo"
   },
   {
     "id": "google-business-profile-creation-and-setup-incl-verification-help",
@@ -668,7 +1784,12 @@
     "priceDisplay": "₹1,000–2,500",
     "type": "one-time",
     "pay": "link",
-    "hero": true
+    "hero": true,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Google Business Profile creation and setup (incl. verification help) service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "google business profile creation and setup (incl. verification help) google-business-maps"
   },
   {
     "id": "google-business-profile-optimization",
@@ -679,7 +1800,12 @@
     "priceDisplay": "₹2,000–4,000",
     "type": "one-time",
     "pay": "link",
-    "hero": true
+    "hero": true,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Google Business Profile optimization service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "google business profile optimization google-business-maps"
   },
   {
     "id": "business-information-updates",
@@ -690,7 +1816,12 @@
     "priceDisplay": "₹500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Business information updates service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "business information updates google-business-maps"
   },
   {
     "id": "google-maps-listing-setup-and-optimization",
@@ -701,7 +1832,12 @@
     "priceDisplay": "₹1,000–3,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Google Maps listing setup and optimization service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "google maps listing setup and optimization google-business-maps"
   },
   {
     "id": "maps-photos-and-information-optimization",
@@ -712,7 +1848,12 @@
     "priceDisplay": "₹1,000–2,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Maps photos and information optimization service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "maps photos and information optimization google-business-maps"
   },
   {
     "id": "google-business-profile-posts-pack-of-8",
@@ -723,7 +1864,12 @@
     "priceDisplay": "₹1,000–2,500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Google Business Profile posts (pack of 8) service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "google business profile posts (pack of 8) google-business-maps"
   },
   {
     "id": "review-qr-code-creation",
@@ -734,7 +1880,12 @@
     "priceDisplay": "₹500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Review QR code creation service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "review qr code creation google-business-maps"
   },
   {
     "id": "legitimate-review-request-system",
@@ -745,7 +1896,12 @@
     "priceDisplay": "₹1,000–2,500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Legitimate review-request system service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "legitimate review-request system google-business-maps"
   },
   {
     "id": "monthly-google-business-and-maps-management",
@@ -756,7 +1912,12 @@
     "priceDisplay": "₹2,000–5,000 /mo",
     "type": "monthly",
     "pay": "sub",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Monthly Google Business and Maps management service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "monthly google business and maps management google-business-maps"
   },
   {
     "id": "basic-package-google-business-profile-maps-digital-visiting-card-1-ad-design",
@@ -767,7 +1928,12 @@
     "priceDisplay": "₹4,999",
     "type": "one-time",
     "pay": "link",
-    "hero": true
+    "hero": true,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Basic Package: Google Business Profile + Maps + digital visiting card + 1 ad design service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "basic package: google business profile + maps + digital visiting card + 1 ad design local-business-packages"
   },
   {
     "id": "standard-package-business-website-business-profile-and-maps-optimization-basic-seo-ad-creatives",
@@ -778,7 +1944,12 @@
     "priceDisplay": "₹14,999",
     "type": "one-time",
     "pay": "link",
-    "hero": true
+    "hero": true,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Standard Package: business website + Business Profile and Maps optimization + basic SEO + ad creatives service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "standard package: business website + business profile and maps optimization + basic seo + ad creatives local-business-packages"
   },
   {
     "id": "premium-package-standard-local-seo-business-profile-management-monthly-digital-management",
@@ -789,7 +1960,12 @@
     "priceDisplay": "₹24,999 + 5,999 /mo",
     "type": "monthly",
     "pay": "quote",
-    "hero": true
+    "hero": true,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Premium Package: Standard + local SEO + Business Profile management + monthly digital management service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "premium package: standard + local seo + business profile management + monthly digital management local-business-packages"
   },
   {
     "id": "complete-digital-setup-for-a-new-business",
@@ -800,7 +1976,12 @@
     "priceDisplay": "₹25,000+",
     "type": "custom",
     "pay": "custom",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Complete digital setup for a new business service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "complete digital setup for a new business local-business-packages"
   },
   {
     "id": "industry-packs-clinic-restaurant-salon-coaching-shop",
@@ -811,7 +1992,12 @@
     "priceDisplay": "Quote",
     "type": "custom",
     "pay": "quote",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Industry packs (Clinic, Restaurant, Salon, Coaching, Shop) service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "industry packs (clinic, restaurant, salon, coaching, shop) local-business-packages"
   },
   {
     "id": "logo-design",
@@ -822,7 +2008,12 @@
     "priceDisplay": "₹1,000–3,000",
     "type": "one-time",
     "pay": "link",
-    "hero": true
+    "hero": true,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Logo design service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "logo design graphic-ad-design"
   },
   {
     "id": "visiting-card-design",
@@ -833,7 +2024,12 @@
     "priceDisplay": "₹500–800",
     "type": "one-time",
     "pay": "link",
-    "hero": true
+    "hero": true,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Visiting card design service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "visiting card design graphic-ad-design"
   },
   {
     "id": "digital-visiting-card",
@@ -844,7 +2040,12 @@
     "priceDisplay": "₹500–1,500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Digital visiting card service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "digital visiting card graphic-ad-design"
   },
   {
     "id": "flyer-poster-design",
@@ -855,7 +2056,12 @@
     "priceDisplay": "₹500–1,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Flyer / poster design service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "flyer / poster design graphic-ad-design"
   },
   {
     "id": "banner-hoarding-design",
@@ -866,7 +2072,12 @@
     "priceDisplay": "₹700–2,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Banner / hoarding design service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "banner / hoarding design graphic-ad-design"
   },
   {
     "id": "social-media-post-design-pack-of-10",
@@ -877,7 +2088,12 @@
     "priceDisplay": "₹1,500–3,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Social media post design (pack of 10) service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "social media post design (pack of 10) graphic-ad-design"
   },
   {
     "id": "business-product-and-festival-ad-design",
@@ -888,7 +2104,12 @@
     "priceDisplay": "₹500–1,500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Business, product and festival ad design service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "business, product and festival ad design graphic-ad-design"
   },
   {
     "id": "youtube-thumbnail-design-each",
@@ -899,7 +2120,12 @@
     "priceDisplay": "₹500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "YouTube thumbnail design (each) service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "youtube thumbnail design (each) graphic-ad-design"
   },
   {
     "id": "product-photo-editing",
@@ -910,7 +2136,12 @@
     "priceDisplay": "₹500–1,500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Product photo editing service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "product photo editing graphic-ad-design"
   },
   {
     "id": "photo-background-removal",
@@ -921,7 +2152,12 @@
     "priceDisplay": "₹500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Photo background removal service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "photo background removal graphic-ad-design"
   },
   {
     "id": "ai-content-creation-and-editing",
@@ -932,7 +2168,12 @@
     "priceDisplay": "₹500–2,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "AI content creation and editing service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "ai content creation and editing ai-content-image-services"
   },
   {
     "id": "ai-image-generation",
@@ -943,7 +2184,12 @@
     "priceDisplay": "₹500–2,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "AI image generation service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "ai image generation ai-content-image-services"
   },
   {
     "id": "ai-image-editing",
@@ -954,7 +2200,12 @@
     "priceDisplay": "₹500–1,500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "AI image editing service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "ai image editing ai-content-image-services"
   },
   {
     "id": "ai-advertisement-creatives",
@@ -965,7 +2216,12 @@
     "priceDisplay": "₹1,000–3,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "AI advertisement creatives service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "ai advertisement creatives ai-content-image-services"
   },
   {
     "id": "ai-social-media-content-pack",
@@ -976,7 +2232,12 @@
     "priceDisplay": "₹1,500–4,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "AI social media content pack service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "ai social media content pack ai-content-image-services"
   },
   {
     "id": "ai-business-content-package",
@@ -987,7 +2248,12 @@
     "priceDisplay": "₹3,000–8,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "AI business content package service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "ai business content package ai-content-image-services"
   },
   {
     "id": "monthly-ai-content-package",
@@ -998,7 +2264,12 @@
     "priceDisplay": "₹3,000–8,000 /mo",
     "type": "monthly",
     "pay": "sub",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Monthly AI content package service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "monthly ai content package ai-content-image-services"
   },
   {
     "id": "channel-setup-and-branding-logo-banner-profile-picture",
@@ -1009,7 +2280,12 @@
     "priceDisplay": "₹1,500–4,000",
     "type": "one-time",
     "pay": "link",
-    "hero": true
+    "hero": true,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Channel setup and branding (logo, banner, profile picture) service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "channel setup and branding (logo, banner, profile picture) youtube-services"
   },
   {
     "id": "video-titles-descriptions-and-tags-per-video",
@@ -1020,7 +2296,12 @@
     "priceDisplay": "₹500–1,500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Video titles, descriptions and tags (per video) service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "video titles, descriptions and tags (per video) youtube-services"
   },
   {
     "id": "youtube-keyword-research-and-seo",
@@ -1031,7 +2312,12 @@
     "priceDisplay": "₹1,500–3,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "YouTube keyword research and SEO service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "youtube keyword research and seo youtube-services"
   },
   {
     "id": "channel-optimization",
@@ -1042,7 +2328,12 @@
     "priceDisplay": "₹2,000–4,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Channel optimization service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "channel optimization youtube-services"
   },
   {
     "id": "instagram-facebook-profile-setup-and-optimization",
@@ -1053,7 +2344,12 @@
     "priceDisplay": "₹1,000–2,500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Instagram / Facebook profile setup and optimization service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "instagram / facebook profile setup and optimization instagram-social-media"
   },
   {
     "id": "captions-and-post-content-pack",
@@ -1064,7 +2360,12 @@
     "priceDisplay": "₹500–2,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Captions and post content pack service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "captions and post content pack instagram-social-media"
   },
   {
     "id": "social-media-content-package",
@@ -1075,7 +2376,12 @@
     "priceDisplay": "₹1,500–4,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Social media content package service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "social media content package instagram-social-media"
   },
   {
     "id": "monthly-social-content",
@@ -1086,7 +2392,12 @@
     "priceDisplay": "₹3,000–6,000 /mo",
     "type": "monthly",
     "pay": "sub",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Monthly social content service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "monthly social content instagram-social-media"
   },
   {
     "id": "website-copy-and-seo-content",
@@ -1097,7 +2408,12 @@
     "priceDisplay": "₹2,000–6,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Website copy and SEO content service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "website copy and seo content content-writing"
   },
   {
     "id": "blog-seo-article",
@@ -1108,7 +2424,12 @@
     "priceDisplay": "₹500–1,500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Blog / SEO article service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "blog / seo article content-writing"
   },
   {
     "id": "general-business-content-brochure-company-profile",
@@ -1119,7 +2440,12 @@
     "priceDisplay": "₹1,000–3,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "General business content (brochure, company profile) service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "general business content (brochure, company profile) content-writing"
   },
   {
     "id": "ai-assisted-content-editing-and-proofreading",
@@ -1130,7 +2456,12 @@
     "priceDisplay": "₹500–1,500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "AI-assisted content editing and proofreading service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "ai-assisted content editing and proofreading content-writing"
   },
   {
     "id": "pdf-to-word-excel-conversion",
@@ -1141,7 +2472,12 @@
     "priceDisplay": "₹500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "PDF to Word / Excel conversion service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "pdf to word / excel conversion pdf-document-services"
   },
   {
     "id": "word-to-pdf-conversion",
@@ -1152,7 +2488,12 @@
     "priceDisplay": "₹500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Word to PDF conversion service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "word to pdf conversion pdf-document-services"
   },
   {
     "id": "pdf-merge-split-or-compress",
@@ -1163,7 +2504,12 @@
     "priceDisplay": "₹500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "PDF merge, split or compress service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "pdf merge, split or compress pdf-document-services"
   },
   {
     "id": "images-to-pdf",
@@ -1174,7 +2520,12 @@
     "priceDisplay": "₹500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Images to PDF service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "images to pdf pdf-document-services"
   },
   {
     "id": "pdf-editing-and-formatting",
@@ -1185,7 +2536,12 @@
     "priceDisplay": "₹500–1,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "PDF editing and formatting service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "pdf editing and formatting pdf-document-services"
   },
   {
     "id": "professional-document-creation",
@@ -1196,7 +2552,12 @@
     "priceDisplay": "₹700–2,500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Professional document creation service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "professional document creation pdf-document-services"
   },
   {
     "id": "resume-cv-creation-and-formatting",
@@ -1207,7 +2568,12 @@
     "priceDisplay": "₹500–1,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Resume / CV creation and formatting service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "resume / cv creation and formatting pdf-document-services"
   },
   {
     "id": "excel-word-and-powerpoint-help-and-cleanup",
@@ -1218,7 +2584,12 @@
     "priceDisplay": "₹500–1,500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Excel, Word and PowerPoint help and cleanup service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "excel, word and powerpoint help and cleanup pdf-document-services"
   },
   {
     "id": "excel-google-sheets-templates-expense-tracker-stock-sheet",
@@ -1229,7 +2600,12 @@
     "priceDisplay": "₹700–1,500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Excel / Google Sheets templates (expense tracker, stock sheet) service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "excel / google sheets templates (expense tracker, stock sheet) pdf-document-services"
   },
   {
     "id": "google-form-creation",
@@ -1240,7 +2616,12 @@
     "priceDisplay": "₹500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Google Form creation service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "google form creation pdf-document-services"
   },
   {
     "id": "qr-code-barcode-or-upi-qr-creation",
@@ -1251,7 +2632,12 @@
     "priceDisplay": "₹500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "QR code, barcode or UPI QR creation service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "qr code, barcode or upi qr creation pdf-document-services"
   },
   {
     "id": "pdf-toolkit-bundle-up-to-5-tasks",
@@ -1262,7 +2648,12 @@
     "priceDisplay": "₹999",
     "type": "one-time",
     "pay": "link",
-    "hero": true
+    "hero": true,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "PDF Toolkit bundle (up to 5 tasks) service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "pdf toolkit bundle (up to 5 tasks) pdf-document-services"
   },
   {
     "id": "quick-fix-30-min-remote-session",
@@ -1273,7 +2664,12 @@
     "priceDisplay": "₹500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Quick Fix (30 min remote session) service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "quick fix (30 min remote session) remote-computer-tech-help"
   },
   {
     "id": "standard-help-60-min-remote-session",
@@ -1284,7 +2680,12 @@
     "priceDisplay": "₹999",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Standard Help (60 min remote session) service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "standard help (60 min remote session) remote-computer-tech-help"
   },
   {
     "id": "laptop-care-bundle-slow-pc-storage-cleanup-temp-files-startup-apps",
@@ -1295,7 +2696,12 @@
     "priceDisplay": "₹999",
     "type": "one-time",
     "pay": "link",
-    "hero": true
+    "hero": true,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Laptop Care bundle (slow PC, storage cleanup, temp files, startup apps) service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "laptop care bundle (slow pc, storage cleanup, temp files, startup apps) remote-computer-tech-help"
   },
   {
     "id": "cloud-workspace-setup-bundle-browser-gmail-drive-whatsapp-web-password-manager",
@@ -1306,7 +2712,12 @@
     "priceDisplay": "₹999",
     "type": "one-time",
     "pay": "link",
-    "hero": true
+    "hero": true,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Cloud Workspace Setup bundle (browser, Gmail, Drive, WhatsApp Web, password manager) service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "cloud workspace setup bundle (browser, gmail, drive, whatsapp web, password manager) remote-computer-tech-help"
   },
   {
     "id": "slow-pc-laptop-optimization-and-storage-cleanup",
@@ -1317,7 +2728,12 @@
     "priceDisplay": "₹500–1,000",
     "type": "one-time",
     "pay": "link",
-    "hero": true
+    "hero": true,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Slow PC / laptop optimization and storage cleanup service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "slow pc / laptop optimization and storage cleanup remote-computer-tech-help"
   },
   {
     "id": "virus-malware-and-basic-security-cleanup",
@@ -1328,7 +2744,12 @@
     "priceDisplay": "₹800",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Virus, malware and basic security cleanup service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "virus, malware and basic security cleanup remote-computer-tech-help"
   },
   {
     "id": "antivirus-setup-browser-pop-up-and-extension-cleanup",
@@ -1339,7 +2760,12 @@
     "priceDisplay": "₹500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Antivirus setup, browser pop-up and extension cleanup service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "antivirus setup, browser pop-up and extension cleanup remote-computer-tech-help"
   },
   {
     "id": "backup-setup-and-cloud-data-recovery-guidance",
@@ -1350,7 +2776,12 @@
     "priceDisplay": "₹700–800",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Backup setup and cloud data recovery guidance service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "backup setup and cloud data recovery guidance remote-computer-tech-help"
   },
   {
     "id": "email-outlook-and-gmail-setup-or-sync-fix",
@@ -1361,7 +2792,12 @@
     "priceDisplay": "₹500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Email, Outlook and Gmail setup or sync fix service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "email, outlook and gmail setup or sync fix remote-computer-tech-help"
   },
   {
     "id": "google-drive-onedrive-and-workspace-setup",
@@ -1372,7 +2808,12 @@
     "priceDisplay": "₹600–1,500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Google Drive, OneDrive and Workspace setup service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "google drive, onedrive and workspace setup remote-computer-tech-help"
   },
   {
     "id": "zoom-meet-and-teams-setup",
@@ -1383,7 +2824,12 @@
     "priceDisplay": "₹500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Zoom, Meet and Teams setup service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "zoom, meet and teams setup remote-computer-tech-help"
   },
   {
     "id": "whatsapp-web-and-password-manager-setup",
@@ -1394,7 +2840,12 @@
     "priceDisplay": "₹500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "WhatsApp Web and password manager setup service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "whatsapp web and password manager setup remote-computer-tech-help"
   },
   {
     "id": "monthly-technical-support-plan",
@@ -1405,7 +2856,12 @@
     "priceDisplay": "₹1,000–2,000 /mo",
     "type": "monthly",
     "pay": "sub",
-    "hero": true
+    "hero": true,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Monthly technical support plan service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "monthly technical support plan remote-computer-tech-help"
   },
   {
     "id": "google-account-setup",
@@ -1416,7 +2872,12 @@
     "priceDisplay": "₹500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Google account setup service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "google account setup account-digital-setup"
   },
   {
     "id": "social-media-account-setup",
@@ -1427,7 +2888,12 @@
     "priceDisplay": "₹500–1,500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Social media account setup service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "social media account setup account-digital-setup"
   },
   {
     "id": "business-profile-setup",
@@ -1438,7 +2904,12 @@
     "priceDisplay": "₹500–1,500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Business profile setup service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "business profile setup account-digital-setup"
   },
   {
     "id": "website-account-verification",
@@ -1449,7 +2920,12 @@
     "priceDisplay": "₹500",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Website account verification service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "website account verification account-digital-setup"
   },
   {
     "id": "digital-account-troubleshooting",
@@ -1460,7 +2936,12 @@
     "priceDisplay": "₹500–1,000",
     "type": "one-time",
     "pay": "link",
-    "hero": false
+    "hero": false,
+    "deliveryType": "Remote & Home Visit",
+    "homeVisitAvailable": true,
+    "status": "Available",
+    "shortDesc": "Digital account troubleshooting service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "digital account troubleshooting account-digital-setup"
   },
   {
     "id": "technical-consultation-60-min-video-call-written-action-summary-website-seo-google-maps-business-profile-android-app-computer-digital-business-or-local-growth",
@@ -1471,6 +2952,11 @@
     "priceDisplay": "₹1,500",
     "type": "one-time",
     "pay": "link",
-    "hero": true
+    "hero": true,
+    "deliveryType": "Remote",
+    "homeVisitAvailable": false,
+    "status": "Available",
+    "shortDesc": "Technical Consultation: 60 min video call + written action summary (website, SEO, Google Maps, Business Profile, Android app, computer, digital business or local growth) service with guaranteed transparent pricing and fast turnaround across India.",
+    "searchTerms": "technical consultation: 60 min video call + written action summary (website, seo, google maps, business profile, android app, computer, digital business or local growth) technical-consultation"
   }
 ]

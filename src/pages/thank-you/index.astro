@@ -4,8 +4,8 @@ import site from '../../data/site.json';
 ---
 
 <Base
-  title={`Payment Received | Thank You | ${site.brandName}`}
-  description="Your payment has been successfully received. Our engineering team will contact you shortly."
+  title={`Order Confirmed | Thank You | ${site.brandName}`}
+  description="Your payment has been successfully verified. An engineer will contact you shortly on WhatsApp."
 >
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-center space-y-8">
     
@@ -23,25 +23,41 @@ import site from '../../data/site.json';
         Thank You! Your Order is Confirmed.
       </h1>
       <p class="text-base text-slate-600 max-w-lg mx-auto">
-        Your Razorpay payment transaction was successful. An official tax invoice and confirmation receipt have been dispatched to your email.
+        Your payment was processed securely. An engineer has been notified and will message you on WhatsApp shortly.
       </p>
     </div>
 
-    <!-- Next Steps Card -->
+    <!-- Booking Summary Card -->
     <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm text-left space-y-4">
-      <h3 class="text-base font-bold text-slate-900">What Happens Next?</h3>
+      <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+        <div>
+          <span class="text-xs text-slate-400 font-semibold uppercase">Booking Reference</span>
+          <div id="display-booking-id" class="text-lg font-black text-slate-900 mt-0.5">HLP-CONFIRMED</div>
+        </div>
+        <div class="text-right">
+          <span class="text-xs text-slate-400 font-semibold uppercase">Delivery Method</span>
+          <div id="display-delivery-mode" class="text-xs font-bold text-brand-600 mt-0.5">Remote Online</div>
+        </div>
+      </div>
+
+      <div class="py-1">
+        <span class="text-xs text-slate-400 font-semibold uppercase">Service Booked</span>
+        <div id="display-service-name" class="text-sm font-bold text-slate-800 mt-0.5">Custom Digital Service</div>
+      </div>
+
+      <h3 class="text-sm font-bold text-slate-900 pt-2 border-t border-slate-100">What Happens Next?</h3>
       <ol class="space-y-3 text-xs sm:text-sm text-slate-600">
         <li class="flex items-start gap-3">
           <span class="w-6 h-6 rounded-full bg-brand-100 text-brand-700 font-bold flex items-center justify-center shrink-0 text-xs">1</span>
-          <span>An assigned engineer is reviewing your booking details right now.</span>
+          <span>We verify your payment and order details on our server gateway.</span>
         </li>
         <li class="flex items-start gap-3">
           <span class="w-6 h-6 rounded-full bg-brand-100 text-brand-700 font-bold flex items-center justify-center shrink-0 text-xs">2</span>
-          <span>We will message you on WhatsApp within <strong class="text-slate-800">15–30 minutes</strong> to initiate your session or collect project assets.</span>
+          <span>Our engineer will ping your WhatsApp within <strong class="text-slate-800">15–30 minutes</strong> to schedule remote access or confirm home visit arrival time.</span>
         </li>
         <li class="flex items-start gap-3">
           <span class="w-6 h-6 rounded-full bg-brand-100 text-brand-700 font-bold flex items-center justify-center shrink-0 text-xs">3</span>
-          <span>Need immediate attention? Reach out directly via the button below.</span>
+          <span>Need immediate connection? Click the WhatsApp button below to chat with your engineer right away.</span>
         </li>
       </ol>
     </div>
@@ -49,7 +65,8 @@ import site from '../../data/site.json';
     <!-- Direct Connect CTA -->
     <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
       <a
-        href={`https://wa.me/${site.whatsapp.replace('+', '')}?text=${encodeURIComponent("Hello! I just completed my payment on the website and would like to start.")}`}
+        id="confirm-whatsapp-btn"
+        href={`https://wa.me/${site.whatsapp.replace('+', '')}?text=${encodeURIComponent("Hello HelpIt! I just completed my payment on the website and would like to start.")}`}
         target="_blank"
         rel="noopener noreferrer"
         class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md transition-all"
@@ -57,7 +74,7 @@ import site from '../../data/site.json';
         <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
           <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
         </svg>
-        <span>Connect on WhatsApp Now</span>
+        <span>Message Engineer on WhatsApp</span>
       </a>
 
       <a
@@ -70,3 +87,25 @@ import site from '../../data/site.json';
 
   </div>
 </Base>
+
+<script define:vars={{ whatsappNumber: site.whatsapp.replace('+', '') }}>
+  const params = new URLSearchParams(window.location.search);
+  const bookingId = params.get('booking_id') || params.get('razorpay_payment_link_id') || 'HLP-' + Math.floor(100000 + Math.random() * 900000);
+  const service = params.get('service') || 'Digital Service';
+  const delivery = params.get('delivery') === 'home-visit' ? 'Doorstep Home Visit (+₹1,000)' : 'Remote Online (India)';
+  const amount = params.get('amount') ? `₹${params.get('amount')}` : '';
+
+  const idEl = document.getElementById('display-booking-id');
+  const serviceEl = document.getElementById('display-service-name');
+  const modeEl = document.getElementById('display-delivery-mode');
+  const waBtn = document.getElementById('confirm-whatsapp-btn');
+
+  if (idEl) idEl.textContent = bookingId;
+  if (serviceEl) serviceEl.textContent = service + (amount ? ` (${amount})` : '');
+  if (modeEl) modeEl.textContent = delivery;
+
+  if (waBtn) {
+    const waText = `Hello HelpIt Team! I have completed payment for my booking.\n• Reference: ${bookingId}\n• Service: ${service}\n• Delivery: ${delivery}\nPlease advise on next steps.`;
+    waBtn.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(waText)}`;
+  }
+</script>

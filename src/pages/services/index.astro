@@ -1,98 +1,355 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import PayButton from '../../components/PayButton.astro';
+import QuoteButton from '../../components/QuoteButton.astro';
 import categories from '../../data/categories.json';
 import services from '../../data/services.json';
 import site from '../../data/site.json';
 
-const groups = ['Web', 'Apps and Extensions', 'Marketing', 'Design and Content', 'Tech Help'];
+// Only show primary 8 categories on the main directory
+const primaryCategories = categories.filter(c => !c.isLegacy);
+
+// Key 6 featured hero services
+const featuredServices = services.filter(s => 
+  s.id === 'reel-to-result-assistance' ||
+  s.id === 'help-me-meet-my-project-deadline' ||
+  s.id === 'slow-laptop-optimization' ||
+  s.id === 'pdf-word-conversion' ||
+  s.id === 'custom-business-consultation' ||
+  s.id === 'ai-tools-for-business'
+);
+
+const serviceListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "HelpIt Digital Solutions — Services Directory",
+  "description": "Comprehensive catalog of digital services, AI setup, document help, and Windows tech support across India from ₹500.",
+  "itemListElement": primaryCategories.map((c, idx) => ({
+    "@type": "ListItem",
+    "position": idx + 1,
+    "name": c.name,
+    "url": `${site.url}/services/${c.id}`
+  }))
+};
 ---
 
 <Base 
-  title={`All Services & Categories | ${site.brandName}`}
-  description="Explore 162+ transparent digital services across 17 categories. Websites, Google Maps, SEO, Android apps, and remote computer tech support from ₹500."
+  title={`Digital Services & Tech Support Directory (From ₹500) | ${site.brandName}`}
+  description="Explore 8 core digital & technical service categories. AI workflows, project deadline rescue, file format help, Windows & PC support, websites, and business setup. Remote across India or NCR home visit."
+  schema={serviceListSchema}
 >
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12">
     <Breadcrumbs items={[{ label: 'Services' }]} />
 
-    <div class="max-w-3xl mb-12">
-      <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Service Catalog</span>
-      <h1 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight mt-1">
-        162 Digital & Tech Services Across 17 Categories
+    <!-- Hero Header -->
+    <div class="max-w-4xl space-y-4">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 border border-brand-200 text-xs font-bold text-brand-700">
+        <span>Transparent Pricing</span>
+        <span>•</span>
+        <span>Starting at ₹500 Remote</span>
+        <span>•</span>
+        <span>+₹1,000 Doorstep NCR</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+        Digital Services & Tech Help Directory
       </h1>
-      <p class="text-base text-slate-600 mt-3 leading-relaxed">
-        Everything you need to launch, rank, optimize, and support your business online. Flat transparent pricing starting at ₹500 with zero surprise costs.
+      <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl">
+        Select from our 8 specialized service categories below, or search directly for the problem you are facing. Everything is delivered remotely across India or via verified doorstep visit in Delhi NCR.
       </p>
     </div>
 
-    <!-- Category Groups -->
-    <div class="space-y-16">
-      {groups.map((groupName) => {
-        const groupCategories = categories.filter(c => c.group === groupName);
-        if (groupCategories.length === 0) return null;
-
-        return (
-          <div class="space-y-6">
-            <div class="border-b border-slate-200 pb-3 flex items-baseline justify-between">
-              <h2 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">{groupName}</h2>
-              <span class="text-xs font-semibold text-slate-400">{groupCategories.length} Categories</span>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {groupCategories.map((cat) => {
-                const count = services.filter(s => s.category === cat.id).length;
-                return (
-                  <a
-                    href={`/services/${cat.id}`}
-                    class="group p-6 rounded-2xl bg-white border border-slate-200 hover:border-brand-500 hover:shadow-lg transition-all flex flex-col justify-between"
-                  >
-                    <div>
-                      <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-slate-100 text-slate-700">
-                          {count} Services
-                        </span>
-                        <span class="text-xs font-extrabold text-brand-600">
-                          From ₹{cat.startingPrice.toLocaleString('en-IN')}
-                        </span>
-                      </div>
-
-                      <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition-colors">
-                        {cat.name}
-                      </h3>
-
-                      <p class="text-xs text-slate-600 mt-2 line-clamp-3 leading-relaxed">
-                        {cat.shortIntro}
-                      </p>
-                    </div>
-
-                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-brand-600">
-                      <span>View Services & Rates</span>
-                      <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
-                    </div>
-                  </a>
-                );
-              })}
-            </div>
-          </div>
-        );
-      })}
+    <!-- Live Search by Problem Box -->
+    <div class="p-4 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+      <label for="problem-search-input" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">
+        Search by problem or technical task
+      </label>
+      <div class="relative">
+        <svg class="w-5 h-5 text-slate-400 absolute left-4 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+        <input 
+          type="text" 
+          id="problem-search-input" 
+          placeholder="e.g. slow laptop, windows update error, convert pdf, reel to result, project deadline..." 
+          class="w-full pl-11 pr-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all"
+        />
+      </div>
+      <div class="flex flex-wrap items-center gap-2 pt-1 text-xs text-slate-500">
+        <span class="font-bold text-slate-700">Quick Searches:</span>
+        <button type="button" class="quick-filter-btn px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium transition-colors" data-term="windows update">Windows Update</button>
+        <button type="button" class="quick-filter-btn px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium transition-colors" data-term="slow laptop">Slow Laptop</button>
+        <button type="button" class="quick-filter-btn px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium transition-colors" data-term="pdf word">PDF to Word</button>
+        <button type="button" class="quick-filter-btn px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium transition-colors" data-term="deadline">Project Deadline</button>
+        <button type="button" class="quick-filter-btn px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium transition-colors" data-term="reel">Reel-to-Result</button>
+        <button type="button" class="quick-filter-btn px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium transition-colors" data-term="google business">Google Business</button>
+      </div>
     </div>
 
-    <!-- Need Consultation CTA -->
-    <div class="mt-20 p-8 rounded-3xl bg-brand-50 border border-brand-200 flex flex-col sm:flex-row items-center justify-between gap-6">
-      <div>
-        <h3 class="text-xl font-bold text-brand-950">Not sure which service you need?</h3>
-        <p class="text-xs sm:text-sm text-brand-800 mt-1 max-w-xl">
-          Book a 60-minute 1-on-1 technical consultation video call. We evaluate your business, analyze your tech setup, and provide an actionable written roadmap.
-        </p>
+    <!-- Live Search Results Grid (Hidden by default, shown when user searches) -->
+    <div id="search-results-section" class="hidden space-y-4">
+      <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+        <h2 class="text-xl font-bold text-slate-900" id="search-results-title">Matching Services</h2>
+        <button type="button" id="clear-search-btn" class="text-xs font-bold text-brand-600 hover:underline">Clear Search</button>
       </div>
-      <a 
-        href="/services/technical-consultation"
-        class="shrink-0 px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs shadow-md transition-all"
-      >
-        Book Consultation (₹1,500)
-      </a>
+      <div id="search-cards-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+      <div id="no-search-results" class="hidden text-center py-12 p-6 rounded-2xl bg-slate-50 border border-slate-200">
+        <p class="text-sm font-bold text-slate-700">No specific listing matched your search.</p>
+        <p class="text-xs text-slate-500 mt-1">Don't worry! We handle custom technical tasks every day.</p>
+        <a href="/tell-us-what-youre-stuck-on" class="mt-4 inline-block px-5 py-2.5 rounded-xl bg-brand-600 text-white font-bold text-xs shadow-md">
+          Tell Us What You're Stuck On &rarr;
+        </a>
+      </div>
+    </div>
+
+    <!-- Prominently Featured Services Section -->
+    <div class="space-y-6" id="featured-services-section">
+      <div class="border-b border-slate-200 pb-3 flex items-baseline justify-between">
+        <div>
+          <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Top In-Demand</span>
+          <h2 class="text-2xl font-black text-slate-900 tracking-tight mt-0.5">Featured Assistance</h2>
+        </div>
+        <span class="text-xs text-slate-500">6 High Priority Services</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {featuredServices.map((item) => (
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-brand-300 transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase bg-brand-50 text-brand-700 border border-brand-200">
+                  {item.deliveryType || 'Remote'}
+                </span>
+                <span class="text-xs font-black text-slate-900">
+                  {item.priceDisplay}
+                </span>
+              </div>
+
+              <h3 class="text-base font-bold text-slate-900 hover:text-brand-600 transition-colors">
+                {item.name}
+              </h3>
+
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                {item.shortDesc}
+              </p>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <a 
+                href={`/services/${item.category}`} 
+                class="text-xs font-bold text-slate-500 hover:text-slate-900"
+              >
+                Category Info &rarr;
+              </a>
+              {item.pay === 'link' ? (
+                <PayButton 
+                  serviceId={item.id} 
+                  serviceName={item.name} 
+                  priceDisplay={item.priceDisplay}
+                  size="sm"
+                />
+              ) : (
+                <QuoteButton 
+                  serviceName={item.name} 
+                  priceDisplay={item.priceDisplay} 
+                  text="Get Quote"
+                  size="sm"
+                />
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- The 8 Core Categories Cards -->
+    <div class="space-y-6" id="categories-grid-section">
+      <div class="border-b border-slate-200 pb-3 flex items-baseline justify-between">
+        <div>
+          <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Browse by Domain</span>
+          <h2 class="text-2xl font-black text-slate-900 tracking-tight mt-0.5">8 Main Service Categories</h2>
+        </div>
+        <span class="text-xs text-slate-500">All India Remote & NCR Doorstep</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {primaryCategories.map((cat, idx) => {
+          const count = services.filter(s => s.category === cat.id).length;
+          return (
+            <a
+              href={`/services/${cat.id}`}
+              class="group p-6 rounded-2xl bg-white border border-slate-200 hover:border-brand-500 hover:shadow-xl transition-all flex flex-col justify-between"
+            >
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="w-8 h-8 rounded-xl bg-brand-50 text-brand-700 font-bold text-xs flex items-center justify-center border border-brand-100">
+                    0{idx + 1}
+                  </span>
+                  <span class="text-xs font-black text-brand-600">
+                    From ₹{cat.startingPrice.toLocaleString('en-IN')}
+                  </span>
+                </div>
+
+                <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition-colors">
+                  {cat.name}
+                </h3>
+
+                <p class="text-xs text-slate-600 mt-2 line-clamp-3 leading-relaxed">
+                  {cat.shortIntro}
+                </p>
+
+                <div class="mt-4 pt-3 border-t border-slate-100">
+                  <span class="text-[11px] font-semibold text-slate-400 block">
+                    {count} Available Services
+                  </span>
+                  {cat.homeVisitAvailable && (
+                    <span class="inline-block mt-1 text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
+                      Doorstep Visit Available
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              <div class="mt-6 flex items-center justify-between text-xs font-bold text-brand-600 group-hover:translate-x-0.5 transition-transform">
+                <span>View Details & Pricing</span>
+                <span>&rarr;</span>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+
+    <!-- Prominent "Tell Us What You're Stuck On" Section -->
+    <div class="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-brand-900 via-indigo-950 to-slate-900 text-white shadow-xl relative overflow-hidden">
+      <div class="relative z-10 max-w-2xl space-y-4">
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-brand-500/20 text-brand-200 border border-brand-400/30">
+          Unlisted or Custom Requirements
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-black tracking-tight leading-tight">
+          Tell Us What You're Stuck On
+        </h2>
+        <p class="text-sm text-slate-300 leading-relaxed">
+          Don't know the technical term for your computer issue or digital task? Simply describe the problem in plain words. We assess feasibility, provide an honest quote of at least ₹500, and confirm everything before you pay.
+        </p>
+        <div class="pt-2 flex flex-wrap items-center gap-4">
+          <a 
+            href="/tell-us-what-youre-stuck-on" 
+            class="px-6 py-3.5 rounded-xl bg-brand-500 hover:bg-brand-400 text-white font-black text-xs sm:text-sm shadow-lg hover:shadow-brand-500/30 transition-all active:scale-95"
+          >
+            Submit Custom Digital Request &rarr;
+          </a>
+          <a 
+            href={`https://wa.me/${site.whatsapp.replace('+', '')}?text=${encodeURIComponent("Hello HelpIt! I have an unlisted task I need assistance with.")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-5 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs sm:text-sm border border-white/20 transition-all"
+          >
+            WhatsApp Directly
+          </a>
+        </div>
+      </div>
     </div>
 
   </div>
 </Base>
+
+<script define:vars={{ allServicesData: services }}>
+  const searchInput = document.getElementById('problem-search-input');
+  const resultsSection = document.getElementById('search-results-section');
+  const resultsGrid = document.getElementById('search-cards-grid');
+  const noResults = document.getElementById('no-search-results');
+  const clearBtn = document.getElementById('clear-search-btn');
+  const featuredSection = document.getElementById('featured-services-section');
+  const categoriesSection = document.getElementById('categories-grid-section');
+  const quickBtns = document.querySelectorAll('.quick-filter-btn');
+
+  function performSearch(query) {
+    const q = query.trim().toLowerCase();
+    if (!q) {
+      resultsSection?.classList.add('hidden');
+      featuredSection?.classList.remove('hidden');
+      categoriesSection?.classList.remove('hidden');
+      return;
+    }
+
+    featuredSection?.classList.add('hidden');
+    categoriesSection?.classList.add('hidden');
+    resultsSection?.classList.remove('hidden');
+
+    const matches = allServicesData.filter(s => {
+      const nameMatch = s.name.toLowerCase().includes(q);
+      const descMatch = s.shortDesc && s.shortDesc.toLowerCase().includes(q);
+      const termsMatch = s.searchTerms && s.searchTerms.toLowerCase().includes(q);
+      const catMatch = s.category.toLowerCase().includes(q);
+      return nameMatch || descMatch || termsMatch || catMatch;
+    });
+
+    if (resultsGrid) resultsGrid.innerHTML = '';
+
+    if (matches.length === 0) {
+      noResults?.classList.remove('hidden');
+    } else {
+      noResults?.classList.add('hidden');
+      matches.slice(0, 18).forEach(item => {
+        const card = document.createElement('div');
+        card.className = "p-5 rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-brand-400 transition-all flex flex-col justify-between";
+        card.innerHTML = `
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-slate-100 text-slate-700">${item.deliveryType || 'Remote'}</span>
+              <span class="text-xs font-black text-brand-600">${item.priceDisplay}</span>
+            </div>
+            <h4 class="text-sm font-bold text-slate-900">${item.name}</h4>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2">${item.shortDesc || ''}</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+            <a href="/services/${item.category}" class="text-xs font-semibold text-slate-500 hover:text-slate-900">View Category</a>
+            <button 
+              type="button" 
+              class="book-service-instant-btn px-3 py-1.5 rounded-lg bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs"
+              data-id="${item.id}"
+              data-name="${item.name}"
+              data-price="${item.priceDisplay}"
+            >
+              Book Now
+            </button>
+          </div>
+        `;
+        resultsGrid?.appendChild(card);
+      });
+
+      // Bind instant book triggers
+      document.querySelectorAll('.book-service-instant-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const t = e.currentTarget;
+          window.dispatchEvent(new CustomEvent('open-payment-modal', {
+            detail: {
+              serviceId: t.dataset.id,
+              name: t.dataset.name,
+              priceDisplay: t.dataset.price
+            }
+          }));
+        });
+      });
+    }
+  }
+
+  searchInput?.addEventListener('input', (e) => {
+    performSearch(e.target.value);
+  });
+
+  quickBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const term = e.currentTarget.dataset.term;
+      if (searchInput) searchInput.value = term;
+      performSearch(term);
+    });
+  });
+
+  clearBtn?.addEventListener('click', () => {
+    if (searchInput) searchInput.value = '';
+    performSearch('');
+  });
+</script>

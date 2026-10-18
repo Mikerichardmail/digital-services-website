@@ -1,9 +1,19 @@
 import services from '../../src/data/services.json';
+import site from '../../src/data/site.json';
 
 export async function onRequestPost({ request, env }) {
   try {
     const body = await request.json();
-    const { serviceId, name, email, phone, note } = body;
+    const { 
+      serviceId, 
+      name, 
+      email, 
+      phone, 
+      note, 
+      deliveryMethod = 'remote', 
+      pincode = '', 
+      area = '' 
+    } = body;
 
     if (!serviceId) {
       return new Response(JSON.stringify({ error: 'Service ID is required' }), {
@@ -21,24 +31,44 @@ export async function onRequestPost({ request, env }) {
       });
     }
 
-    const price = service.priceFrom;
-    if (!price || price < 500) {
-      return new Response(JSON.stringify({ error: 'Invalid service amount for online checkout' }), {
+    // Minimum base service price is ₹500
+    let basePrice = Math.max(service.priceFrom || 500, 500);
+
+    // Home visit surcharge logic: +₹1,000
+    const isHomeVisit = deliveryMethod === 'home-visit';
+    const homeVisitSurcharge = isHomeVisit ? (site.homeVisitSurcharge || 1000) : 0;
+    const finalPrice = basePrice + homeVisitSurcharge;
+
+    if (finalPrice < 500) {
+      return new Response(JSON.stringify({ error: 'Minimum service charge is ₹500' }), {
         status: 400,
         headers: { 'Content-Type': 'application/json' },
       });
     }
 
-    const amountInPaise = price * 100;
+    // Validation for home visit pincode
+    if (isHomeVisit && (!pincode || pincode.trim().length < 6)) {
+      return new Response(JSON.stringify({ error: 'Valid 6-digit area pincode is required for home visit' }), {
+        status: 400,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
+
+    const amountInPaise = finalPrice * 100;
     const keyId = env?.RAZORPAY_KEY_ID;
     const keySecret = env?.RAZORPAY_KEY_SECRET;
 
-    // Local dev / test fallback if keys are not yet configured
+    const formattedPhone = phone?.startsWith('+91') ? phone : `+91${phone?.replace(/^0+/, '')}`;
+
+    // Local dev / test fallback if keys are not yet configured in Cloudflare environment
     if (!keyId || !keySecret) {
       console.warn('Razorpay keys not configured in environment. Returning test redirect.');
+      const testRef = 'HLP-' + Math.floor(100000 + Math.random() * 900000);
+      const testUrl = `/thank-you?booking_id=${testRef}&service=${encodeURIComponent(service.name)}&amount=${finalPrice}&delivery=${deliveryMethod}&test_mode=1`;
       return new Response(JSON.stringify({
-        short_url: '/thank-you?test_mode=1',
-        notice: 'Test mode active (Razorpay keys not set in environment)'
+        short_url: testUrl,
+        bookingId: testRef,
+        notice: 'Test mode active (Razorpay keys pending in Cloudflare dashboard)'
       }), {
         status: 200,
         headers: { 'Content-Type': 'application/json' },
@@ -46,8 +76,7 @@ export async function onRequestPost({ request, env }) {
     }
 
     const url = new URL(request.url);
-    const callbackUrl = `${url.origin}/thank-you`;
-    const formattedPhone = phone?.startsWith('+91') ? phone : `+91${phone?.replace(/^0+/, '')}`;
+    const callbackUrl = `${url.origin}/thank-you?service=${encodeURIComponent(service.name)}&amount=${finalPrice}&delivery=${deliveryMethod}`;
 
     const authHeader = 'Basic ' + btoa(`${keyId}:${keySecret}`);
 
@@ -55,7 +84,7 @@ export async function onRequestPost({ request, env }) {
       amount: amountInPaise,
       currency: 'INR',
       accept_partial: false,
-      description: service.name,
+      description: `${service.name} (${isHomeVisit ? 'Home Visit' : 'Remote'})`,
       customer: {
         name: name || 'Valued Customer',
         email: email || '',
@@ -69,6 +98,12 @@ export async function onRequestPost({ request, env }) {
       notes: {
         serviceId: service.id,
         serviceName: service.name,
+        deliveryMethod: isHomeVisit ? 'Home Visit (+₹1,000)' : 'Remote Pan-India',
+        basePrice: `₹${basePrice}`,
+        homeVisitFee: `₹${homeVisitSurcharge}`,
+        totalAmount: `₹${finalPrice}`,
+        areaPincode: pincode || 'N/A',
+        areaLocation: area || 'N/A',
         customerNote: note || ''
       },
       callback_url: callbackUrl,
@@ -94,7 +129,7 @@ export async function onRequestPost({ request, env }) {
       });
     }
 
-    return new Response(JSON.stringify({ short_url: data.short_url }), {
+    return new Response(JSON.stringify({ short_url: data.short_url, paymentLinkId: data.id }), {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
     });

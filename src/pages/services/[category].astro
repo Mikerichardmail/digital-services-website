@@ -21,7 +21,7 @@ const { category, categoryServices } = Astro.props;
 
 // Related categories
 const relatedCategories = categories
-  .filter((c) => c.id !== category.id && (c.group === category.group || Math.random() > 0.5))
+  .filter((c) => !c.isLegacy && c.id !== category.id)
   .slice(0, 3);
 
 // Structured Data for Google Rich Snippets
@@ -29,12 +29,13 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   "name": `${category.name} Services`,
-  "description": category.shortIntro,
+  "description": category.seoDescription || category.shortIntro,
   "provider": {
     "@type": "ProfessionalService",
     "name": site.brandName,
     "url": site.url,
-    "telephone": site.whatsapp
+    "telephone": site.whatsapp,
+    "priceRange": `₹${category.startingPrice} - ₹50,000`
   },
   "areaServed": ["Noida", "Gurgaon", "Delhi", "Ghaziabad", "Faridabad", "India"],
   "offers": {
@@ -72,8 +73,8 @@ const pageSchemas = [serviceSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema
 ---
 
 <Base
-  title={`${category.name} in Delhi NCR & India (From ₹${category.startingPrice.toLocaleString('en-IN')}) | ${site.brandName}`}
-  description={`${category.shortIntro} 100% transparent rates starting from ₹${category.startingPrice.toLocaleString('en-IN')}. Fast remote delivery across NCR & India.`}
+  title={category.seoTitle || `${category.name} in Delhi NCR & India (From ₹${category.startingPrice.toLocaleString('en-IN')}) | ${site.brandName}`}
+  description={category.seoDescription || `${category.shortIntro} 100% transparent rates starting from ₹${category.startingPrice.toLocaleString('en-IN')}. Fast remote delivery across India, doorstep visits in NCR.`}
   schema={pageSchemas}
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12">
@@ -87,30 +88,92 @@ const pageSchemas = [serviceSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema
     />
 
     <!-- Header Section -->
-    <div class="max-w-3xl space-y-4">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 border border-brand-100 text-xs font-bold text-brand-700">
-        <span>{category.group} Category</span>
+    <div class="max-w-4xl space-y-4">
+      <div class="inline-flex flex-wrap items-center gap-2 px-3 py-1 rounded-full bg-brand-50 border border-brand-200 text-xs font-bold text-brand-700">
+        <span>{category.group}</span>
         <span>•</span>
-        <span>Starting from ₹{category.startingPrice.toLocaleString('en-IN')}</span>
+        <span>Remote from ₹{category.startingPrice.toLocaleString('en-IN')}</span>
+        {category.homeVisitAvailable && (
+          <>
+            <span>•</span>
+            <span class="text-emerald-700">Doorstep Visit Available (+₹1,000 in NCR)</span>
+          </>
+        )}
       </div>
 
       <h1 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
         {category.name}
       </h1>
 
-      <p class="text-base text-slate-600 leading-relaxed">
+      <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl">
         {category.shortIntro}
       </p>
     </div>
 
+    <!-- Problems We Solve (Plain language for non-technical clients) -->
+    {category.problemsSolved && category.problemsSolved.length > 0 && (
+      <div class="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-slate-50 to-brand-50/30 border border-slate-200 space-y-4">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-brand-600"></span>
+          <h2 class="text-lg font-black text-slate-900 tracking-tight">Are You Facing Any of These Issues?</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs sm:text-sm text-slate-700">
+          {category.problemsSolved.map(prob => (
+            <div class="flex items-start gap-2.5 p-3 rounded-xl bg-white border border-slate-200 shadow-xs">
+              <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>{prob}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+
     <!-- Services Table Section -->
     <div class="space-y-4">
-      <div class="flex items-center justify-between">
-        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">Available Services & Rates</h2>
-        <span class="text-xs font-medium text-slate-500">{categoryServices.length} Total Services</span>
+      <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+        <div>
+          <h2 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">Available Services & Transparent Rates</h2>
+          <p class="text-xs text-slate-500 mt-0.5">Enforcing strict ₹500 minimum service fee across India</p>
+        </div>
+        <span class="text-xs font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-full">{categoryServices.length} Services</span>
       </div>
 
       <ServiceTable services={categoryServices} />
+    </div>
+
+    <!-- Delivery & Pricing Rules Card -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+        <div class="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-sm">
+          1
+        </div>
+        <h3 class="text-sm font-bold text-slate-900">Remote Pan-India (From ₹500)</h3>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          Instant connection via Google Meet or AnyDesk screen share. You supervise the engineer live. Zero passwords or OTPs asked.
+        </p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+        <div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-sm">
+          2
+        </div>
+        <h3 class="text-sm font-bold text-slate-900">Doorstep Home Visit (+₹1,000)</h3>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          Available in Delhi NCR (Noida, Delhi, Gurgaon, Ghaziabad, Faridabad). Service Charge + ₹1,000 travel fee confirmed upfront before booking.
+        </p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+        <div class="w-8 h-8 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center font-bold text-sm">
+          3
+        </div>
+        <h3 class="text-sm font-bold text-slate-900">WhatsApp Confirmation</h3>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          After verified payment, you receive immediate booking details, engineer direct contact, and receipt on WhatsApp.
+        </p>
+      </div>
     </div>
 
     <!-- What You Get & Delivery Timeline -->
@@ -120,7 +183,7 @@ const pageSchemas = [serviceSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
           </svg>
-          <span class="text-slate-900 font-extrabold text-base">What You Always Get</span>
+          <span class="text-slate-900 font-extrabold text-base">Inclusions & Guarantee</span>
         </div>
         <ul class="space-y-2 text-xs sm:text-sm text-slate-600">
           <li class="flex items-center gap-2">
@@ -130,10 +193,10 @@ const pageSchemas = [serviceSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema
             <span class="text-emerald-500 font-bold">✓</span> 100% transparent pricing with zero surprise charges
           </li>
           <li class="flex items-center gap-2">
-            <span class="text-emerald-500 font-bold">✓</span> Strict zero-password handling security guarantee
+            <span class="text-emerald-500 font-bold">✓</span> Strict privacy protection & zero-password policy
           </li>
           <li class="flex items-center gap-2">
-            <span class="text-emerald-500 font-bold">✓</span> Post-delivery check & complete handover documentation
+            <span class="text-emerald-500 font-bold">✓</span> Verified invoice & WhatsApp confirmation
           </li>
         </ul>
       </div>
@@ -143,20 +206,20 @@ const pageSchemas = [serviceSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
-          <span class="text-slate-900 font-extrabold text-base">Fast Turnaround Time</span>
+          <span class="text-slate-900 font-extrabold text-base">Estimated Delivery Times</span>
         </div>
         <ul class="space-y-2 text-xs sm:text-sm text-slate-600">
           <li class="flex items-center gap-2">
-            <span class="text-brand-500 font-bold">•</span> Tech fixes & diagnostics: <strong class="text-slate-800">Same-day (1–4 hours)</strong>
+            <span class="text-brand-500 font-bold">•</span> Quick Tech Fixes & Conversions: <strong class="text-slate-800">Same-day (1–4 hours)</strong>
           </li>
           <li class="flex items-center gap-2">
-            <span class="text-brand-500 font-bold">•</span> Designs & PDF tasks: <strong class="text-slate-800">24 to 48 hours</strong>
+            <span class="text-brand-500 font-bold">•</span> AI Setups & Workflows: <strong class="text-slate-800">24 to 48 hours</strong>
           </li>
           <li class="flex items-center gap-2">
-            <span class="text-brand-500 font-bold">•</span> Websites & Local Packages: <strong class="text-slate-800">3 to 7 working days</strong>
+            <span class="text-brand-500 font-bold">•</span> Websites & Business Profiles: <strong class="text-slate-800">3 to 7 working days</strong>
           </li>
           <li class="flex items-center gap-2">
-            <span class="text-brand-500 font-bold">•</span> Custom Apps & Extensions: <strong class="text-slate-800">Milestone-based delivery</strong>
+            <span class="text-brand-500 font-bold">•</span> Urgent Project Deadlines: <strong class="text-slate-800">Priority expedited queue</strong>
           </li>
         </ul>
       </div>
@@ -169,10 +232,26 @@ const pageSchemas = [serviceSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema
       </div>
     )}
 
+    <!-- Custom Request CTA -->
+    <div class="p-8 rounded-3xl bg-brand-50 border border-brand-200 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div>
+        <h3 class="text-xl font-bold text-brand-950">Have a unique or unlisted requirement?</h3>
+        <p class="text-xs sm:text-sm text-brand-800 mt-1 max-w-xl">
+          Describe what you're stuck on. We review feasibility, provide an honest quote of at least ₹500, and confirm scope before you pay.
+        </p>
+      </div>
+      <a 
+        href="/tell-us-what-youre-stuck-on"
+        class="shrink-0 px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs shadow-md transition-all"
+      >
+        Tell Us What You're Stuck On &rarr;
+      </a>
+    </div>
+
     <!-- Related Categories -->
     {relatedCategories.length > 0 && (
       <div class="space-y-6 pt-6 border-t border-slate-200">
-        <h3 class="text-lg font-bold text-slate-900">Explore Related Categories</h3>
+        <h3 class="text-lg font-bold text-slate-900">Explore Other Categories</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           {relatedCategories.map((rel) => (
             <a

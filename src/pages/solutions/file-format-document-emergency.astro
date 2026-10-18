@@ -1,0 +1,119 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import PayButton from '../../components/PayButton.astro';
+import QuoteButton from '../../components/QuoteButton.astro';
+import site from '../../data/site.json';
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "PDF & Document Conversion Emergency Assistance",
+  "description": "Fast scanned PDF to Word OCR extraction, large PDF compression for government portals, corrupted Excel CSV formatting, and batch conversion from ₹500.",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": site.brandName,
+    "telephone": site.whatsapp,
+    "priceRange": "₹500 - ₹999"
+  },
+  "areaServed": "India"
+};
+---
+
+<Base
+  title={`PDF & Document Conversion Emergency — OCR, Compression & Word Formatting (From ₹500) | ${site.brandName}`}
+  description="Need a scanned PDF converted to editable Word? PDF rejected due to file size limits? Corrupted Excel sheet? Get instant 1-hour document help from ₹500."
+  schema={pageSchema}
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12">
+    <Breadcrumbs items={[{ label: 'Services', href: '/services' }, { label: 'File Format & Document Help' }]} />
+
+    <!-- Hero Header -->
+    <div class="max-w-3xl space-y-4">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 border border-emerald-200 text-xs font-bold text-emerald-900">
+        <span>100% Confidential & Secure</span>
+        <span>•</span>
+        <span>From ₹500</span>
+        <span>•</span>
+        <span>Turnaround Within 1–2 Hours</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+        File Format & Document Emergency Help
+      </h1>
+
+      <p class="text-base sm:text-xl text-slate-600 leading-relaxed font-medium">
+        Cannot edit a scanned PDF? Government or university portal rejecting your file because it exceeds 2MB? Excel formulas returning #VALUE errors? We fix it in minutes.
+      </p>
+    </div>
+
+    <!-- Problems We Solve -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+        <span class="text-2xl">📄</span>
+        <h3 class="font-bold text-slate-900 text-base">Scanned PDF to Word OCR</h3>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          Extract text from Hindi, English, and tabular scanned pages into clean, editable Microsoft Word (.docx) files with identical fonts and margins.
+        </p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+        <span class="text-2xl">📉</span>
+        <h3 class="font-bold text-slate-900 text-base">Lossless Compression</h3>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          Reduce 50MB PDFs or scanned docs down to 500KB or 2MB portal upload limits while keeping text, seals, and signatures razor sharp.
+        </p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+        <span class="text-2xl">📊</span>
+        <h3 class="font-bold text-slate-900 text-base">Excel & CSV Formatting</h3>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          Repair corrupted spreadsheets, fix broken date formats, split merged names/addresses into separate columns, and clean up messy customer databases.
+        </p>
+      </div>
+    </div>
+
+    <!-- Strict Confidentiality Notice -->
+    <div class="p-4 rounded-xl bg-slate-100 border border-slate-200 text-xs text-slate-600 flex items-center gap-3">
+      <svg class="w-5 h-5 text-emerald-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+      </svg>
+      <span>
+        <strong>Guaranteed Document Privacy:</strong> Your uploaded documents are handled strictly by an NDA-bound engineer and deleted permanently from our drives within 24 hours of completion.
+      </span>
+    </div>
+
+    <!-- Pricing Card -->
+    <div class="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-md flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="space-y-1">
+        <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">Featured Offer</span>
+        <h3 class="text-2xl font-black text-slate-900 mt-1">PDF Toolkit 5-in-1 Bundle</h3>
+        <p class="text-xs sm:text-sm text-slate-500 max-w-lg">
+          Covers up to 5 document tasks: conversions, OCR text extraction, compression, merge/split & formatting at one flat discounted price.
+        </p>
+      </div>
+      <div class="flex flex-col sm:items-end gap-3 shrink-0">
+        <div class="text-left sm:text-right">
+          <span class="text-3xl font-black text-slate-900">₹999</span>
+          <span class="text-xs text-slate-500 block">Flat for 5 tasks</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <PayButton 
+            serviceId="pdf-toolkit-bundle" 
+            serviceName="PDF Toolkit 5-in-1 Bundle" 
+            priceDisplay="₹999"
+            size="lg"
+          />
+          <QuoteButton 
+            serviceName="PDF & Document Help" 
+            priceDisplay="From ₹500" 
+            text="Send on WhatsApp"
+            size="lg"
+          />
+        </div>
+      </div>
+    </div>
+
+  </div>
+</Base>

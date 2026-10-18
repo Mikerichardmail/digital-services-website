@@ -1,0 +1,288 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import site from '../../data/site.json';
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Custom Digital Help Request — Tell Us What You're Stuck On",
+  "description": "Describe your computer, software, or digital problem in plain language. We review feasibility and provide a transparent quote of at least ₹500 before taking payment.",
+  "url": `${site.url}/tell-us-what-youre-stuck-on`,
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": site.brandName,
+    "telephone": site.whatsapp,
+    "email": site.email
+  }
+};
+---
+
+<Base
+  title={`Tell Us What You're Stuck On — Custom Digital Help Request | ${site.brandName}`}
+  description="Stuck on a computer problem or digital task? Describe your issue in plain words. We assess feasibility, provide an honest quote from ₹500, and confirm scope before payment."
+  schema={pageSchema}
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-10">
+    <Breadcrumbs items={[{ label: 'Services', href: '/services' }, { label: "Tell Us What You're Stuck On" }]} />
+
+    <!-- Hero Header -->
+    <div class="space-y-4">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-xs font-bold text-amber-800">
+        <span>Custom Digital Help Request</span>
+        <span>•</span>
+        <span>Honest Feasibility Check</span>
+        <span>•</span>
+        <span>Min Quote ₹500</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+        Tell Us What You're Stuck On
+      </h1>
+
+      <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+        You don't need to know the technical jargon. Just describe what's happening or what you want to achieve. An experienced engineer will review feasibility, quote a transparent price (minimum ₹500), and guide you step-by-step.
+      </p>
+    </div>
+
+    <!-- Guarantees & Safeguards -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+      <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+        <strong class="text-slate-900 block font-bold mb-1">1. Transparent Quote First</strong>
+        <span class="text-slate-600">We inspect feasibility and agree on deliverables and a minimum ₹500 quote before you pay a single rupee.</span>
+      </div>
+      <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+        <strong class="text-slate-900 block font-bold mb-1">2. Zero Passwords Or OTPs</strong>
+        <span class="text-slate-600">We never ask for passwords or private codes. You supervise remote screen share live or in-person.</span>
+      </div>
+      <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+        <strong class="text-slate-900 block font-bold mb-1">3. Flexible Delivery</strong>
+        <span class="text-slate-600">Available 100% remotely across all India, or via verified doorstep visit in Delhi NCR (+₹1,000).</span>
+      </div>
+    </div>
+
+    <!-- Interactive Request Form -->
+    <div class="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-xl space-y-6">
+      <form id="stuck-request-form" class="space-y-6">
+        
+        <!-- Category Selector -->
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+            What area does your problem belong to? *
+          </label>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+            <label class="p-3 border rounded-xl cursor-pointer hover:border-brand-500 transition-all flex flex-col items-center text-center gap-1.5 border-brand-500 bg-brand-50/50">
+              <input type="radio" name="problemCategory" value="Windows & Laptop Issue" checked class="text-brand-600 focus:ring-brand-500" />
+              <span class="font-bold text-slate-900">Windows / PC</span>
+            </label>
+            <label class="p-3 border rounded-xl cursor-pointer hover:border-brand-500 transition-all flex flex-col items-center text-center gap-1.5 border-slate-200 bg-white">
+              <input type="radio" name="problemCategory" value="AI & Automation Workflow" class="text-brand-600 focus:ring-brand-500" />
+              <span class="font-bold text-slate-900">AI & Reels</span>
+            </label>
+            <label class="p-3 border rounded-xl cursor-pointer hover:border-brand-500 transition-all flex flex-col items-center text-center gap-1.5 border-slate-200 bg-white">
+              <input type="radio" name="problemCategory" value="Project Deadline Rescue" class="text-brand-600 focus:ring-brand-500" />
+              <span class="font-bold text-slate-900">Deadline Help</span>
+            </label>
+            <label class="p-3 border rounded-xl cursor-pointer hover:border-brand-500 transition-all flex flex-col items-center text-center gap-1.5 border-slate-200 bg-white">
+              <input type="radio" name="problemCategory" value="PDF & Document Emergency" class="text-brand-600 focus:ring-brand-500" />
+              <span class="font-bold text-slate-900">PDF / Files</span>
+            </label>
+            <label class="p-3 border rounded-xl cursor-pointer hover:border-brand-500 transition-all flex flex-col items-center text-center gap-1.5 border-slate-200 bg-white">
+              <input type="radio" name="problemCategory" value="Website or Domain Issue" class="text-brand-600 focus:ring-brand-500" />
+              <span class="font-bold text-slate-900">Website / Domain</span>
+            </label>
+            <label class="p-3 border rounded-xl cursor-pointer hover:border-brand-500 transition-all flex flex-col items-center text-center gap-1.5 border-slate-200 bg-white">
+              <input type="radio" name="problemCategory" value="Google Maps & Local Setup" class="text-brand-600 focus:ring-brand-500" />
+              <span class="font-bold text-slate-900">Google Maps</span>
+            </label>
+            <label class="p-3 border rounded-xl cursor-pointer hover:border-brand-500 transition-all flex flex-col items-center text-center gap-1.5 border-slate-200 bg-white">
+              <input type="radio" name="problemCategory" value="Design & Social Media" class="text-brand-600 focus:ring-brand-500" />
+              <span class="font-bold text-slate-900">Design / Video</span>
+            </label>
+            <label class="p-3 border rounded-xl cursor-pointer hover:border-brand-500 transition-all flex flex-col items-center text-center gap-1.5 border-slate-200 bg-white">
+              <input type="radio" name="problemCategory" value="Other Unlisted Task" class="text-brand-600 focus:ring-brand-500" />
+              <span class="font-bold text-slate-900">Other / Unlisted</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Problem Description -->
+        <div>
+          <label for="stuck-problem-desc" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
+            Describe what you're stuck on or the desired result *
+          </label>
+          <textarea 
+            id="stuck-problem-desc" 
+            name="problemDescription" 
+            required 
+            rows="4"
+            placeholder="Explain in plain words: what device are you using? What error message or behavior appears? What do you need completed?"
+            class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all"
+          ></textarea>
+        </div>
+
+        <!-- Reference Link -->
+        <div>
+          <label for="stuck-reference-link" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
+            Relevant reference link or sample (Optional)
+          </label>
+          <input 
+            type="url" 
+            id="stuck-reference-link" 
+            name="referenceLink" 
+            placeholder="https://drive.google.com/... or https://instagram.com/reel/..."
+            class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all"
+          />
+        </div>
+
+        <!-- Preferred Delivery Mode -->
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+            Preferred Assistance Mode *
+          </label>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <label class="p-3.5 border rounded-xl cursor-pointer hover:border-brand-500 transition-all border-brand-500 bg-brand-50/50" id="stuck-remote-label">
+              <div class="flex items-center gap-2">
+                <input type="radio" name="deliveryPreference" value="Remote Online" checked class="text-brand-600 focus:ring-brand-500" id="stuck-radio-remote" />
+                <span class="text-xs font-bold text-slate-900">Remote Screen Share (India & Global)</span>
+              </div>
+              <span class="text-[11px] text-slate-500 block pl-5 mt-1">Starting from ₹500 base quote</span>
+            </label>
+
+            <label class="p-3.5 border rounded-xl cursor-pointer hover:border-brand-500 transition-all border-slate-200 bg-white" id="stuck-home-label">
+              <div class="flex items-center gap-2">
+                <input type="radio" name="deliveryPreference" value="Home Visit (NCR)" class="text-brand-600 focus:ring-brand-500" id="stuck-radio-home" />
+                <span class="text-xs font-bold text-slate-900">Doorstep Home Visit (Delhi NCR Only)</span>
+              </div>
+              <span class="text-[11px] text-brand-600 font-bold block pl-5 mt-1">+₹1,000 Travel Fee confirmed upfront</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Home visit area / pincode -->
+        <div id="stuck-pincode-wrap" class="hidden p-4 rounded-xl bg-amber-50 border border-amber-200 space-y-2">
+          <label for="stuck-pincode" class="block text-xs font-bold text-amber-950 uppercase">
+            Your Locality & 6-Digit Pincode *
+          </label>
+          <input 
+            type="text" 
+            id="stuck-pincode" 
+            name="pincodeArea" 
+            placeholder="e.g. Sector 62, Noida - 201301" 
+            class="w-full px-3.5 py-2 rounded-lg border border-amber-300 text-xs sm:text-sm bg-white"
+          />
+        </div>
+
+        <!-- Customer Contact Details -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="stuck-name" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Your Full Name *</label>
+            <input 
+              type="text" 
+              id="stuck-name" 
+              name="clientName" 
+              required 
+              placeholder="e.g. Priya Verma"
+              class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all"
+            />
+          </div>
+
+          <div>
+            <label for="stuck-phone" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">WhatsApp Number *</label>
+            <div class="relative">
+              <span class="absolute left-3.5 top-2.5 text-slate-400 text-sm font-semibold">+91</span>
+              <input 
+                type="tel" 
+                id="stuck-phone" 
+                name="clientPhone" 
+                required 
+                pattern="[0-9]{10}"
+                placeholder="9876543210"
+                class="w-full pl-12 pr-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <label for="stuck-urgency" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Urgency / Preferred Timing</label>
+          <select 
+            id="stuck-urgency" 
+            name="urgency" 
+            class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all bg-white"
+          >
+            <option value="Emergency (Within 2-4 Hours)">Urgent Emergency (Within 2–4 Hours)</option>
+            <option value="Same Day (Within 12 Hours)" selected>Same Day (Within 12 Hours)</option>
+            <option value="Next 24-48 Hours">Next 24 to 48 Hours</option>
+            <option value="Flexible / Planning">Flexible / Exploring options</option>
+          </select>
+        </div>
+
+        <button 
+          type="submit" 
+          id="stuck-submit-btn" 
+          class="w-full py-4 px-6 rounded-2xl bg-brand-600 hover:bg-brand-700 text-white font-black text-sm sm:text-base shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 active:scale-95"
+        >
+          <span>Send Request to Engineer on WhatsApp &rarr;</span>
+        </button>
+      </form>
+    </div>
+
+  </div>
+</Base>
+
+<script define:vars={{ whatsappNumber: site.whatsapp.replace('+', '') }}>
+  const radioRemote = document.getElementById('stuck-radio-remote');
+  const radioHome = document.getElementById('stuck-radio-home');
+  const labelRemote = document.getElementById('stuck-remote-label');
+  const labelHome = document.getElementById('stuck-home-label');
+  const pincodeWrap = document.getElementById('stuck-pincode-wrap');
+  const form = document.getElementById('stuck-request-form');
+
+  function toggleDeliveryUI() {
+    if (radioHome?.checked) {
+      labelHome?.classList.add('border-brand-500', 'bg-brand-50/50');
+      labelHome?.classList.remove('border-slate-200', 'bg-white');
+      labelRemote?.classList.remove('border-brand-500', 'bg-brand-50/50');
+      labelRemote?.classList.add('border-slate-200', 'bg-white');
+      pincodeWrap?.classList.remove('hidden');
+    } else {
+      labelRemote?.classList.add('border-brand-500', 'bg-brand-50/50');
+      labelRemote?.classList.remove('border-slate-200', 'bg-white');
+      labelHome?.classList.remove('border-brand-500', 'bg-brand-50/50');
+      labelHome?.classList.add('border-slate-200', 'bg-white');
+      pincodeWrap?.classList.add('hidden');
+    }
+  }
+
+  radioRemote?.addEventListener('change', toggleDeliveryUI);
+  radioHome?.addEventListener('change', toggleDeliveryUI);
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const category = formData.get('problemCategory');
+    const desc = formData.get('problemDescription');
+    const ref = formData.get('referenceLink');
+    const mode = formData.get('deliveryPreference');
+    const pincode = formData.get('pincodeArea');
+    const name = formData.get('clientName');
+    const phone = formData.get('clientPhone');
+    const urgency = formData.get('urgency');
+
+    const msg = [
+      `*HelpIt Custom Digital Help Request*`,
+      `• *Name:* ${name}`,
+      `• *Phone:* +91${phone}`,
+      `• *Domain:* ${category}`,
+      `• *Urgency:* ${urgency}`,
+      `• *Delivery:* ${mode}${pincode ? ` (${pincode})` : ''}`,
+      ref ? `• *Reference:* ${ref}` : '',
+      `• *Problem Description:*\n${desc}`,
+      `\n_Please assess feasibility and send scope/quote (Min ₹500)._`
+    ].filter(Boolean).join('\n');
+
+    const targetUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`;
+    window.open(targetUrl, '_blank');
+  });
+</script>

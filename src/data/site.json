@@ -1,6 +1,6 @@
 {
   "brandName": "HelpIt Digital Solutions",
-  "tagline": "Fast, Reliable Digital Services for Indian Businesses",
+  "tagline": "Fast, Transparent Digital & Tech Support Across India from ₹500",
   "domain": "helpit.in",
   "url": "https://helpit.in",
   "whatsapp": "+917738789773",
@@ -8,5 +8,7 @@
   "email": "shubham@helpit.in",
   "address": "Sector 62, Noida, NCR, India - 201301",
   "consultationFee": 1500,
-  "minServiceFee": 500
+  "minServiceFee": 500,
+  "homeVisitSurcharge": 1000,
+  "homeVisitCities": ["Noida", "Greater Noida", "Delhi", "Gurgaon", "Ghaziabad", "Faridabad"]
 }

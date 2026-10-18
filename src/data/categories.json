@@ -1,240 +1,490 @@
 [
   {
+    "id": "ai-setup-assistance",
+    "name": "AI Setup & AI Assistance",
+    "group": "AI & Automation",
+    "icon": "Cpu",
+    "startingPrice": 500,
+    "homeVisitAvailable": true,
+    "heroService": "Reel-to-Result Assistance",
+    "shortIntro": "End-to-end setup for ChatGPT, Claude, Midjourney, and custom AI workflows. We build prompts, automate content, and turn viral Reels into real business revenue.",
+    "seoTitle": "AI Setup & AI Assistance in India (From ₹500) | HelpIt Digital",
+    "seoDescription": "Expert AI setup for business, custom AI prompts, Reel-to-Result workflows, and image/video creation assistance across India. Remote help from ₹500, home visits available in NCR.",
+    "targetKeywords": [
+      "AI tool setup India",
+      "Reel-to-Result AI workflow",
+      "Custom AI prompts for business",
+      "AI video and image creation help",
+      "ChatGPT setup for Indian businesses",
+      "AI automation consulting"
+    ],
+    "problemsSolved": [
+      "Don't know how to set up or use ChatGPT/Claude to automate daily business tasks",
+      "Need custom prompts that actually generate customer replies and sales",
+      "Want to turn viral Instagram Reels into measurable sales leads ('Reel-to-Result')",
+      "Need high-converting AI-generated promotional images or product videos"
+    ],
+    "faqs": [
+      {
+        "q": "How does the 'Reel-to-Result' assistance work?",
+        "a": "We analyze your top-performing or target Reels, build automated DM/lead capture funnels, and prepare clear scripts or AI prompts so viewers convert directly into paying clients."
+      },
+      {
+        "q": "Can you set up AI tools remotely on my computer?",
+        "a": "Yes! We connect via secure remote screen share (Google Meet or AnyDesk) and configure your AI accounts, API keys, and workflow templates in real time."
+      },
+      {
+        "q": "Is there a minimum charge for AI help?",
+        "a": "Yes, our base remote assistance starts at ₹500 flat. For doorstep home visits in Delhi NCR, add ₹1,000 for travel and on-site guidance."
+      }
+    ]
+  },
+  {
+    "id": "project-deadline-assistance",
+    "name": "Project & Deadline Assistance",
+    "group": "Development & Emergency",
+    "icon": "Clock",
+    "startingPrice": 1000,
+    "homeVisitAvailable": true,
+    "heroService": "Help Me Meet My Project Deadline",
+    "shortIntro": "Emergency troubleshooting and technical assistance for stuck projects. Fast bug fixes, code cleanup, deployment rescue, and feasibility checks before your deadline.",
+    "seoTitle": "Help Me Meet My Project Deadline — Urgent Technical Help | HelpIt",
+    "seoDescription": "Facing an urgent technical project deadline? Get immediate debugging, website troubleshooting, code fixes, and technical rescue. 100% confidential assistance from ₹1,000.",
+    "targetKeywords": [
+      "Help me meet my project deadline",
+      "Urgent technical project assistance India",
+      "Emergency code debugging help",
+      "Website submission error fix",
+      "Technical project feasibility assessment"
+    ],
+    "problemsSolved": [
+      "Running out of time on an urgent client, office, or academic technical project",
+      "Encountering critical errors, broken builds, or deployment crashes right before deadline",
+      "Need an experienced engineer to inspect scope, fix stubborn bugs, and ensure delivery",
+      "Require clear technical feedback, formatting, and guidance to finalize deliverables"
+    ],
+    "faqs": [
+      {
+        "q": "How fast can you start working on my deadline emergency?",
+        "a": "We review feasibility and deliverables within 15–30 minutes of receiving your request and can begin immediately upon scope confirmation."
+      },
+      {
+        "q": "What is your policy regarding academic or college projects?",
+        "a": "For academic work, we strictly offer tutoring, feedback, formatting, code reviews, and debugging guidance. We do not impersonate students or perform dishonest submissions on a customer's behalf."
+      },
+      {
+        "q": "What if the project cannot be completed before the deadline?",
+        "a": "We conduct an honest feasibility assessment first. If the requested timeline is genuinely impossible, we advise you upfront before accepting any payment."
+      }
+    ]
+  },
+  {
+    "id": "file-format-document-help",
+    "name": "File Format & Document Help",
+    "group": "Office & Documents",
+    "icon": "FileCheck",
+    "startingPrice": 500,
+    "homeVisitAvailable": true,
+    "heroService": "PDF & Document Conversion Toolkit",
+    "shortIntro": "Instant fix for unopenable, corrupted, or oversized files. PDF to Word, scanned OCR text extraction, Excel/CSV cleanup, batch file conversion, and size reduction.",
+    "seoTitle": "PDF & File Format Help — Fast Conversion, OCR & Compression | HelpIt",
+    "seoDescription": "Convert scanned PDF to Word, compress large files for portals, fix corrupted Excel/CSV files, and batch convert documents. Fast, secure online document help from ₹500.",
+    "targetKeywords": [
+      "PDF to Word conversion India",
+      "Scanned PDF OCR text extraction",
+      "Reduce PDF file size without losing quality",
+      "Corrupted Excel CSV formatting cleanup",
+      "Batch convert HEIC to JPG online help",
+      "Unopenable file format troubleshooting"
+    ],
+    "problemsSolved": [
+      "Scanned PDF or images that must be converted into perfectly editable Word or Excel files",
+      "File size too large for government, university, or client portal upload limits",
+      "Corrupted, unopenable, or formatting-damaged Word, Excel, or CSV spreadsheets",
+      "Batch converting dozens of images or documents across formats (HEIC, WebP, PDF, PNG)"
+    ],
+    "faqs": [
+      {
+        "q": "Can you extract text from blurry or scanned Hindi/English documents?",
+        "a": "Yes! We use advanced OCR combined with human proofreading to ensure 100% typographic accuracy."
+      },
+      {
+        "q": "Is my private data and document content secure?",
+        "a": "Strict confidentiality is guaranteed. All customer files are processed over secure channels and deleted permanently after task completion."
+      },
+      {
+        "q": "How much does file format help cost?",
+        "a": "Standard conversions and compressions start at ₹500. Our 5-in-1 Document Toolkit bundle is ₹999."
+      }
+    ]
+  },
+  {
+    "id": "windows-computer-support",
+    "name": "Windows & Computer Support",
+    "group": "Tech & IT Support",
+    "icon": "Monitor",
+    "startingPrice": 500,
+    "homeVisitAvailable": true,
+    "heroService": "Slow Laptop Optimization & Windows Error Fix",
+    "shortIntro": "Fast remote and doorstep Windows troubleshooting. We fix Windows update errors, startup crashes, slow laptops, driver issues, printer/Wi-Fi errors, and genuine activations.",
+    "seoTitle": "Windows & Computer Support — Slow PC Tune-Up & Error Fix | HelpIt",
+    "seoDescription": "Remote computer repair and Windows troubleshooting across India. Fix Windows update errors, slow laptop, driver faults, printer connection, and genuine activation from ₹500.",
+    "targetKeywords": [
+      "Windows update error fix 0x8007 India",
+      "Slow laptop tune up remote help",
+      "Printer WiFi offline troubleshooting",
+      "Windows activation troubleshooting genuine",
+      "Computer startup boot error fix",
+      "Doorstep computer repair Noida NCR"
+    ],
+    "problemsSolved": [
+      "Laptop or PC running unbearably slow, freezing, or taking several minutes to start up",
+      "Windows Update failing repeatedly with cryptic errors like 0x80070002 or 0x80240034",
+      "Printer showing 'Offline' or Wi-Fi network dropping continuously",
+      "Audio, Bluetooth, display, or graphics driver malfunctions",
+      "Legitimate Windows license activation troubleshooting without shady bypasses"
+    ],
+    "faqs": [
+      {
+        "q": "How does remote computer support work?",
+        "a": "You share a secure temporary code using AnyDesk or Google Meet. You see everything we do live on your screen, and access ends the moment you disconnect."
+      },
+      {
+        "q": "Can you do an on-site home visit instead of remote support?",
+        "a": "Yes! Home visits are available across Delhi NCR (Noida, Delhi, Gurgaon, Ghaziabad, Faridabad) for an additional ₹1,000 travel fee (Total = Service + ₹1,000)."
+      },
+      {
+        "q": "Do you provide genuine Windows activation?",
+        "a": "We assist strictly with genuine license troubleshooting and official Microsoft activation channels. We never use unauthorized activators or piracy tools."
+      }
+    ]
+  },
+  {
+    "id": "business-consultation-digital",
+    "name": "Business Consultation & Digital Setup",
+    "group": "Business & Growth",
+    "icon": "Briefcase",
+    "startingPrice": 500,
+    "homeVisitAvailable": true,
+    "heroService": "Custom Business Consultation & Roadmap",
+    "shortIntro": "End-to-end digital foundation for local shops, clinics, and startups. Google Business Profile setup, WhatsApp Business catalog, e-commerce listings, and 1-on-1 consultation.",
+    "seoTitle": "Business Consultation & Digital Setup in India | HelpIt Digital",
+    "seoDescription": "Setup Google Business Profile, WhatsApp Business catalog, e-commerce listings, and get 1-on-1 business digital roadmap consultation. Starting from ₹500 across India.",
+    "targetKeywords": [
+      "Google Business Profile setup verification India",
+      "WhatsApp Business catalog automation setup",
+      "Custom digital business consultation",
+      "E-commerce product listing Amazon Flipkart",
+      "Local shop digital setup Noida NCR"
+    ],
+    "problemsSolved": [
+      "Google Business Profile not verified, missing on Google Maps, or pin in wrong spot",
+      "Need WhatsApp Business with professional catalog, quick replies, and payment links",
+      "Listing products across Amazon, Flipkart, Meesho, or Shopify stores",
+      "Unsure which software, CRM, or billing tools your business should adopt"
+    ],
+    "faqs": [
+      {
+        "q": "What happens during a 60-Minute Consultation (₹1,500)?",
+        "a": "We conduct a 1-on-1 video call reviewing your digital presence, marketing, and technical setup. Within 24 hours, you receive a written step-by-step action roadmap."
+      },
+      {
+        "q": "Can you help set up WhatsApp Business on our office phones?",
+        "a": "Yes, we configure business profiles, catalogues, greeting messages, and away automations remotely or during a home/office visit."
+      },
+      {
+        "q": "Do you guarantee Google Business Profile ranking or reinstatement?",
+        "a": "We follow official Google guidelines and proven optimization practices, but we do not guarantee specific ranking positions or outcome on suspended appeals."
+      }
+    ]
+  },
+  {
+    "id": "website-seo-services",
+    "name": "Website & SEO Services",
+    "group": "Web & Ranking",
+    "icon": "Globe",
+    "startingPrice": 500,
+    "homeVisitAvailable": true,
+    "heroService": "Fast Business Website & Speed Optimization",
+    "shortIntro": "High-converting business websites, emergency bug fixes, domain/DNS pointing, SSL security, speed optimization under 2 seconds, and high-intent SEO keyword audits.",
+    "seoTitle": "Website & SEO Services — Web Development & Fixes | HelpIt",
+    "seoDescription": "Mobile-ready business websites, WordPress bug fixes, domain DNS setup, under-2s speed optimization, and SEO audits across India. Fast turnaround from ₹500.",
+    "targetKeywords": [
+      "Business website creation India",
+      "Fix WordPress critical error remote",
+      "Domain DNS pointing Cloudflare SSL setup",
+      "Website speed optimization under 2 seconds",
+      "Low competition SEO audit India"
+    ],
+    "problemsSolved": [
+      "Need a modern, fast, mobile-friendly website that converts visitors into paying customers",
+      "WordPress white screen of death, broken layouts, or contact form failures",
+      "Purchased domain on GoDaddy/Hostinger but cannot connect DNS records or business email",
+      "Website taking over 4 seconds to load and losing rank on Google search"
+    ],
+    "faqs": [
+      {
+        "q": "How fast can you fix an urgent website bug?",
+        "a": "Most layout bugs, SSL certificate errors, and contact form failures are diagnosed and fixed within 1 to 4 hours."
+      },
+      {
+        "q": "How much does a complete business website cost?",
+        "a": "Clean landing pages start from ₹3,000–₹6,000, and comprehensive 5-page business websites start from ₹8,000."
+      },
+      {
+        "q": "Will my website rank on Google?",
+        "a": "All websites we build are built SEO-ready with schema markup, fast loading speeds, and indexed via Google Search Console."
+      }
+    ]
+  },
+  {
+    "id": "design-images-video",
+    "name": "Design, Images & Video Assistance",
+    "group": "Creative & Media",
+    "icon": "Palette",
+    "startingPrice": 500,
+    "homeVisitAvailable": false,
+    "heroService": "High-CTR YouTube Thumbnails & Ad Creatives",
+    "shortIntro": "Attention-grabbing social media creatives, festival promotional banners, YouTube thumbnails, video subtitles/captions, and e-commerce product image retouching.",
+    "seoTitle": "Design, Images & Video Assistance — Banners, Thumbnails | HelpIt",
+    "seoDescription": "Custom social media post designs, high-CTR YouTube thumbnails, video captions, and product image editing for creators and businesses across India. From ₹500.",
+    "targetKeywords": [
+      "Social media post design India",
+      "YouTube thumbnail designer",
+      "Video captions subtitles formatting",
+      "Product image background removal",
+      "Promotional banner poster design"
+    ],
+    "problemsSolved": [
+      "Low engagement on social media due to bland, unprofessional graphic posts",
+      "YouTube video views are low because thumbnails lack high-contrast, clickable appeal",
+      "Need accurate, styled captions and subtitles for short-form Instagram Reels or YouTube Shorts",
+      "Messy product photos that need clean white backgrounds for Amazon or Meesho"
+    ],
+    "faqs": [
+      {
+        "q": "How fast do you deliver single ad creatives and thumbnails?",
+        "a": "Single graphic creatives and YouTube thumbnails are delivered within 24 to 48 hours."
+      },
+      {
+        "q": "What file formats do you provide?",
+        "a": "High-resolution PNG, JPG, vector SVG, and print-ready PDF formats."
+      },
+      {
+        "q": "Can you design custom templates we can edit in Canva?",
+        "a": "Yes! We can provide editable Canva template links upon request."
+      }
+    ]
+  },
+  {
+    "id": "android-app-digital-tools",
+    "name": "Android App & Digital Tool Assistance",
+    "group": "Apps & Utilities",
+    "icon": "Smartphone",
+    "startingPrice": 500,
+    "homeVisitAvailable": true,
+    "heroService": "Google Play Store App Listing & Preparation",
+    "shortIntro": "Play Console store listing assistance, screenshot & asset preparation, policy compliance advisory, browser extension troubleshooting, and digital tool integration.",
+    "seoTitle": "Android App & Digital Tool Assistance | HelpIt Digital",
+    "seoDescription": "Google Play Store app listing help, Play Console compliance, store graphics, Chrome extensions, and digital utility tools setup across India. From ₹500.",
+    "targetKeywords": [
+      "Google Play Store app listing help India",
+      "Play Console policy compliance check",
+      "App screenshot feature graphic design",
+      "Chrome extension troubleshooting",
+      "Digital tools workflow selection"
+    ],
+    "problemsSolved": [
+      "App rejected by Google Play Console due to metadata or privacy policy errors",
+      "Need professional store assets: 512px app icon, 1024x500 feature graphic, and device screenshots",
+      "Chrome extension crashing, failing Manifest V3 review, or blocked by browser",
+      "Need guidance selecting the right digital productivity tools for remote teams"
+    ],
+    "faqs": [
+      {
+        "q": "Do you help publish apps to the Google Play Store?",
+        "a": "Yes! We guide you step-by-step through Google Play Console setup, policy verification, asset uploading, and release rollout."
+      },
+      {
+        "q": "Can you fix an app rejection from Google Play?",
+        "a": "We audit Google's rejection notification, resolve the policy violation in your metadata or privacy policy, and help you resubmit."
+      },
+      {
+        "q": "Do you develop custom Android apps?",
+        "a": "Yes! Custom native Android app development starts from ₹10,000 for utility apps and ₹20,000+ for full business apps."
+      }
+    ]
+  },
+  {
     "id": "website-development",
     "name": "Website Development",
-    "group": "Web",
+    "group": "Web & Ranking",
     "icon": "Globe",
     "startingPrice": 3000,
+    "homeVisitAvailable": true,
+    "isLegacy": true,
     "shortIntro": "Custom, mobile-responsive and SEO-ready websites designed to convert visitors into paying clients. From single landing pages to comprehensive business portals and web tools.",
     "faqs": [
       {
         "q": "How long does it take to deliver a business website?",
         "a": "Standard landing pages take 2–4 days, while full business websites usually take 5–8 days depending on content readiness."
-      },
-      {
-        "q": "Are all websites mobile-friendly and fast?",
-        "a": "Yes, 100%. All our websites are optimized for high mobile speed, responsive across all screen sizes, and built SEO-ready by default."
-      },
-      {
-        "q": "Can I update the content myself later?",
-        "a": "Yes, we provide user-friendly setups or management guidance so you can easily update text, images, and prices."
       }
     ]
   },
   {
     "id": "website-support-fixes",
     "name": "Website Support & Fixes",
-    "group": "Web",
+    "group": "Web & Ranking",
     "icon": "Wrench",
     "startingPrice": 500,
+    "homeVisitAvailable": true,
+    "isLegacy": true,
     "shortIntro": "Fast resolution for website bugs, WordPress errors, SSL warnings, speed issues, and broken layouts. Same-day emergency fixes available.",
     "faqs": [
       {
         "q": "How quickly can you fix a broken website?",
         "a": "Most urgent bugs, layout issues, and SSL errors are diagnosed and fixed within 1 to 4 hours."
-      },
-      {
-        "q": "What do you need from me to start?",
-        "a": "We will need temporary admin access or hosting credentials. We strictly follow safe backup procedures before touching any live files."
-      },
-      {
-        "q": "Do you provide monthly website maintenance?",
-        "a": "Yes! Our monthly maintenance plans start at ₹1,000/month and cover security, plugin updates, speed checks, and regular backups."
       }
     ]
   },
   {
     "id": "domain-hosting-setup",
     "name": "Domain, Hosting & Technical Setup",
-    "group": "Web",
+    "group": "Web & Ranking",
     "icon": "Server",
     "startingPrice": 500,
+    "homeVisitAvailable": true,
+    "isLegacy": true,
     "shortIntro": "Professional setup for domains, DNS records, business emails, SSL certificates, Cloudflare CDN, Google Analytics, and Search Console.",
     "faqs": [
       {
-        "q": "Can you set up professional business email like info@mybusiness.com?",
-        "a": "Yes, we configure business email on Google Workspace, Zoho Mail, or your cPanel, and connect it to your phone and laptop."
-      },
-      {
         "q": "My domain is not pointing to my website. Can you fix it?",
         "a": "Yes, DNS propagation and record mapping (A, CNAME, MX, TXT) are usually resolved within 30–60 minutes."
-      },
-      {
-        "q": "Do you set up Google Search Console and indexing?",
-        "a": "Yes, we submit your sitemap, verify ownership, and resolve crawl errors so your pages appear properly on Google search."
       }
     ]
   },
   {
     "id": "android-app-development",
     "name": "Android App Development",
-    "group": "Apps and Extensions",
+    "group": "Apps & Utilities",
     "icon": "Smartphone",
     "startingPrice": 10000,
+    "homeVisitAvailable": true,
+    "isLegacy": true,
     "shortIntro": "Lightweight, high-performance native Android apps built for your business, utilities, or Play Store publishing with monetization setup.",
     "faqs": [
       {
         "q": "Do you help publish the app to Google Play Store?",
         "a": "Yes, we provide end-to-end Play Console setup, policy compliance check, asset preparation, and store publishing assistance."
-      },
-      {
-        "q": "Can you integrate AdMob and Play Billing?",
-        "a": "Yes, we integrate Google AdMob banners, interstitials, rewarded ads, and Google Play in-app subscriptions."
-      },
-      {
-        "q": "Will the app work offline?",
-        "a": "Yes, we can design apps with robust offline SQLite/Room databases or local file storage depending on your requirements."
       }
     ]
   },
   {
     "id": "chrome-extensions",
     "name": "Chrome Extensions",
-    "group": "Apps and Extensions",
+    "group": "Apps & Utilities",
     "icon": "Puzzle",
     "startingPrice": 5000,
+    "homeVisitAvailable": false,
+    "isLegacy": true,
     "shortIntro": "Custom Chrome extensions to automate workflows, scrape data, enhance web apps, or launch digital SaaS tools on the Chrome Web Store.",
     "faqs": [
       {
         "q": "Are your extensions built using Manifest V3?",
-        "a": "Yes, all our Chrome extensions strictly adhere to Google Chrome's Manifest V3 standards for maximum security and store compliance."
-      },
-      {
-        "q": "Can extensions communicate with external APIs?",
-        "a": "Yes, we securely integrate third-party APIs, AI services, and custom backends into your extension."
-      },
-      {
-        "q": "Do you handle Web Store submission?",
-        "a": "Yes, we assist with zip packaging, icon sets, store privacy policies, and Chrome Web Store review requirements."
+        "a": "Yes, all our Chrome extensions strictly adhere to Google Chrome's Manifest V3 standards."
       }
     ]
   },
   {
     "id": "seo-local-seo",
     "name": "SEO & Local SEO",
-    "group": "Marketing",
+    "group": "Web & Ranking",
     "icon": "Search",
     "startingPrice": 1500,
+    "homeVisitAvailable": true,
+    "isLegacy": true,
     "shortIntro": "Proven search engine optimization to rank your business at the top of Google search results in your city and target service areas.",
     "faqs": [
       {
-        "q": "What is the difference between General SEO and Local SEO?",
-        "a": "Local SEO focuses on ranking in Google Maps and local 3-pack search queries (e.g. 'dentist in Noida'), driving phone calls and walk-ins."
-      },
-      {
         "q": "How soon can I see SEO results?",
-        "a": "Local SEO improvements often show within 3 to 6 weeks, while competitive organic keywords take 2 to 4 months of consistent effort."
-      },
-      {
-        "q": "Do you provide monthly SEO reports?",
-        "a": "Yes, our monthly clients receive transparent keyword ranking reports, traffic graphs, and work logs."
+        "a": "Local SEO improvements often show within 3 to 6 weeks, while competitive organic keywords take 2 to 4 months."
       }
     ]
   },
   {
     "id": "google-business-maps",
     "name": "Google Business Profile & Google Maps",
-    "group": "Marketing",
+    "group": "Business & Growth",
     "icon": "MapPin",
     "startingPrice": 500,
+    "homeVisitAvailable": true,
+    "isLegacy": true,
     "shortIntro": "Complete Google Business Profile setup, pin correction, category optimization, legitimate review systems, and monthly ranking management.",
     "faqs": [
       {
         "q": "My business pin is in the wrong location on Google Maps. Can you fix it?",
-        "a": "Yes, we calibrate coordinates and submit official location corrections to ensure customers navigate directly to your door."
-      },
-      {
-        "q": "Do you do fake reviews?",
-        "a": "No, we strictly never provide or buy fake reviews. We set up legitimate review-generation QR systems that prompt real customers."
-      },
-      {
-        "q": "Can you help reinstate a suspended Google Business Profile?",
-        "a": "Yes, we audit your business proof, align guidelines, and submit official reinstatement appeals to Google support."
+        "a": "Yes, we calibrate coordinates and submit official location corrections."
       }
     ]
   },
   {
     "id": "local-business-packages",
     "name": "Local Business Packages",
-    "group": "Marketing",
+    "group": "Business & Growth",
     "icon": "Briefcase",
     "startingPrice": 4999,
+    "homeVisitAvailable": true,
+    "isLegacy": true,
     "shortIntro": "All-in-one digital growth packages combining Google Maps, website, digital visiting cards, and ad creatives for shops, clinics, and startups.",
     "faqs": [
       {
         "q": "What is included in the Basic Package (₹4,999)?",
         "a": "Google Business Profile creation + Maps optimization + Digital visiting card + 1 professional ad creative design."
-      },
-      {
-        "q": "What is included in the Standard Package (₹14,999)?",
-        "a": "Full business website + Google Business Profile and Maps optimization + Basic SEO + Social ad creatives."
-      },
-      {
-        "q": "Do you provide custom industry packages?",
-        "a": "Yes! We have specialized bundles for Clinics, Restaurants, Salons, Coaching Centers, and Retail Shops."
       }
     ]
   },
   {
     "id": "graphic-ad-design",
     "name": "Graphic & Ad Design",
-    "group": "Design and Content",
+    "group": "Creative & Media",
     "icon": "Palette",
     "startingPrice": 500,
+    "homeVisitAvailable": false,
+    "isLegacy": true,
     "shortIntro": "Crisp logos, digital visiting cards, banners, festival creatives, social media packs, and YouTube thumbnails crafted for your brand.",
     "faqs": [
       {
         "q": "What formats do you provide for logos?",
-        "a": "High-resolution PNG (transparent background), JPG, vector SVG, and print-ready PDF."
-      },
-      {
-        "q": "What is a Digital Visiting Card?",
-        "a": "An interactive digital card with clickable Call, WhatsApp, Map, and Website buttons that you can share easily on WhatsApp."
-      },
-      {
-        "q": "How fast do you deliver creatives?",
-        "a": "Single ad creatives and thumbnails are delivered within 24–48 hours."
+        "a": "High-resolution PNG, JPG, vector SVG, and print-ready PDF."
       }
     ]
   },
   {
     "id": "ai-content-image-services",
     "name": "AI Content & Image Services",
-    "group": "Design and Content",
+    "group": "AI & Automation",
     "icon": "Cpu",
     "startingPrice": 500,
+    "homeVisitAvailable": true,
+    "isLegacy": true,
     "shortIntro": "Harness cutting-edge AI for high-impact commercial images, social marketing copy, customized product visuals, and smart chatbots.",
     "faqs": [
       {
         "q": "Can AI images be used for commercial advertisements?",
         "a": "Yes, we generate high-resolution visuals optimized with prompt engineering tailored for commercial advertising."
-      },
-      {
-        "q": "Can you build an AI chatbot for my website or WhatsApp?",
-        "a": "Yes, we configure AI assistants trained on your business information, FAQs, and price list to handle customer inquiries."
-      },
-      {
-        "q": "Do you refine and edit the AI outputs manually?",
-        "a": "Yes, every AI output is quality-checked, proofread, and graphically adjusted before final delivery."
       }
     ]
   },
   {
     "id": "youtube-services",
     "name": "YouTube Services",
-    "group": "Marketing",
+    "group": "Creative & Media",
     "icon": "Video",
     "startingPrice": 500,
+    "homeVisitAvailable": false,
+    "isLegacy": true,
     "shortIntro": "Complete YouTube channel setup, banner branding, high-CTR thumbnail design, SEO tags, and monthly video management for creators.",
     "faqs": [
-      {
-        "q": "Do you buy or sell YouTube channels or subscribers?",
-        "a": "No. We strictly abide by YouTube guidelines and do NOT buy/sell channels, views, or subscribers. We provide organic channel optimization."
-      },
-      {
-        "q": "How do your SEO tags and titles help?",
-        "a": "We analyze search volume and competition to craft titles and descriptions that rank in YouTube Search and Suggested Videos."
-      },
       {
         "q": "Can you design custom thumbnails?",
         "a": "Yes, we design eye-catching, high-converting thumbnails from ₹500 each."
@@ -244,132 +494,96 @@
   {
     "id": "instagram-social-media",
     "name": "Instagram & Social Media",
-    "group": "Marketing",
+    "group": "Creative & Media",
     "icon": "Share2",
     "startingPrice": 500,
+    "homeVisitAvailable": false,
+    "isLegacy": true,
     "shortIntro": "Professional Instagram & Facebook profile optimization, content calendar packs, viral captions, and monthly management plans.",
     "faqs": [
       {
         "q": "What is included in the Profile Optimization?",
         "a": "Bio copywriting, custom bio link, highlight covers, category tag, and contact button setup."
-      },
-      {
-        "q": "Do you provide monthly social media posting?",
-        "a": "Yes, our monthly packages range from ₹3,000 to ₹6,000/month and include graphics, captions, hashtags, and scheduling."
-      },
-      {
-        "q": "Do you ever ask for my account password?",
-        "a": "No, never. We provide ready-to-post creatives or request editor access via Meta Business Suite."
       }
     ]
   },
   {
     "id": "content-writing",
     "name": "Content Writing",
-    "group": "Design and Content",
+    "group": "Creative & Media",
     "icon": "FileText",
     "startingPrice": 500,
+    "homeVisitAvailable": false,
+    "isLegacy": true,
     "shortIntro": "Engaging, conversion-focused website copy, SEO blog posts, corporate profiles, and proofreading that build authority and trust.",
     "faqs": [
       {
         "q": "Is the content 100% original and plagiarism-free?",
-        "a": "Yes, all content is written to your specific guidelines, grammatically polished, and checked for originality."
-      },
-      {
-        "q": "Are the blog posts written for SEO?",
-        "a": "Yes, articles include target keywords, meta descriptions, clear H2/H3 headers, and internal linking suggestions."
-      },
-      {
-        "q": "What is the typical delivery timeframe?",
-        "a": "Single articles (800–1,500 words) are delivered within 24–48 hours."
+        "a": "Yes, all content is written to your specific guidelines and checked for originality."
       }
     ]
   },
   {
     "id": "pdf-document-services",
     "name": "PDF & Document Services",
-    "group": "Tech Help",
+    "group": "Office & Documents",
     "icon": "FileCheck",
     "startingPrice": 500,
+    "homeVisitAvailable": true,
+    "isLegacy": true,
     "shortIntro": "Fast document formatting, PDF conversions, OCR text extraction, Word/Excel cleanup, custom invoice templates, and QR code generation.",
     "faqs": [
       {
         "q": "What is the PDF Toolkit bundle (₹999)?",
         "a": "It covers up to 5 document tasks (conversions, merge/split, OCR, compression, or formatting) at one discounted price."
-      },
-      {
-        "q": "Can you convert scanned or handwritten documents to Word or Excel?",
-        "a": "Yes, using advanced OCR combined with manual verification for 100% accuracy."
-      },
-      {
-        "q": "Can you unlock my password-protected PDF?",
-        "a": "Only if you are the legitimate owner of the document. We do not assist with unauthorized document access."
       }
     ]
   },
   {
     "id": "remote-computer-tech-help",
     "name": "Remote Software & Cloud Support",
-    "group": "Tech Help",
+    "group": "Tech & IT Support",
     "icon": "Monitor",
     "startingPrice": 500,
+    "homeVisitAvailable": true,
+    "isLegacy": true,
     "shortIntro": "Instant 100% remote software assistance, slow PC optimization, virus cleanup, and cloud workspace setups. Zero physical hardware repairs or on-site visits.",
     "faqs": [
       {
-        "q": "Do you repair physical hardware or replace laptop parts?",
-        "a": "No. We specialize strictly in 100% digital, remote software, system tune-ups, and cloud configurations. We do not repair broken screens, motherboards, or physical parts."
-      },
-      {
         "q": "How does remote software support work?",
-        "a": "You share a secure temporary code using AnyDesk, TeamViewer, or Google Meet screen share. You watch our screen movements live, and the session ends the moment you close the app."
-      },
-      {
-        "q": "What if my software problem cannot be resolved?",
-        "a": "We stand by our No-Fix, No-Fee promise on diagnostic sessions. If we can't solve your software issue, you get a full refund."
+        "a": "You share a secure temporary code using AnyDesk or Google Meet. You watch our screen movements live."
       }
     ]
   },
   {
     "id": "account-digital-setup",
     "name": "Account & Digital Setup Assistance",
-    "group": "Tech Help",
+    "group": "Tech & IT Support",
     "icon": "UserCheck",
     "startingPrice": 500,
+    "homeVisitAvailable": true,
+    "isLegacy": true,
     "shortIntro": "Safe, guided assistance for setting up Google accounts, 2-factor authentication, business profiles, and official account recovery steps.",
     "faqs": [
       {
         "q": "What is your security rule regarding passwords and OTPs?",
-        "a": "Strict Rule: We NEVER ask for, handle, or store your passwords, OTPs, or private authentication keys. We guide your screen or use official delegated access."
-      },
-      {
-        "q": "Can you recover my hacked account?",
-        "a": "We guide you through official platform recovery mechanisms with identity proof. We never use unauthorized bypass tools."
-      },
-      {
-        "q": "Can you help set up 2-Step Verification?",
-        "a": "Yes, we help configure Google Authenticator, SMS 2FA, and backup security keys to protect your accounts from hacking."
+        "a": "Strict Rule: We NEVER ask for, handle, or store your passwords, OTPs, or private authentication keys."
       }
     ]
   },
   {
     "id": "technical-consultation",
     "name": "Technical Consultation",
-    "group": "Tech Help",
+    "group": "Business & Growth",
     "icon": "PhoneCall",
     "startingPrice": 1500,
+    "homeVisitAvailable": true,
+    "isLegacy": true,
     "shortIntro": "60-minute 1-on-1 video consultation + written action summary. Get clear, unbiased expert advice on websites, SEO, apps, or business IT.",
     "faqs": [
       {
         "q": "What topics can we cover during the consultation?",
         "a": "Website architecture, SEO audits, Google Maps strategy, app development feasibility, tech stack selection, or local digital marketing."
-      },
-      {
-        "q": "Do I get a summary after the call?",
-        "a": "Yes, within 24 hours of the call you receive a comprehensive written Action Summary with step-by-step next actions."
-      },
-      {
-        "q": "How do we connect for the call?",
-        "a": "We connect over Google Meet or Zoom at your preferred scheduled time."
       }
     ]
   }

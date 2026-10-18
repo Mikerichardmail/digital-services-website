@@ -1,0 +1,15 @@
+name = "digital-services-website"
+main = "functions/api/create-payment-link.js"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+# Cloudflare Workers Static Assets binding
+# This fixes "TypeError: Cannot read properties of undefined (reading 'fetch')"
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+not_found_handling = "404-page"
+html_handling = "auto-trailing-slash"
+
+[vars]
+ENVIRONMENT = "production"

@@ -1,0 +1,134 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import PayButton from '../../components/PayButton.astro';
+import QuoteButton from '../../components/QuoteButton.astro';
+import site from '../../data/site.json';
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Reel-to-Result Assistance — Instagram Reel Sales Automation",
+  "description": "Convert viral Instagram Reels into paying customers with automated DM funnels, high-converting scripts, and AI video workflows across India.",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": site.brandName,
+    "telephone": site.whatsapp,
+    "priceRange": "₹999 - ₹4,999"
+  },
+  "areaServed": "India"
+};
+---
+
+<Base
+  title={`Reel-to-Result AI Workflow — Turn Instagram Reels into Sales | ${site.brandName}`}
+  description="Stop getting empty views. Turn Instagram Reels into high-converting inquiries with automated DM triggers, AI video hooks, and WhatsApp funnels from ₹999."
+  schema={pageSchema}
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12">
+    <Breadcrumbs items={[{ label: 'Services', href: '/services' }, { label: 'Reel-to-Result Assistance' }]} />
+
+    <!-- Hero Header -->
+    <div class="max-w-3xl space-y-4">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 border border-purple-200 text-xs font-bold text-purple-800">
+        <span>High-Converting AI Workflow</span>
+        <span>•</span>
+        <span>From ₹999</span>
+        <span>•</span>
+        <span>Remote Delivery Pan-India</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+        Reel-to-Result Assistance
+      </h1>
+
+      <p class="text-base sm:text-xl text-slate-600 leading-relaxed font-medium">
+        Getting thousands of Reel views but zero inquiries? We build the automated funnel that turns viewer comments and DMs into verified WhatsApp leads and paying clients.
+      </p>
+    </div>
+
+    <!-- The 4-Step Funnel -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-xs sm:text-sm">
+      <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+        <span class="w-7 h-7 rounded-lg bg-purple-100 text-purple-700 font-black flex items-center justify-center">1</span>
+        <h3 class="font-bold text-slate-900 text-sm">Hook & CTA Script</h3>
+        <p class="text-slate-500">We write psychological comment triggers (e.g., "Comment 'PRICE' for instant catalog").</p>
+      </div>
+
+      <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+        <span class="w-7 h-7 rounded-lg bg-purple-100 text-purple-700 font-black flex items-center justify-center">2</span>
+        <h3 class="font-bold text-slate-900 text-sm">Instant DM Auto-Reply</h3>
+        <p class="text-slate-500">Official Instagram API sends the brochure, coupon, or link to their inbox in 3 seconds flat.</p>
+      </div>
+
+      <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+        <span class="w-7 h-7 rounded-lg bg-purple-100 text-purple-700 font-black flex items-center justify-center">3</span>
+        <h3 class="font-bold text-slate-900 text-sm">WhatsApp Lead Routing</h3>
+        <p class="text-slate-500">High-intent viewers are directed directly to your WhatsApp with pre-filled order inquiry text.</p>
+      </div>
+
+      <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+        <span class="w-7 h-7 rounded-lg bg-purple-100 text-purple-700 font-black flex items-center justify-center">4</span>
+        <h3 class="font-bold text-slate-900 text-sm">Sale & Repeat Flow</h3>
+        <p class="text-slate-500">Track click rates, inquiries, and customer conversions with zero monthly headache.</p>
+      </div>
+    </div>
+
+    <!-- Pricing Options -->
+    <div class="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-md space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-5">
+        <div>
+          <span class="text-xs font-bold text-purple-600 uppercase tracking-wider">Turnkey Package</span>
+          <h2 class="text-2xl font-black text-slate-900 mt-1">Reel-to-Result Starter Setup</h2>
+          <p class="text-xs text-slate-500 mt-1">Ideal for local doctors, retail shops, coaches, and creators.</p>
+        </div>
+        <div class="text-left sm:text-right">
+          <span class="text-3xl font-black text-slate-900">₹999</span>
+          <span class="text-xs text-slate-500 block">One-time transparent fee</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm text-slate-700">
+        <div class="space-y-2">
+          <div class="flex items-center gap-2">
+            <span class="text-emerald-500 font-bold">✓</span> Up to 3 Comment-to-DM automated triggers
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-emerald-500 font-bold">✓</span> Custom AI Hook & Caption Prompt Library
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-emerald-500 font-bold">✓</span> Direct WhatsApp Business Link integration
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <div class="flex items-center gap-2">
+            <span class="text-emerald-500 font-bold">✓</span> 100% compliant with Meta/Instagram policies
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-emerald-500 font-bold">✓</span> Zero account passwords needed (delegated access)
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-emerald-500 font-bold">✓</span> Delivered remotely in 24 to 48 hours
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-4 flex flex-wrap items-center gap-4">
+        <PayButton 
+          serviceId="reel-to-result-assistance" 
+          serviceName="Reel-to-Result Assistance" 
+          priceDisplay="₹999"
+          size="lg"
+        />
+        <QuoteButton 
+          serviceName="Reel-to-Result Assistance" 
+          priceDisplay="₹999" 
+          text="Discuss on WhatsApp"
+          size="lg"
+        />
+      </div>
+    </div>
+
+  </div>
+</Base>
