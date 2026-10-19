@@ -12,11 +12,11 @@ const primaryCategories = categories.filter(c => !c.isLegacy);
       
       <!-- Brand Logo -->
       <a href="/" class="flex items-center gap-2.5 group">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-          </svg>
-        </div>
+        <img 
+          src="/icon.png" 
+          alt={site.brandName} 
+          class="w-10 h-10 rounded-xl object-contain shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform bg-white" 
+        />
         <div>
           <span class="text-xl font-black text-slate-900 tracking-tight block leading-none">{site.brandName}</span>
           <span class="text-[11px] text-brand-600 font-bold tracking-wide mt-0.5 block">Remote India & NCR Doorstep</span>

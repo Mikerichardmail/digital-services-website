@@ -18,7 +18,7 @@ const {
   title = `${site.brandName} - Fast Digital Services & Tech Support from ₹500`,
   description = "Get business websites, Google Maps ranking, local SEO, Android apps, and instant remote computer tech help across NCR & India. 100% transparent pricing from ₹500.",
   canonical = Astro.url.href,
-  ogImage = "/og-image.svg",
+  ogImage = "/icon.png",
   schema
 } = Astro.props;
 
@@ -74,8 +74,12 @@ const defaultSchema = {
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(ogImage, site.url).href} />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Favicon & Touch Icons -->
+    <link rel="icon" type="image/png" href="/icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icon.png" />
+    <link rel="shortcut icon" href="/icon.png" />
     <meta name="theme-color" content="#2563eb" />
 
     <!-- Structured Data (JSON-LD) -->
