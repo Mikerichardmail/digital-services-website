@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /thank-you/
+Disallow: /api/
 
 Sitemap: https://helpit.in/sitemap-index.xml

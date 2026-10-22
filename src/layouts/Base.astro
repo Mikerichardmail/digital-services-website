@@ -12,6 +12,7 @@ interface Props {
   canonical?: string;
   ogImage?: string;
   schema?: Record<string, any>;
+  noindex?: boolean;
 }
 
 const {
@@ -19,7 +20,8 @@ const {
   description = "Get business websites, Google Maps ranking, local SEO, Android apps, and instant remote computer tech help across NCR & India. 100% transparent pricing from ₹500.",
   canonical = Astro.url.href,
   ogImage = "/icon.png",
-  schema
+  schema,
+  noindex = false
 } = Astro.props;
 
 const defaultSchema = {
@@ -55,7 +57,7 @@ const defaultSchema = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"} />
     <meta name="author" content={site.brandName} />
 
     <!-- Open Graph / Facebook -->
