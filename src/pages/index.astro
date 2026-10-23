@@ -7,7 +7,6 @@ import PayButton from '../components/PayButton.astro';
 import QuoteButton from '../components/QuoteButton.astro';
 import site from '../data/site.json';
 import categories from '../data/categories.json';
-import services from '../data/services.json';
 
 // Filter primary 8 categories
 const primaryCategories = categories.filter(c => !c.isLegacy);
@@ -48,10 +47,10 @@ const featuredHeroServices = [
   },
   {
     title: "Custom Business Consultation",
-    desc: "60-minute 1-on-1 strategy video call + written action plan for websites, SEO, apps, and IT growth.",
+    desc: "60-minute 1-on-1 strategy session via WhatsApp + written action plan for websites, SEO, apps, and IT growth.",
     price: "₹1,500 Flat",
     href: "/services/business-consultation-digital",
-    badge: "1-on-1 Call",
+    badge: "1-on-1 Session",
     icon: "🎯"
   },
   {

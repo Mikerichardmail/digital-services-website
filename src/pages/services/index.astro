@@ -255,7 +255,34 @@ const serviceListSchema = {
   </div>
 </Base>
 
-<script define:vars={{ allServicesData: services }}>
+<script>
+  let allServicesData = null;
+  let loadingPromise = null;
+
+  async function loadSearchData() {
+    if (allServicesData) return allServicesData;
+    if (!loadingPromise) {
+      loadingPromise = fetch('/search-index.json')
+        .then(res => res.json())
+        .then(data => {
+          allServicesData = data;
+          return data;
+        })
+        .catch(err => {
+          console.error('Could not load search index', err);
+          return [];
+        });
+    }
+    return loadingPromise;
+  }
+
+  // Prefetch index during idle time after main thread paint
+  if ('requestIdleCallback' in window) {
+    window.requestIdleCallback(() => loadSearchData());
+  } else {
+    setTimeout(loadSearchData, 1500);
+  }
+
   const searchInput = document.getElementById('problem-search-input');
   const resultsSection = document.getElementById('search-results-section');
   const resultsGrid = document.getElementById('search-cards-grid');
@@ -265,7 +292,9 @@ const serviceListSchema = {
   const categoriesSection = document.getElementById('categories-grid-section');
   const quickBtns = document.querySelectorAll('.quick-filter-btn');
 
-  function performSearch(query) {
+  searchInput?.addEventListener('focus', () => loadSearchData(), { once: true });
+
+  async function performSearch(query) {
     const q = query.trim().toLowerCase();
     if (!q) {
       resultsSection?.classList.add('hidden');
@@ -278,7 +307,8 @@ const serviceListSchema = {
     categoriesSection?.classList.add('hidden');
     resultsSection?.classList.remove('hidden');
 
-    const matches = allServicesData.filter(s => {
+    const data = await loadSearchData();
+    const matches = data.filter(s => {
       const nameMatch = s.name.toLowerCase().includes(q);
       const descMatch = s.shortDesc && s.shortDesc.toLowerCase().includes(q);
       const termsMatch = s.searchTerms && s.searchTerms.toLowerCase().includes(q);

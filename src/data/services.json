@@ -434,7 +434,7 @@
   {
     "id": "custom-business-consultation",
     "category": "business-consultation-digital",
-    "name": "Custom Business Consultation (60-Min Video Call + Roadmap)",
+    "name": "Custom Business Consultation (60-Min WhatsApp Consultation + Roadmap)",
     "priceFrom": 1500,
     "priceTo": 1500,
     "priceDisplay": "₹1,500 Flat",
@@ -444,8 +444,8 @@
     "deliveryType": "Remote & Home Visit",
     "homeVisitAvailable": true,
     "status": "Available",
-    "shortDesc": "1-on-1 strategy session reviewing your online presence, tools, and growth plan with a written action roadmap.",
-    "searchTerms": "custom business consultation 1 on 1 advisory digital roadmap"
+    "shortDesc": "1-on-1 strategy session via WhatsApp reviewing your online presence, tools, and growth plan with a written action roadmap.",
+    "searchTerms": "custom business consultation 1 on 1 advisory digital roadmap whatsapp consultation"
   },
   {
     "id": "digital-business-setup",
@@ -2828,8 +2828,8 @@
     "deliveryType": "Remote & Home Visit",
     "homeVisitAvailable": true,
     "status": "Available",
-    "shortDesc": "Zoom, Meet and Teams setup service with guaranteed transparent pricing and fast turnaround across India.",
-    "searchTerms": "zoom, meet and teams setup remote-computer-tech-help"
+    "shortDesc": "Client video conferencing software setup (Zoom, Meet, Teams) configured safely on your PC via AnyDesk or TeamViewer screen share.",
+    "searchTerms": "zoom meet teams client setup remote-computer-tech-help"
   },
   {
     "id": "whatsapp-web-and-password-manager-setup",
@@ -2944,9 +2944,9 @@
     "searchTerms": "digital account troubleshooting account-digital-setup"
   },
   {
-    "id": "technical-consultation-60-min-video-call-written-action-summary-website-seo-google-maps-business-profile-android-app-computer-digital-business-or-local-growth",
+    "id": "technical-consultation-60-min-whatsapp-consultation-written-action-summary-website-seo-google-maps-business-profile-android-app-computer-digital-business-or-local-growth",
     "category": "technical-consultation",
-    "name": "Technical Consultation: 60 min video call + written action summary (website, SEO, Google Maps, Business Profile, Android app, computer, digital business or local growth)",
+    "name": "Technical Consultation: 60 min WhatsApp consultation + written action summary (website, SEO, Google Maps, Business Profile, Android app, computer, digital business or local growth)",
     "priceFrom": 1500,
     "priceTo": 1500,
     "priceDisplay": "₹1,500",
@@ -2956,7 +2956,7 @@
     "deliveryType": "Remote",
     "homeVisitAvailable": false,
     "status": "Available",
-    "shortDesc": "Technical Consultation: 60 min video call + written action summary (website, SEO, Google Maps, Business Profile, Android app, computer, digital business or local growth) service with guaranteed transparent pricing and fast turnaround across India.",
-    "searchTerms": "technical consultation: 60 min video call + written action summary (website, seo, google maps, business profile, android app, computer, digital business or local growth) technical-consultation"
+    "shortDesc": "Technical Consultation: 60 min WhatsApp consultation + written action summary (website, SEO, Google Maps, Business Profile, Android app, computer, digital business or local growth) service with guaranteed transparent pricing across India.",
+    "searchTerms": "technical consultation 60 min whatsapp consultation written action summary website seo google maps business profile android app computer digital business local growth technical-consultation"
   }
 ]

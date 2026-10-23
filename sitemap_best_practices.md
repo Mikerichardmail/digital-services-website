@@ -64,9 +64,12 @@ For search engines that support priority and change frequency (like Bing and Yah
 2. **Update `src/layouts/Base.astro`:**
    - Add `noindex?: boolean` prop.
    - When `noindex` is true, render `<meta name="robots" content="noindex, nofollow" />`.
-3. **Update `src/pages/thank-you/index.astro`:**
-   - Pass `noindex={true}` to prevent Google from indexing the thank-you screen.
-4. **Update `public/robots.txt`:**
-   - Confirm proper formatting and absolute sitemap reference.
+3. **Update Utility Pages (`thank-you` & `404`):**
+   - In `src/pages/thank-you/index.astro`: Pass `noindex={true}` to prevent Google from indexing the thank-you screen.
+   - In `src/pages/404.astro`: Pass `noindex={true}` to ensure error pages are strictly non-indexed.
+4. **Update `public/robots.txt` & `public/_redirects`:**
+   - Declare absolute sitemap references for both `sitemap-index.xml` and `sitemap.xml`.
+   - Provide `public/_redirects` and post-build alias to guarantee zero 404s when crawlers request `/sitemap.xml`.
 5. **Build and Validate:**
-   - Execute `npm run build` and inspect `dist/sitemap-index.xml` and `dist/sitemap-0.xml` to verify accurate XML structure, tags, and exclusions.
+   - Execute `npm run build` with automated post-build validation (`scripts/post-build.js`).
+   - Validate `dist/sitemap-index.xml`, `dist/sitemap.xml`, and `dist/sitemap-0.xml` for accurate W3C XML structure, tags, and exclusions.

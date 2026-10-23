@@ -31,7 +31,7 @@
       },
       {
         "q": "Can you set up AI tools remotely on my computer?",
-        "a": "Yes! We connect via secure remote screen share (Google Meet or AnyDesk) and configure your AI accounts, API keys, and workflow templates in real time."
+        "a": "Yes! We connect via secure remote screen share (AnyDesk or TeamViewer) and configure your AI accounts, API keys, and workflow templates in real time."
       },
       {
         "q": "Is there a minimum charge for AI help?",
@@ -147,7 +147,7 @@
     "faqs": [
       {
         "q": "How does remote computer support work?",
-        "a": "You share a secure temporary code using AnyDesk or Google Meet. You see everything we do live on your screen, and access ends the moment you disconnect."
+        "a": "You share a secure temporary code using AnyDesk or TeamViewer screen share. You see everything we do live on your screen, and access ends the moment you disconnect."
       },
       {
         "q": "Can you do an on-site home visit instead of remote support?",
@@ -186,7 +186,7 @@
     "faqs": [
       {
         "q": "What happens during a 60-Minute Consultation (₹1,500)?",
-        "a": "We conduct a 1-on-1 video call reviewing your digital presence, marketing, and technical setup. Within 24 hours, you receive a written step-by-step action roadmap."
+        "a": "We conduct a 1-on-1 consultation over WhatsApp chat or audio reviewing your digital presence, marketing, and technical setup. Within 24 hours, you receive a written step-by-step action roadmap."
       },
       {
         "q": "Can you help set up WhatsApp Business on our office phones?",
@@ -551,7 +551,7 @@
     "faqs": [
       {
         "q": "How does remote software support work?",
-        "a": "You share a secure temporary code using AnyDesk or Google Meet. You watch our screen movements live."
+        "a": "You share a secure temporary code using AnyDesk or TeamViewer screen share. You watch our screen movements live."
       }
     ]
   },
@@ -579,7 +579,7 @@
     "startingPrice": 1500,
     "homeVisitAvailable": true,
     "isLegacy": true,
-    "shortIntro": "60-minute 1-on-1 video consultation + written action summary. Get clear, unbiased expert advice on websites, SEO, apps, or business IT.",
+    "shortIntro": "60-minute 1-on-1 WhatsApp consultation + written action summary. Get clear, unbiased expert advice on websites, SEO, apps, or business IT.",
     "faqs": [
       {
         "q": "What topics can we cover during the consultation?",
