@@ -1,0 +1,730 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import site from '../../data/site.json';
+import packages from '../../data/instagramViewsPackages.json';
+
+// SEO Structured Data
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": site.url },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": `${site.url}/services` },
+    { "@type": "ListItem", "position": 3, "name": "Instagram Views", "item": `${site.url}/instagram-views` }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Instagram Views Packages — HelpIt Digital Solutions",
+  "description": "Buy high-retention Instagram Reel views starting from 100,000 views for ₹200 up to 10,000,000 views for ₹10,000. 100% password-free, safe delivery, and instant WhatsApp ordering.",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": site.brandName,
+    "url": site.url,
+    "telephone": site.whatsapp,
+    "priceRange": "₹200 - ₹10,000"
+  },
+  "areaServed": "India",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Instagram Views Pricing Packages",
+    "itemListElement": packages.map((pkg, idx) => ({
+      "@type": "Offer",
+      "position": idx + 1,
+      "name": pkg.name,
+      "price": pkg.price,
+      "priceCurrency": "INR",
+      "description": `${pkg.views} high-retention Instagram views for ₹${pkg.price}.`
+    }))
+  }
+};
+
+const faqs = [
+  {
+    q: "Do you ever ask for my Instagram password?",
+    a: "Never. We will never ask for your Instagram password, OTP, or account login credentials. All we need is the public link of the Instagram Reel you want to boost."
+  },
+  {
+    q: "How does the WhatsApp ordering process work?",
+    a: "Click 'Order Now' on any package above and paste your Instagram Reel URL. Our system will generate a prefilled WhatsApp message with your exact package and Reel details. Send it to our verified HelpIt WhatsApp number to finalize your order."
+  },
+  {
+    q: "Does my Instagram profile need to be public?",
+    a: "Yes. Your profile must be public during views delivery so the views can reach your Reel. Once delivery is complete, you can switch back if you wish."
+  },
+  {
+    q: "How fast do the views arrive?",
+    a: "Views delivery begins within 15 to 60 minutes after order confirmation on WhatsApp. Views are distributed at a safe, organic pace to ensure healthy engagement metrics."
+  },
+  {
+    q: "Can I split a package across multiple Reels?",
+    a: "Each package order is applied to one public Reel link. If you have multiple Reels, you can place separate orders or discuss a custom multi-reel bundle directly with us on WhatsApp."
+  },
+  {
+    q: "Is this safe for my Instagram account?",
+    a: "Yes, 100% safe. Because we only use your public Reel URL and deliver views through standard network distribution, your account remains completely secure and untouched."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.a
+    }
+  }))
+};
+
+const pageSchemas = [breadcrumbSchema, serviceSchema, faqSchema];
+---
+
+<Base
+  title={`Buy Instagram Views in India (From ₹200 for 100K Views) | ${site.brandName}`}
+  description="Boost your Instagram Reels with high-retention views. Packages from 100,000 views (₹200) to 10,000,000 views (₹10,000). 100% password-free. Order directly on WhatsApp."
+  schema={pageSchemas}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-16">
+    
+    <!-- Breadcrumbs -->
+    <Breadcrumbs 
+      items={[
+        { label: 'Services', href: '/services' },
+        { label: 'Instagram Views' }
+      ]} 
+    />
+
+    <!-- Hero Header -->
+    <div class="text-center max-w-3xl mx-auto space-y-4">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-purple-50 via-pink-50 to-amber-50 border border-pink-200 text-xs font-bold text-pink-700 shadow-sm">
+        <span class="flex h-2 w-2 relative">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-pink-500"></span>
+        </span>
+        <span>Instant WhatsApp Order • 100% Password-Free • Safe & Organic</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-tight">
+        Buy Instagram Views <br class="hidden sm:inline" />
+        <span class="bg-gradient-to-r from-purple-600 via-pink-600 to-amber-500 bg-clip-text text-transparent">
+          From ₹200 for 100,000 Views
+        </span>
+      </h1>
+
+      <p class="text-base sm:text-lg text-slate-600 font-medium leading-relaxed max-w-2xl mx-auto">
+        Skyrocket your Instagram Reels visibility and social proof. Select your views package, paste your public Reel URL, and complete your order seamlessly on WhatsApp.
+      </p>
+
+      <!-- Trust Badges Bar -->
+      <div class="pt-4 flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs font-semibold text-slate-700">
+        <div class="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-sm">
+          <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+          </svg>
+          <span>No Password Needed</span>
+        </div>
+        <div class="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-sm">
+          <svg class="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          <span>Fast 15–60m Start</span>
+        </div>
+        <div class="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-sm">
+          <svg class="w-4 h-4 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
+          <span>100% Safe Delivery</span>
+        </div>
+        <div class="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-sm">
+          <svg class="w-4 h-4 text-emerald-600 fill-current" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+          </svg>
+          <span>WhatsApp Verified</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pricing Cards Section -->
+    <div class="space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 pb-4">
+        <div>
+          <h2 class="text-2xl font-black text-slate-900 tracking-tight">Available Instagram Views Packages</h2>
+          <p class="text-xs sm:text-sm text-slate-500 mt-0.5">Click "Order Now" on any package to submit your public Reel link and continue via WhatsApp.</p>
+        </div>
+        <div class="inline-flex items-center gap-1.5 text-xs font-bold text-slate-600 bg-slate-100 px-3 py-1.5 rounded-xl self-start sm:self-auto">
+          <span>9 Transparent Plans</span>
+          <span>•</span>
+          <span class="text-emerald-700">₹200 to ₹10,000</span>
+        </div>
+      </div>
+
+      <!-- Packages Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch pt-2">
+        {packages.map((pkg) => {
+          const isPopular = pkg.highlightType === 'popular' || pkg.badge === 'Popular' || pkg.id === 'popular';
+
+          return (
+            <div 
+              class={`relative rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 ${
+                isPopular
+                  ? 'bg-gradient-to-b from-slate-900 via-brand-950 to-slate-900 text-white shadow-2xl shadow-brand-950/40 ring-2 ring-brand-500 hover:-translate-y-2 lg:-translate-y-3'
+                  : 'bg-white text-slate-900 border border-slate-200 shadow-sm hover:shadow-xl hover:border-slate-300 hover:-translate-y-1'
+              }`}
+            >
+              <!-- Top Highlight Badge for Popular -->
+              {isPopular && (
+                <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-500 via-indigo-500 to-purple-600 text-white text-[11px] font-black uppercase tracking-wider py-1 px-4 rounded-full shadow-lg shadow-brand-500/30 whitespace-nowrap">
+                  🔥 Most Popular
+                </div>
+              )}
+
+              <div>
+                <!-- Header / Name -->
+                <div class="flex items-start justify-between gap-2">
+                  <div>
+                    <h3 class={`text-lg font-bold tracking-tight ${isPopular ? 'text-white' : 'text-slate-900'}`}>
+                      {pkg.name}
+                    </h3>
+                    <p class={`text-xs mt-1 leading-relaxed ${isPopular ? 'text-slate-300' : 'text-slate-500'}`}>
+                      {pkg.description}
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Views Quantity Prominently Displayed -->
+                <div class={`mt-6 p-4 rounded-2xl border ${
+                  isPopular 
+                    ? 'bg-white/5 border-white/10' 
+                    : 'bg-slate-50 border-slate-100'
+                }`}>
+                  <span class={`text-[11px] font-bold uppercase tracking-wider block ${
+                    isPopular ? 'text-brand-300' : 'text-slate-500'
+                  }`}>
+                    Views Quantity
+                  </span>
+                  <div class="mt-1 flex items-baseline gap-2">
+                    <span class={`text-3xl sm:text-4xl font-black tracking-tight ${
+                      isPopular 
+                        ? 'text-white' 
+                        : 'text-slate-900'
+                    }`}>
+                      {pkg.views}
+                    </span>
+                    <span class={`text-xs font-bold uppercase ${
+                      isPopular ? 'text-brand-400' : 'text-brand-600'
+                    }`}>
+                      Views
+                    </span>
+                  </div>
+                </div>
+
+                <!-- Price Clearly Displayed in INR -->
+                <div class="mt-6 flex items-baseline justify-between border-b pb-5 border-dashed border-slate-200">
+                  <div>
+                    <span class={`text-xs font-bold uppercase tracking-wider block ${
+                      isPopular ? 'text-slate-400' : 'text-slate-400'
+                    }`}>
+                      Price (INR)
+                    </span>
+                    <div class="flex items-baseline gap-1 mt-0.5">
+                      <span class={`text-3xl sm:text-4xl font-extrabold tracking-tight ${
+                        isPopular ? 'text-emerald-400' : 'text-slate-900'
+                      }`}>
+                        {pkg.priceDisplay}
+                      </span>
+                      <span class={`text-xs font-medium ${isPopular ? 'text-slate-400' : 'text-slate-500'}`}>
+                        one-time
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="text-right">
+                    <span class={`text-[10px] font-bold uppercase tracking-wider block ${
+                      isPopular ? 'text-slate-400' : 'text-slate-400'
+                    }`}>
+                      Est. Speed
+                    </span>
+                    <span class={`inline-flex items-center gap-1 text-xs font-bold mt-1 px-2.5 py-0.5 rounded-full ${
+                      isPopular 
+                        ? 'bg-brand-500/20 text-brand-300' 
+                        : 'bg-slate-100 text-slate-700'
+                    }`}>
+                      ⚡ {pkg.deliveryTime}
+                    </span>
+                  </div>
+                </div>
+
+                <!-- Features Included -->
+                <div class="mt-6 space-y-3">
+                  <span class={`text-xs font-bold uppercase tracking-wider block ${
+                    isPopular ? 'text-slate-400' : 'text-slate-400'
+                  }`}>
+                    Package Features:
+                  </span>
+                  <ul class="space-y-2.5 text-xs sm:text-sm">
+                    {pkg.features.map((feat) => (
+                      <li class="flex items-start gap-2.5">
+                        <svg class={`w-4 h-4 shrink-0 mt-0.5 ${
+                          isPopular 
+                            ? 'text-emerald-400' 
+                            : 'text-emerald-600'
+                        }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span class={isPopular ? 'text-slate-200' : 'text-slate-700'}>
+                          {feat}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Order Now Action Button -->
+              <div class="mt-8 pt-4">
+                <button
+                  type="button"
+                  class={`ig-order-now-btn w-full py-3.5 px-6 rounded-2xl font-bold text-sm sm:text-base flex items-center justify-center gap-2 shadow-md transition-all active:scale-95 cursor-pointer ${
+                    isPopular
+                      ? 'bg-gradient-to-r from-brand-500 via-indigo-500 to-purple-600 hover:from-brand-600 hover:to-purple-700 text-white shadow-brand-500/30'
+                      : 'bg-slate-900 hover:bg-brand-600 text-white'
+                  }`}
+                  data-package-id={pkg.id}
+                  data-package-name={pkg.name}
+                  data-package-views={pkg.views}
+                  data-package-price={pkg.price}
+                  data-package-price-display={pkg.priceDisplay}
+                >
+                  <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+                  </svg>
+                  <span>Order Now &rarr;</span>
+                </button>
+                <div class="text-center mt-2">
+                  <span class={`text-[10px] ${isPopular ? 'text-slate-400' : 'text-slate-400'}`}>
+                    100% Password-Free • Direct WhatsApp Flow
+                  </span>
+                </div>
+              </div>
+
+            </div>
+          );
+        })}
+      </div>
+    </div>
+
+    <!-- 3-Step WhatsApp Order Workflow Section -->
+    <div class="rounded-3xl bg-slate-900 text-white p-8 sm:p-12 space-y-8 shadow-xl">
+      <div class="max-w-2xl space-y-2">
+        <span class="text-xs font-bold text-brand-400 uppercase tracking-wider">Simple & Transparent Ordering</span>
+        <h2 class="text-2xl sm:text-3xl font-black tracking-tight">How to Order Instagram Views in 3 Steps</h2>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          No signups, no complicated dashboards, and absolutely no passwords. We complete every order with transparent WhatsApp communication.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-300 font-black flex items-center justify-center text-lg">
+            1
+          </div>
+          <h3 class="font-bold text-base text-white">Select Your Package</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Choose your preferred views quantity ranging from 100,000 views (₹200) up to 10,000,000 views (₹10,000).
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-pink-500/20 text-pink-300 font-black flex items-center justify-center text-lg">
+            2
+          </div>
+          <h3 class="font-bold text-base text-white">Provide Your Reel URL</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Paste the link of your public Instagram Reel. We only require the public link — we will never ask for your password.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-300 font-black flex items-center justify-center text-lg">
+            3
+          </div>
+          <h3 class="font-bold text-base text-white">Confirm on WhatsApp</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Submit the form to open WhatsApp with a prefilled order message. Our team verifies your Reel and begins delivery right away.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Safety & Quality Guarantees -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-3">
+        <div class="w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-slate-900">Zero Password Requirement</h3>
+        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+          Your account security is our top priority. We never request your Instagram password, OTPs, or authentication codes. As long as your Reel is public, views are delivered directly to the link.
+        </p>
+      </div>
+
+      <div class="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-3">
+        <div class="w-10 h-10 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center font-bold">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-slate-900">Safe, Organic Delivery Pacing</h3>
+        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+          Views are paced smoothly to support natural retention and algorithmic indexing. Whether you need 100K or 20 Million views, our delivery protects your profile's reputation.
+        </p>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="space-y-6 max-w-4xl mx-auto">
+      <div class="text-center space-y-2">
+        <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Have Questions?</span>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Frequently Asked Questions</h2>
+        <p class="text-xs sm:text-sm text-slate-500">Everything you need to know about purchasing Instagram Reel views with HelpIt.</p>
+      </div>
+
+      <div class="divide-y divide-slate-200 rounded-3xl bg-white border border-slate-200 shadow-sm overflow-hidden">
+        {faqs.map((faq) => (
+          <div class="p-6 sm:p-7 space-y-2">
+            <h3 class="text-sm sm:text-base font-bold text-slate-900 flex items-start gap-2.5">
+              <span class="text-brand-600 font-extrabold shrink-0">Q.</span>
+              <span>{faq.q}</span>
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 pl-6 leading-relaxed">
+              {faq.a}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Custom Needs / Multi-Reel Banner -->
+    <div class="rounded-3xl bg-gradient-to-r from-purple-900 via-indigo-900 to-slate-900 text-white p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+      <div class="space-y-2 text-center md:text-left">
+        <span class="text-xs font-bold text-pink-300 uppercase tracking-wider">Custom Campaigns & Multi-Reels</span>
+        <h3 class="text-xl sm:text-2xl font-black tracking-tight">Need a custom views volume or agency package?</h3>
+        <p class="text-xs sm:text-sm text-slate-300 max-w-xl">
+          We handle enterprise creator campaigns, monthly views packages, and multi-reel bundles across India. Chat with our team directly.
+        </p>
+      </div>
+      <a 
+        href={`https://wa.me/${site.whatsapp.replace('+', '')}?text=${encodeURIComponent("Hello HelpIt, I am looking for a custom Instagram views package for my profile. Please share details.")}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm shadow-lg shadow-emerald-500/20 active:scale-95 transition-all shrink-0"
+      >
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+        </svg>
+        <span>Chat on WhatsApp</span>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Instagram Order Modal (Reel URL Request & WhatsApp Flow) -->
+  <div 
+    id="instagram-order-modal" 
+    class="fixed inset-0 z-50 hidden overflow-y-auto bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4 transition-all"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-pkg-header"
+  >
+    <div class="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl border border-slate-100 overflow-hidden transform transition-all my-8 animate-in fade-in zoom-in-95">
+      
+      <!-- Modal Header -->
+      <div class="bg-gradient-to-r from-purple-700 via-pink-600 to-amber-600 px-6 py-5 text-white flex items-center justify-between">
+        <div>
+          <span class="text-[11px] font-bold uppercase tracking-wider text-white/80">HelpIt WhatsApp Order</span>
+          <h3 class="text-xl font-black tracking-tight" id="modal-pkg-header">Order Instagram Views</h3>
+        </div>
+        <button 
+          id="close-ig-modal-btn" 
+          type="button" 
+          class="text-white/80 hover:text-white rounded-xl p-1.5 hover:bg-white/10 transition-colors" 
+          aria-label="Close modal"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Package Summary Box -->
+      <div class="p-5 sm:p-6 bg-slate-50 border-b border-slate-100 flex items-center justify-between">
+        <div>
+          <span class="text-[11px] font-bold uppercase text-slate-400 tracking-wider">Selected Package</span>
+          <h4 class="text-base sm:text-lg font-black text-slate-900 mt-0.5" id="modal-summary-name">100K Views Package</h4>
+          <span class="inline-flex items-center gap-1.5 text-xs text-brand-600 font-bold mt-1">
+            <span id="modal-summary-views">100,000 Views</span>
+          </span>
+        </div>
+        <div class="text-right">
+          <span class="text-[11px] font-bold uppercase text-slate-400 tracking-wider block">Price (INR)</span>
+          <span class="text-2xl sm:text-3xl font-black text-emerald-600" id="modal-summary-price">₹100</span>
+        </div>
+      </div>
+
+      <!-- Order Form -->
+      <form id="ig-order-form" class="p-6 space-y-5">
+        <input type="hidden" id="selected-pkg-name" value="" />
+        <input type="hidden" id="selected-pkg-views" value="" />
+        <input type="hidden" id="selected-pkg-price" value="" />
+
+        <!-- Instagram Reel URL input -->
+        <div>
+          <label for="reel-url-input" class="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-2">
+            Instagram Reel URL *
+          </label>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-pink-500">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </div>
+            <input 
+              type="text" 
+              id="reel-url-input" 
+              required 
+              placeholder="https://www.instagram.com/reel/C8xxxxxxxx/" 
+              class="w-full pl-11 pr-4 py-3 rounded-2xl border border-slate-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition-all shadow-sm"
+            />
+          </div>
+          <p class="text-[11px] text-slate-500 mt-2 flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Paste your public Reel URL. Make sure your Instagram profile is public.</span>
+          </p>
+          <p id="url-error" class="hidden text-xs text-rose-600 font-semibold mt-1.5"></p>
+        </div>
+
+        <!-- Security / Password-Free Reassurance -->
+        <div class="p-4 rounded-2xl bg-emerald-50/80 border border-emerald-200/80 flex items-start gap-3">
+          <svg class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
+          <div class="text-xs text-emerald-950">
+            <strong class="font-bold block text-emerald-900">100% Safe & Password-Free</strong>
+            <span>We never ask for your Instagram password, OTPs, or login details. Your account is always completely secure.</span>
+          </div>
+        </div>
+
+        <!-- Form Submission Button -->
+        <div>
+          <button 
+            type="submit" 
+            id="ig-submit-btn"
+            class="w-full py-3.5 px-6 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2.5 shadow-lg shadow-emerald-600/30 active:scale-95 transition-all cursor-pointer"
+          >
+            <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+            </svg>
+            <span>Continue to WhatsApp Order &rarr;</span>
+          </button>
+          <p class="text-center text-[11px] text-slate-400 mt-2">
+            Opens WhatsApp directly with your prefilled package details.
+          </p>
+        </div>
+      </form>
+
+      <!-- Post-submission / Manual Redirect State -->
+      <div id="ig-success-state" class="hidden p-6 sm:p-8 text-center space-y-4">
+        <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto text-2xl font-black">
+          ✓
+        </div>
+        <h4 class="text-lg font-black text-slate-900">Redirecting to WhatsApp...</h4>
+        <p class="text-xs sm:text-sm text-slate-600 max-w-sm mx-auto leading-relaxed">
+          If WhatsApp didn't open automatically in a new tab, click the button below to send your prefilled order message.
+        </p>
+        <div>
+          <a 
+            id="ig-manual-whatsapp-link" 
+            href="#" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md transition-all active:scale-95"
+          >
+            <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+            </svg>
+            <span>Open WhatsApp Now</span>
+          </a>
+        </div>
+        <div class="pt-2">
+          <button 
+            type="button" 
+            id="ig-done-btn" 
+            class="text-xs text-slate-500 hover:text-slate-800 underline font-medium cursor-pointer"
+          >
+            Close Window
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Client-side Interactive Script -->
+  <script is:inline define:vars={{ whatsappNumber: site.whatsapp.replace('+', '') }}>
+    (function() {
+      const orderButtons = document.querySelectorAll('.ig-order-now-btn');
+      const modal = document.getElementById('instagram-order-modal');
+      const closeBtn = document.getElementById('close-ig-modal-btn');
+      const doneBtn = document.getElementById('ig-done-btn');
+      const form = document.getElementById('ig-order-form');
+      const successState = document.getElementById('ig-success-state');
+      const urlInput = document.getElementById('reel-url-input');
+      const urlError = document.getElementById('url-error');
+      const manualLink = document.getElementById('ig-manual-whatsapp-link');
+
+      const summaryName = document.getElementById('modal-summary-name');
+      const summaryViews = document.getElementById('modal-summary-views');
+      const summaryPrice = document.getElementById('modal-summary-price');
+
+      const inputPkgName = document.getElementById('selected-pkg-name');
+      const inputPkgViews = document.getElementById('selected-pkg-views');
+      const inputPkgPrice = document.getElementById('selected-pkg-price');
+
+      function openModal(btn) {
+        const pkgName = btn.getAttribute('data-package-name') || '';
+        const pkgViews = btn.getAttribute('data-package-views') || '';
+        const pkgPrice = btn.getAttribute('data-package-price') || '';
+        const pkgPriceDisplay = btn.getAttribute('data-package-price-display') || ('₹' + pkgPrice);
+
+        inputPkgName.value = pkgName;
+        inputPkgViews.value = pkgViews;
+        inputPkgPrice.value = pkgPrice;
+
+        if (summaryName) summaryName.textContent = pkgName;
+        if (summaryViews) summaryViews.textContent = pkgViews + ' Views';
+        if (summaryPrice) summaryPrice.textContent = pkgPriceDisplay;
+
+        if (urlInput) urlInput.value = '';
+        if (urlError) {
+          urlError.classList.add('hidden');
+          urlError.textContent = '';
+        }
+
+        if (form) form.classList.remove('hidden');
+        if (successState) successState.classList.add('hidden');
+
+        if (modal) {
+          modal.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+          setTimeout(() => {
+            if (urlInput) urlInput.focus();
+          }, 100);
+        }
+      }
+
+      function closeModal() {
+        if (modal) {
+          modal.classList.add('hidden');
+          document.body.style.overflow = '';
+        }
+      }
+
+      orderButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          openModal(btn);
+        });
+      });
+
+      if (closeBtn) closeBtn.addEventListener('click', closeModal);
+      if (doneBtn) doneBtn.addEventListener('click', closeModal);
+
+      if (modal) {
+        modal.addEventListener('click', function(e) {
+          if (e.target === modal) closeModal();
+        });
+      }
+
+      window.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+          closeModal();
+        }
+      });
+
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+
+          let reelUrl = urlInput ? urlInput.value.trim() : '';
+
+          if (!reelUrl) {
+            if (urlError) {
+              urlError.textContent = 'Please enter your Instagram Reel URL.';
+              urlError.classList.remove('hidden');
+            }
+            if (urlInput) urlInput.focus();
+            return;
+          }
+
+          // If user pasted without protocol, prepend https://
+          if (!/^https?:\/\//i.test(reelUrl)) {
+            reelUrl = 'https://' + reelUrl;
+          }
+
+          // Validate that the URL points to Instagram
+          if (!reelUrl.toLowerCase().includes('instagram.com')) {
+            if (urlError) {
+              urlError.textContent = 'Please enter a valid Instagram URL (e.g. https://www.instagram.com/reel/...).';
+              urlError.classList.remove('hidden');
+            }
+            if (urlInput) urlInput.focus();
+            return;
+          }
+
+          if (urlError) {
+            urlError.classList.add('hidden');
+            urlError.textContent = '';
+          }
+
+          const pkgName = inputPkgName.value;
+          const pkgViews = inputPkgViews.value;
+          const pkgPrice = inputPkgPrice.value;
+
+          const prefilledMessage = 
+`Hello HelpIt,
+
+I want to order Instagram views.
+
+Package: ${pkgName}
+Views: ${pkgViews}
+Price: ₹${pkgPrice}
+Instagram Reel URL: ${reelUrl}
+
+Please share the next steps for placing my order.`;
+
+          const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(prefilledMessage)}`;
+
+          if (manualLink) {
+            manualLink.setAttribute('href', waUrl);
+          }
+
+          // Switch modal view to success/redirect state
+          if (form) form.classList.add('hidden');
+          if (successState) successState.classList.remove('hidden');
+
+          // Open WhatsApp
+          window.open(waUrl, '_blank');
+        });
+      }
+    })();
+  </script>
+</Base>

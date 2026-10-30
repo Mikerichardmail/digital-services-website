@@ -1,2 +1,8 @@
 # Sitemap redirect
 /sitemap.xml /sitemap-index.xml 301
+
+# Instagram Views aliases
+/services/instagram-views /instagram-views 301
+/services/instagram-views/ /instagram-views 301
+/instagram-reels-views /instagram-views 301
+/instagram-reels-views/ /instagram-views 301

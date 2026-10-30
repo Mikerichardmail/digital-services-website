@@ -1,0 +1,182 @@
+[
+  {
+    "id": "starter",
+    "name": "Starter",
+    "views": "100,000",
+    "viewsCount": 100000,
+    "price": "200",
+    "priceNumber": 200,
+    "priceDisplay": "₹200",
+    "badge": null,
+    "highlightType": null,
+    "deliveryTime": "15–60 mins",
+    "description": "Ideal for creators testing views quality on their newest Instagram Reel.",
+    "features": [
+      "100,000 High-Retention Reel Views",
+      "100% Safe — No Password Needed",
+      "Safe, Organic Delivery Pacing",
+      "Works with Any Public Reel Link",
+      "Instant WhatsApp Order Support"
+    ]
+  },
+  {
+    "id": "basic",
+    "name": "Basic",
+    "views": "250,000",
+    "viewsCount": 250000,
+    "price": "400",
+    "priceNumber": 400,
+    "priceDisplay": "₹400",
+    "badge": null,
+    "highlightType": null,
+    "deliveryTime": "30–90 mins",
+    "description": "Give your Reel strong algorithmic momentum to reach more explore feeds.",
+    "features": [
+      "250,000 High-Retention Reel Views",
+      "100% Safe — No Password Needed",
+      "Natural Pacing to Match Organic Growth",
+      "Works with Any Public Reel Link",
+      "Instant WhatsApp Order Support"
+    ]
+  },
+  {
+    "id": "standard",
+    "name": "Standard",
+    "views": "500,000",
+    "viewsCount": 500000,
+    "price": "600",
+    "priceNumber": 600,
+    "priceDisplay": "₹600",
+    "badge": null,
+    "highlightType": null,
+    "deliveryTime": "1–2 hours",
+    "description": "Half a million views to push your content into trending feeds and hashtags.",
+    "features": [
+      "500,000 High-Retention Reel Views",
+      "100% Safe — No Password Needed",
+      "Accelerated Algorithmic Reach",
+      "Works with Any Public Reel Link",
+      "Instant WhatsApp Order Support"
+    ]
+  },
+  {
+    "id": "popular",
+    "name": "Popular",
+    "views": "1,000,000",
+    "viewsCount": 1000000,
+    "price": "1,000",
+    "priceNumber": 1000,
+    "priceDisplay": "₹1,000",
+    "badge": "Popular",
+    "highlightType": "popular",
+    "deliveryTime": "2–4 hours",
+    "description": "Our most popular package. Unlock viral social proof with 1 million views.",
+    "features": [
+      "1,000,000 High-Retention Reel Views",
+      "100% Safe — No Password Needed",
+      "Maximum Algorithmic Visibility",
+      "Works with Any Public Reel Link",
+      "Priority WhatsApp Support"
+    ]
+  },
+  {
+    "id": "growth",
+    "name": "Growth",
+    "views": "2,000,000",
+    "viewsCount": 2000000,
+    "price": "2,000",
+    "priceNumber": 2000,
+    "priceDisplay": "₹2,000",
+    "badge": null,
+    "highlightType": null,
+    "deliveryTime": "3–6 hours",
+    "description": "Supercharge growth and authority for brand sponsorships and launches.",
+    "features": [
+      "2,000,000 High-Retention Reel Views",
+      "100% Safe — No Password Needed",
+      "Safe Tiered Pacing & Retention",
+      "Works with Any Public Reel Link",
+      "Priority WhatsApp Support"
+    ]
+  },
+  {
+    "id": "pro",
+    "name": "Pro",
+    "views": "3,000,000",
+    "viewsCount": 3000000,
+    "price": "3,000",
+    "priceNumber": 3000,
+    "priceDisplay": "₹3,000",
+    "badge": null,
+    "highlightType": null,
+    "deliveryTime": "4–8 hours",
+    "description": "Designed for serious creators and business accounts building massive reach.",
+    "features": [
+      "3,000,000 High-Retention Reel Views",
+      "100% Safe — No Password Needed",
+      "High Authority & Search Stacking",
+      "Works with Any Public Reel Link",
+      "Dedicated WhatsApp Support"
+    ]
+  },
+  {
+    "id": "premium",
+    "name": "Premium",
+    "views": "5,000,000",
+    "viewsCount": 5000000,
+    "price": "5,000",
+    "priceNumber": 5000,
+    "priceDisplay": "₹5,000",
+    "badge": null,
+    "highlightType": null,
+    "deliveryTime": "6–12 hours",
+    "description": "Multi-million views boost for prominent creators, agencies, and brands.",
+    "features": [
+      "5,000,000 High-Retention Reel Views",
+      "100% Safe — No Password Needed",
+      "High Authority & Search Stacking",
+      "Works with Any Public Reel Link",
+      "Dedicated WhatsApp Support"
+    ]
+  },
+  {
+    "id": "ultimate",
+    "name": "Ultimate",
+    "views": "7,500,000",
+    "viewsCount": 7500000,
+    "price": "7,500",
+    "priceNumber": 7500,
+    "priceDisplay": "₹7,500",
+    "badge": null,
+    "highlightType": null,
+    "deliveryTime": "8–16 hours",
+    "description": "High-volume exposure engineered for celebrity profiles and national promotions.",
+    "features": [
+      "7,500,000 High-Retention Reel Views",
+      "100% Safe — No Password Needed",
+      "Safe Large-Scale Speed Pacing",
+      "Works with Any Public Reel Link",
+      "VIP Dedicated WhatsApp Manager"
+    ]
+  },
+  {
+    "id": "mega",
+    "name": "Mega",
+    "views": "10,000,000",
+    "viewsCount": 10000000,
+    "price": "10,000",
+    "priceNumber": 10000,
+    "priceDisplay": "₹10,000",
+    "badge": null,
+    "highlightType": null,
+    "deliveryTime": "12–24 hours",
+    "description": "The mega views package. 10 million views for maximum viral dominance across India.",
+    "features": [
+      "10,000,000 High-Retention Reel Views",
+      "100% Safe — No Password Needed",
+      "Maximum Viral Impact & Reach",
+      "Works with Any Public Reel Link",
+      "VIP Dedicated WhatsApp Manager"
+    ]
+  }
+]

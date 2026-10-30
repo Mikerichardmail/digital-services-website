@@ -63,6 +63,7 @@ export default defineConfig({
           item.lastmod = new Date('2026-10-19');
         } else if (
           item.url.includes('/solutions/') || 
+          item.url.includes('/instagram-views/') || 
           item.url.includes('/tell-us-what-youre-stuck-on/')
         ) {
           // Tier 2: Targeted Solution Landing Pages (High-Intent SEO)

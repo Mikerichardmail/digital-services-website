@@ -65,7 +65,14 @@ const { services, title, showCategoryBadge = false } = Astro.props;
                 </span>
               </td>
               <td class="py-4 px-4 sm:px-6 text-right whitespace-nowrap">
-                {item.pay === 'link' ? (
+                {item.id === 'instagram-reel-views-packages' ? (
+                  <a 
+                    href="/instagram-views" 
+                    class="inline-flex items-center justify-center gap-1 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white shadow-sm px-3 py-1.5 text-xs font-bold transition-all"
+                  >
+                    <span>View Packages &rarr;</span>
+                  </a>
+                ) : item.pay === 'link' ? (
                   <PayButton 
                     serviceId={item.id} 
                     serviceName={item.name} 
