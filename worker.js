@@ -1,5 +1,6 @@
 import { onRequestPost as handleCreatePaymentLink } from './functions/api/create-payment-link.js';
 import { onRequestPost as handleRazorpayWebhook } from './functions/api/razorpay-webhook.js';
+import { onRequest as handleSeoApi } from './functions/api/seo.js';
 
 export default {
   async fetch(request, env, ctx) {
@@ -25,6 +26,11 @@ export default {
         status: 405,
         headers: { 'Content-Type': 'application/json' }
       });
+    }
+
+    // 3. API Route: Google Search Console & PageSpeed Insights SEO Service
+    if (url.pathname === '/api/seo') {
+      return handleSeoApi({ request, env, ctx });
     }
 
     // 3. Static Site & Asset Serving (51 Astro Pages, CSS, JS, SVGs, Sitemap)

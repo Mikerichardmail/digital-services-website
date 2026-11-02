@@ -12,6 +12,11 @@ node_modules/
 !.env.example
 .dev.vars
 .dev.vars.*
+*.json.secret
+oauth-credentials.json
+token.json
+*service-account*.json
+*credentials*.json
 
 # logs
 npm-debug.log*

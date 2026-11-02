@@ -1,0 +1,1078 @@
+---
+import Base from '../../layouts/Base.astro';
+
+// Exclude admin dashboard from public search engine indexes
+const noindex = true;
+---
+
+<Base 
+  title="SEO Command Center - Google Search Console & PageSpeed Insights | HelpIt.in"
+  description="Internal SEO monitoring and diagnostic dashboard for HelpIt.in powered by Google Search Console API and PageSpeed Insights API."
+  noindex={noindex}
+>
+  <main class="min-h-screen bg-slate-900 text-slate-100 py-8 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto space-y-6">
+
+      <!-- Header & Status Bar -->
+      <header class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 backdrop-blur-md shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-3">
+            <div class="p-2.5 bg-brand-600/20 border border-brand-500/30 rounded-xl text-brand-400">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </div>
+            <div>
+              <h1 class="text-2xl font-bold text-white tracking-tight">HelpIt.in SEO Command Center</h1>
+              <p class="text-sm text-slate-400">Live integration with Google Search Console API & Google PageSpeed Insights API</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Property & API Status Badges -->
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Search Console (sc-domain:helpit.in)
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-blue-500/15 text-blue-400 border border-blue-500/30">
+            <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+            PageSpeed Insights API
+          </span>
+          <button id="btnRefreshAll" class="px-3.5 py-1.5 bg-slate-700 hover:bg-slate-600 text-slate-200 text-xs font-medium rounded-lg transition-colors flex items-center gap-1.5 border border-slate-600">
+            <svg id="refreshSpinner" class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+            </svg>
+            Refresh Data
+          </button>
+        </div>
+      </header>
+
+      <!-- Navigation Tabs -->
+      <nav class="flex border-b border-slate-700 space-x-1 overflow-x-auto no-scrollbar pb-1 text-sm font-medium">
+        <button data-tab="tab-performance" class="tab-btn px-4 py-2.5 rounded-t-xl text-brand-400 border-b-2 border-brand-500 bg-slate-800/60 font-semibold flex items-center gap-2 transition-all">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+          Search Performance
+        </button>
+        <button data-tab="tab-opportunities" class="tab-btn px-4 py-2.5 rounded-t-xl text-slate-400 hover:text-slate-200 border-b-2 border-transparent font-medium flex items-center gap-2 transition-all">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+          SEO Opportunities
+        </button>
+        <button data-tab="tab-inspection" class="tab-btn px-4 py-2.5 rounded-t-xl text-slate-400 hover:text-slate-200 border-b-2 border-transparent font-medium flex items-center gap-2 transition-all">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+          URL Inspection
+        </button>
+        <button data-tab="tab-pagespeed" class="tab-btn px-4 py-2.5 rounded-t-xl text-slate-400 hover:text-slate-200 border-b-2 border-transparent font-medium flex items-center gap-2 transition-all">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          PageSpeed & Core Web Vitals
+        </button>
+        <button data-tab="tab-sitemaps" class="tab-btn px-4 py-2.5 rounded-t-xl text-slate-400 hover:text-slate-200 border-b-2 border-transparent font-medium flex items-center gap-2 transition-all">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+          Sitemaps & Indexing
+        </button>
+      </nav>
+
+      <!-- TAB 1: Search Performance -->
+      <section id="tab-performance" class="tab-content space-y-6">
+        <!-- Date Selector -->
+        <div class="flex items-center justify-between">
+          <h2 class="text-lg font-bold text-white">Google Search Performance (Last 28 Days)</h2>
+          <div class="flex items-center gap-2">
+            <span class="text-xs text-slate-400">Date Range:</span>
+            <select id="selPerfDays" class="bg-slate-800 border border-slate-700 text-slate-200 text-xs rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-brand-500">
+              <option value="7">Last 7 Days</option>
+              <option value="28" selected>Last 28 Days</option>
+              <option value="90">Last 3 Months</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- KPI Cards -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-5 shadow-sm">
+            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Total Clicks</div>
+            <div id="metricClicks" class="mt-2 text-3xl font-extrabold text-blue-400">--</div>
+            <div class="mt-1 text-xs text-slate-400">Actual organic search clicks</div>
+          </div>
+          <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-5 shadow-sm">
+            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Total Impressions</div>
+            <div id="metricImpressions" class="mt-2 text-3xl font-extrabold text-purple-400">--</div>
+            <div class="mt-1 text-xs text-slate-400">Times HelpIt.in appeared in SERP</div>
+          </div>
+          <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-5 shadow-sm">
+            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Average CTR</div>
+            <div id="metricCtr" class="mt-2 text-3xl font-extrabold text-emerald-400">--</div>
+            <div class="mt-1 text-xs text-slate-400">Click-Through Rate</div>
+          </div>
+          <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-5 shadow-sm">
+            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Average Position</div>
+            <div id="metricPosition" class="mt-2 text-3xl font-extrabold text-amber-400">--</div>
+            <div class="mt-1 text-xs text-slate-400">Weighted average search rank</div>
+          </div>
+        </div>
+
+        <!-- Trends Visualizer -->
+        <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-6">
+          <h3 class="text-sm font-semibold text-white mb-4">Search Performance Trends (Daily Clicks & Impressions)</h3>
+          <div id="trendChartContainer" class="h-44 w-full flex items-end gap-1.5 overflow-x-auto pb-4 pt-4 border-b border-slate-700/60">
+            <!-- Dynamic bars loaded by JS -->
+            <div class="text-xs text-slate-400 mx-auto self-center">Loading trend data from Google Search Console...</div>
+          </div>
+          <div class="mt-3 flex items-center justify-between text-xs text-slate-400">
+            <div class="flex items-center gap-4">
+              <span class="flex items-center gap-1.5"><span class="w-3 h-3 bg-blue-500 rounded-sm"></span> Clicks</span>
+              <span class="flex items-center gap-1.5"><span class="w-3 h-3 bg-purple-500/50 rounded-sm"></span> Impressions</span>
+            </div>
+            <span id="trendDateRange" class="text-slate-400 text-xs">--</span>
+          </div>
+        </div>
+
+        <!-- Two Columns: Top Queries & Top Pages -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- Top Queries -->
+          <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-5">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-sm font-semibold text-white flex items-center gap-2">
+                <span>Top Search Queries</span>
+                <span id="queriesCount" class="text-xs px-2 py-0.5 bg-slate-700 text-slate-300 rounded-full">0</span>
+              </h3>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs">
+                <thead class="text-slate-400 uppercase bg-slate-900/40 border-b border-slate-700">
+                  <tr>
+                    <th class="py-2.5 px-3 font-semibold">Query</th>
+                    <th class="py-2.5 px-3 font-semibold text-right">Clicks</th>
+                    <th class="py-2.5 px-3 font-semibold text-right">Impr</th>
+                    <th class="py-2.5 px-3 font-semibold text-right">CTR</th>
+                    <th class="py-2.5 px-3 font-semibold text-right">Pos</th>
+                  </tr>
+                </thead>
+                <tbody id="tblQueries" class="divide-y divide-slate-700/60 text-slate-200">
+                  <tr><td colspan="5" class="py-4 text-center text-slate-400">Loading queries...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Top Pages -->
+          <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-5">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-sm font-semibold text-white flex items-center gap-2">
+                <span>Top Performing Pages</span>
+                <span id="pagesCount" class="text-xs px-2 py-0.5 bg-slate-700 text-slate-300 rounded-full">0</span>
+              </h3>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs">
+                <thead class="text-slate-400 uppercase bg-slate-900/40 border-b border-slate-700">
+                  <tr>
+                    <th class="py-2.5 px-3 font-semibold">Page URL</th>
+                    <th class="py-2.5 px-3 font-semibold text-right">Clicks</th>
+                    <th class="py-2.5 px-3 font-semibold text-right">Impr</th>
+                    <th class="py-2.5 px-3 font-semibold text-right">CTR</th>
+                    <th class="py-2.5 px-3 font-semibold text-right">Pos</th>
+                  </tr>
+                </thead>
+                <tbody id="tblPages" class="divide-y divide-slate-700/60 text-slate-200">
+                  <tr><td colspan="5" class="py-4 text-center text-slate-400">Loading pages...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Devices and Countries Breakdown -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-5">
+            <h3 class="text-sm font-semibold text-white mb-3">Device Breakdown</h3>
+            <div id="deviceBreakdown" class="space-y-3">
+              <div class="text-xs text-slate-400">Loading device data...</div>
+            </div>
+          </div>
+          <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-5">
+            <h3 class="text-sm font-semibold text-white mb-3">Top Countries</h3>
+            <div id="countryBreakdown" class="space-y-3">
+              <div class="text-xs text-slate-400">Loading country data...</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: SEO Opportunities -->
+      <section id="tab-opportunities" class="tab-content hidden space-y-6">
+        <div class="flex items-center justify-between">
+          <div>
+            <h2 class="text-lg font-bold text-white">Algorithmic SEO Opportunities & Diagnostics</h2>
+            <p class="text-xs text-slate-400">Derived from Search Console performance data and traffic comparisons</p>
+          </div>
+        </div>
+
+        <!-- Sub-section: Striking Distance Keywords (Positions 5-30) -->
+        <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-6">
+          <div class="flex items-center justify-between mb-4">
+            <div>
+              <h3 class="text-sm font-semibold text-emerald-400 flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+                Striking Distance Keywords (Rank 5 to 30)
+              </h3>
+              <p class="text-xs text-slate-400 mt-0.5">Queries ranking on Page 2 or lower half of Page 1 with high ranking potential.</p>
+            </div>
+            <span id="strikingCount" class="text-xs font-semibold px-2.5 py-1 bg-emerald-500/20 text-emerald-300 rounded-lg">0 found</span>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead class="text-slate-400 uppercase bg-slate-900/40 border-b border-slate-700">
+                <tr>
+                  <th class="py-2.5 px-3">Keyword Query</th>
+                  <th class="py-2.5 px-3">Page</th>
+                  <th class="py-2.5 px-3 text-right">Position</th>
+                  <th class="py-2.5 px-3 text-right">Impressions</th>
+                  <th class="py-2.5 px-3">Recommended Optimization</th>
+                </tr>
+              </thead>
+              <tbody id="tblStriking" class="divide-y divide-slate-700/60 text-slate-200">
+                <tr><td colspan="5" class="py-4 text-center text-slate-400">Analyzing search data...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Sub-section: High Impressions, Low CTR (Page 1 Title/Meta Optimization) -->
+        <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-6">
+          <div class="flex items-center justify-between mb-4">
+            <div>
+              <h3 class="text-sm font-semibold text-amber-400 flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+                High Impressions, Low CTR Opportunities
+              </h3>
+              <p class="text-xs text-slate-400 mt-0.5">Users are seeing your pages in Google but not clicking. Improve title tag & meta description.</p>
+            </div>
+            <span id="lowCtrCount" class="text-xs font-semibold px-2.5 py-1 bg-amber-500/20 text-amber-300 rounded-lg">0 found</span>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead class="text-slate-400 uppercase bg-slate-900/40 border-b border-slate-700">
+                <tr>
+                  <th class="py-2.5 px-3">Query</th>
+                  <th class="py-2.5 px-3">Page</th>
+                  <th class="py-2.5 px-3 text-right">Position</th>
+                  <th class="py-2.5 px-3 text-right">Impr</th>
+                  <th class="py-2.5 px-3 text-right">CTR</th>
+                  <th class="py-2.5 px-3">Title & Meta Action</th>
+                </tr>
+              </thead>
+              <tbody id="tblLowCtr" class="divide-y divide-slate-700/60 text-slate-200">
+                <tr><td colspan="6" class="py-4 text-center text-slate-400">Analyzing CTR data...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Sub-section: Content Decay & Traffic Drop Alerts -->
+        <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-6">
+          <div class="flex items-center justify-between mb-4">
+            <div>
+              <h3 class="text-sm font-semibold text-rose-400 flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-rose-400"></span>
+                Content Decay & Traffic Loss Comparison
+              </h3>
+              <p class="text-xs text-slate-400 mt-0.5">Pages that lost clicks or impressions compared to the previous 28-day window.</p>
+            </div>
+            <span id="decayCount" class="text-xs font-semibold px-2.5 py-1 bg-rose-500/20 text-rose-300 rounded-lg">0 alerts</span>
+          </div>
+          <div id="contentDecayContainer" class="space-y-3">
+            <div class="text-xs text-slate-400 text-center py-4">Checking traffic change between periods...</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: URL Inspection -->
+      <section id="tab-inspection" class="tab-content hidden space-y-6">
+        <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-6">
+          <h2 class="text-lg font-bold text-white mb-2">Google Search Console URL Inspection API</h2>
+          <p class="text-xs text-slate-400 mb-6">Inspect real-time Google indexing verdict, crawling status, canonical agreement, and mobile index coverage directly from Google.</p>
+
+          <!-- Input Bar -->
+          <div class="flex flex-col sm:flex-row gap-3">
+            <input 
+              id="inspectUrlInput" 
+              type="url" 
+              value="https://helpit.in/" 
+              placeholder="https://helpit.in/services/website-seo-services/" 
+              class="flex-1 bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-brand-500"
+            />
+            <button 
+              id="btnRunInspect" 
+              class="px-5 py-2.5 bg-brand-600 hover:bg-brand-500 text-white font-medium text-sm rounded-xl transition-colors shadow-md flex items-center justify-center gap-2"
+            >
+              <svg id="inspectSpinner" class="w-4 h-4 hidden animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+              <span>Inspect URL</span>
+            </button>
+          </div>
+
+          <!-- Quick URL Pickers -->
+          <div class="mt-4 flex flex-wrap items-center gap-2 text-xs">
+            <span class="text-slate-400">Quick Test:</span>
+            <button class="quick-url-btn px-2.5 py-1 bg-slate-700 hover:bg-slate-600 rounded text-slate-300 transition" data-url="https://helpit.in/">Homepage</button>
+            <button class="quick-url-btn px-2.5 py-1 bg-slate-700 hover:bg-slate-600 rounded text-slate-300 transition" data-url="https://helpit.in/services/website-seo-services/">SEO Services</button>
+            <button class="quick-url-btn px-2.5 py-1 bg-slate-700 hover:bg-slate-600 rounded text-slate-300 transition" data-url="https://helpit.in/services/windows-computer-support/">PC Support</button>
+            <button class="quick-url-btn px-2.5 py-1 bg-slate-700 hover:bg-slate-600 rounded text-slate-300 transition" data-url="https://helpit.in/solutions/project-deadline-rescue/">Solutions Page</button>
+            <button class="quick-url-btn px-2.5 py-1 bg-slate-700 hover:bg-slate-600 rounded text-slate-300 transition" data-url="https://helpit.in/locations/noida/">Location (Noida)</button>
+          </div>
+        </div>
+
+        <!-- Inspection Result Card -->
+        <div id="inspectResultCard" class="hidden bg-slate-800/80 border border-slate-700 rounded-xl p-6 space-y-5">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-700/60 gap-3">
+            <div>
+              <div class="text-xs text-slate-400">Inspected URL</div>
+              <div id="inspUrl" class="text-sm font-mono text-white font-semibold break-all">--</div>
+            </div>
+            <div id="inspVerdictBadge" class="self-start sm:self-auto px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+              --
+            </div>
+          </div>
+
+          <!-- Status Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-slate-900/50 border border-slate-700/60 rounded-lg p-4">
+              <div class="text-xs font-medium text-slate-400">Coverage State</div>
+              <div id="inspCoverageState" class="mt-1 text-sm font-semibold text-slate-200">--</div>
+              <p class="text-xs text-slate-400 mt-1">Google indexing eligibility</p>
+            </div>
+            <div class="bg-slate-900/50 border border-slate-700/60 rounded-lg p-4">
+              <div class="text-xs font-medium text-slate-400">Last Crawl Time</div>
+              <div id="inspLastCrawl" class="mt-1 text-sm font-semibold text-slate-200">--</div>
+              <p class="text-xs text-slate-400 mt-1">Googlebot timestamp</p>
+            </div>
+            <div class="bg-slate-900/50 border border-slate-700/60 rounded-lg p-4">
+              <div class="text-xs font-medium text-slate-400">Robots.txt & Fetch</div>
+              <div id="inspRobotsState" class="mt-1 text-sm font-semibold text-slate-200">--</div>
+              <p class="text-xs text-slate-400 mt-1">Crawl accessibility</p>
+            </div>
+          </div>
+
+          <!-- Canonical Comparison -->
+          <div class="bg-slate-900/70 border border-slate-700 rounded-xl p-5 space-y-3">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-300">Canonical Tag Analysis</h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-mono">
+              <div class="p-3 bg-slate-800 rounded border border-slate-700/80">
+                <span class="text-slate-400 block mb-1 font-sans">User-Declared Canonical:</span>
+                <span id="inspUserCanonical" class="text-slate-200 break-all">--</span>
+              </div>
+              <div class="p-3 bg-slate-800 rounded border border-slate-700/80">
+                <span class="text-slate-400 block mb-1 font-sans">Google Selected Canonical:</span>
+                <span id="inspGoogleCanonical" class="text-slate-200 break-all">--</span>
+              </div>
+            </div>
+            <div id="inspCanonicalStatus" class="p-3 rounded-lg text-xs">
+              <!-- JS outputs whether canonicals match -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: PageSpeed & Web Vitals -->
+      <section id="tab-pagespeed" class="tab-content hidden space-y-6">
+        <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-6">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-5">
+            <div>
+              <h2 class="text-lg font-bold text-white">Google PageSpeed Insights Audit</h2>
+              <p class="text-xs text-slate-400">Live Lighthouse performance, accessibility, SEO audits, and Core Web Vitals</p>
+            </div>
+
+            <!-- Strategy Switcher (Mobile vs Desktop) -->
+            <div class="flex items-center gap-2 self-start md:self-auto bg-slate-900 p-1 rounded-xl border border-slate-700">
+              <button id="btnStratMobile" class="strat-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-brand-600 text-white transition">Mobile</button>
+              <button id="btnStratDesktop" class="strat-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-slate-200 transition">Desktop</button>
+            </div>
+          </div>
+
+          <!-- PageSpeed Input Bar -->
+          <div class="flex flex-col sm:flex-row gap-3">
+            <input 
+              id="psUrlInput" 
+              type="url" 
+              value="https://helpit.in/" 
+              placeholder="https://helpit.in/" 
+              class="flex-1 bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-brand-500"
+            />
+            <button 
+              id="btnRunPageSpeed" 
+              class="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm rounded-xl transition-colors shadow-md flex items-center justify-center gap-2"
+            >
+              <svg id="psSpinner" class="w-4 h-4 hidden animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+              <span>Run PageSpeed Audit</span>
+            </button>
+          </div>
+
+          <!-- Quick Test Pickers -->
+          <div class="mt-4 flex flex-wrap items-center gap-2 text-xs">
+            <span class="text-slate-400">Analyze Page:</span>
+            <button class="quick-ps-btn px-2.5 py-1 bg-slate-700 hover:bg-slate-600 rounded text-slate-300 transition" data-url="https://helpit.in/">Homepage</button>
+            <button class="quick-ps-btn px-2.5 py-1 bg-slate-700 hover:bg-slate-600 rounded text-slate-300 transition" data-url="https://helpit.in/services/website-seo-services/">SEO Services Page</button>
+            <button class="quick-ps-btn px-2.5 py-1 bg-slate-700 hover:bg-slate-600 rounded text-slate-300 transition" data-url="https://helpit.in/pricing/">Pricing Page</button>
+            <button class="quick-ps-btn px-2.5 py-1 bg-slate-700 hover:bg-slate-600 rounded text-slate-300 transition" data-url="https://helpit.in/contact/">Contact Page</button>
+          </div>
+        </div>
+
+        <!-- PageSpeed Results Section -->
+        <div id="psResultsContainer" class="space-y-6">
+          <!-- 4 Category Scores -->
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-5 text-center">
+              <div class="text-xs font-semibold text-slate-400 uppercase">Performance</div>
+              <div id="scorePerf" class="mt-3 text-4xl font-extrabold text-emerald-400">--</div>
+              <div id="scorePerfSub" class="mt-1 text-xs text-slate-400">Lighthouse Score</div>
+            </div>
+            <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-5 text-center">
+              <div class="text-xs font-semibold text-slate-400 uppercase">SEO</div>
+              <div id="scoreSeo" class="mt-3 text-4xl font-extrabold text-emerald-400">--</div>
+              <div id="scoreSeoSub" class="mt-1 text-xs text-slate-400">Lighthouse Score</div>
+            </div>
+            <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-5 text-center">
+              <div class="text-xs font-semibold text-slate-400 uppercase">Accessibility</div>
+              <div id="scoreA11y" class="mt-3 text-4xl font-extrabold text-blue-400">--</div>
+              <div id="scoreA11ySub" class="mt-1 text-xs text-slate-400">Lighthouse Score</div>
+            </div>
+            <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-5 text-center">
+              <div class="text-xs font-semibold text-slate-400 uppercase">Best Practices</div>
+              <div id="scoreBp" class="mt-3 text-4xl font-extrabold text-emerald-400">--</div>
+              <div id="scoreBpSub" class="mt-1 text-xs text-slate-400">Lighthouse Score</div>
+            </div>
+          </div>
+
+          <!-- Core Web Vitals Grid -->
+          <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-6">
+            <h3 class="text-sm font-bold text-white mb-4">Core Web Vitals & Key User Metrics</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+              <div class="p-3 bg-slate-900/60 border border-slate-700/60 rounded-xl">
+                <div class="text-xs text-slate-400">LCP (Largest Contentful)</div>
+                <div id="metricLcp" class="mt-1 text-lg font-bold text-slate-200">--</div>
+                <span id="badgeLcp" class="mt-1 inline-block text-[10px] px-1.5 py-0.5 rounded font-semibold bg-slate-700 text-slate-300">--</span>
+              </div>
+              <div class="p-3 bg-slate-900/60 border border-slate-700/60 rounded-xl">
+                <div class="text-xs text-slate-400">CLS (Cumulative Shift)</div>
+                <div id="metricCls" class="mt-1 text-lg font-bold text-slate-200">--</div>
+                <span id="badgeCls" class="mt-1 inline-block text-[10px] px-1.5 py-0.5 rounded font-semibold bg-slate-700 text-slate-300">--</span>
+              </div>
+              <div class="p-3 bg-slate-900/60 border border-slate-700/60 rounded-xl">
+                <div class="text-xs text-slate-400">FCP (First Paint)</div>
+                <div id="metricFcp" class="mt-1 text-lg font-bold text-slate-200">--</div>
+                <span id="badgeFcp" class="mt-1 inline-block text-[10px] px-1.5 py-0.5 rounded font-semibold bg-slate-700 text-slate-300">--</span>
+              </div>
+              <div class="p-3 bg-slate-900/60 border border-slate-700/60 rounded-xl">
+                <div class="text-xs text-slate-400">TBT (Blocking Time)</div>
+                <div id="metricTbt" class="mt-1 text-lg font-bold text-slate-200">--</div>
+                <span id="badgeTbt" class="mt-1 inline-block text-[10px] px-1.5 py-0.5 rounded font-semibold bg-slate-700 text-slate-300">--</span>
+              </div>
+              <div class="p-3 bg-slate-900/60 border border-slate-700/60 rounded-xl">
+                <div class="text-xs text-slate-400">Speed Index</div>
+                <div id="metricSi" class="mt-1 text-lg font-bold text-slate-200">--</div>
+                <span id="badgeSi" class="mt-1 inline-block text-[10px] px-1.5 py-0.5 rounded font-semibold bg-slate-700 text-slate-300">--</span>
+              </div>
+              <div class="p-3 bg-slate-900/60 border border-slate-700/60 rounded-xl">
+                <div class="text-xs text-slate-400">INP (Interaction)</div>
+                <div id="metricInp" class="mt-1 text-lg font-bold text-slate-200">--</div>
+                <span id="badgeInp" class="mt-1 inline-block text-[10px] px-1.5 py-0.5 rounded font-semibold bg-slate-700 text-slate-300">--</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Actionable Diagnostic Recommendations from actual API results -->
+          <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-6">
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <h3 class="text-sm font-bold text-white">Actionable Opportunities & Technical Diagnostics</h3>
+                <p class="text-xs text-slate-400">Identified bottlenecks for images, JavaScript, CSS, render-blocking resources, and caching</p>
+              </div>
+              <span id="recsCount" class="text-xs px-2.5 py-1 bg-slate-700 text-slate-300 rounded-lg">0 items</span>
+            </div>
+            <div id="psRecsList" class="space-y-3">
+              <div class="text-xs text-slate-400 text-center py-4">Click "Run PageSpeed Audit" to analyze opportunities.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 5: Sitemaps & Indexing -->
+      <section id="tab-sitemaps" class="tab-content hidden space-y-6">
+        <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-700">
+            <div>
+              <h2 class="text-lg font-bold text-white">Google Search Console Sitemaps</h2>
+              <p class="text-xs text-slate-400">Check submitted sitemaps, error logs, and verify critical pages presence.</p>
+            </div>
+            <button id="btnSubmitSitemap" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold rounded-lg transition-colors flex items-center gap-1.5">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" /></svg>
+              Submit Sitemap to Search Console
+            </button>
+          </div>
+
+          <!-- Submitted Sitemaps Table -->
+          <div class="mt-5">
+            <h3 class="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-3">Sitemaps in Search Console</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs">
+                <thead class="text-slate-400 uppercase bg-slate-900/40 border-b border-slate-700">
+                  <tr>
+                    <th class="py-2.5 px-3">Sitemap URL</th>
+                    <th class="py-2.5 px-3">Last Submitted</th>
+                    <th class="py-2.5 px-3">Last Downloaded</th>
+                    <th class="py-2.5 px-3 text-right">Warnings</th>
+                    <th class="py-2.5 px-3 text-right">Errors</th>
+                    <th class="py-2.5 px-3">Status</th>
+                  </tr>
+                </thead>
+                <tbody id="tblSitemaps" class="divide-y divide-slate-700/60 text-slate-200">
+                  <tr><td colspan="6" class="py-4 text-center text-slate-400">Loading sitemaps...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Important Note -->
+          <div class="mt-6 p-4 rounded-xl bg-amber-500/10 border border-amber-500/20 text-xs text-amber-200 flex items-start gap-3">
+            <svg class="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+            <div>
+              <strong class="font-semibold block text-amber-300 mb-0.5">Sitemap vs Indexing Distinction:</strong>
+              A page appearing in your sitemap is a crawl recommendation to Googlebot. It does <em>not</em> guarantee or claim that Google has indexed the page. Use the <strong>URL Inspection tab</strong> to verify actual indexing verdict directly from Google's index.
+            </div>
+          </div>
+
+          <!-- Critical Pages Verification Matrix -->
+          <div class="mt-6">
+            <h3 class="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-3">Core Website Pages Included in Sitemap</h3>
+            <div id="criticalPagesList" class="space-y-2">
+              <div class="text-xs text-slate-400">Loading verification matrix...</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Client-side Dashboard Script -->
+  <script is:inline>
+    // Tab switching
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+        tabBtns.forEach(b => {
+          b.classList.remove('text-brand-400', 'border-brand-500', 'bg-slate-800/60', 'font-semibold');
+          b.classList.add('text-slate-400', 'border-transparent', 'font-medium');
+        });
+        btn.classList.remove('text-slate-400', 'border-transparent', 'font-medium');
+        btn.classList.add('text-brand-400', 'border-brand-500', 'bg-slate-800/60', 'font-semibold');
+
+        tabContents.forEach(c => {
+          if (c.id === target) {
+            c.classList.remove('hidden');
+          } else {
+            c.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // 1. Load Search Performance Data
+    async function loadPerformanceData(days = 28) {
+      const spinner = document.getElementById('refreshSpinner');
+      if (spinner) spinner.classList.add('animate-spin');
+
+      try {
+        const res = await fetch(`/api/seo?action=overview&days=${days}`);
+        const data = await res.json();
+
+        if (data.error) {
+          alert(`Search Console API: ${data.message}`);
+          return;
+        }
+
+        // Summary metrics
+        document.getElementById('metricClicks').textContent = data.summary.totalClicks.toLocaleString();
+        document.getElementById('metricImpressions').textContent = data.summary.totalImpressions.toLocaleString();
+        document.getElementById('metricCtr').textContent = (data.summary.averageCtr * 100).toFixed(2) + '%';
+        document.getElementById('metricPosition').textContent = data.summary.averagePosition.toFixed(1);
+
+        // Daily Trends chart
+        const trendContainer = document.getElementById('trendChartContainer');
+        const trendRange = document.getElementById('trendDateRange');
+        if (trendRange) trendRange.textContent = `${data.period.startDate} to ${data.period.endDate}`;
+
+        if (data.trends && data.trends.length > 0) {
+          const maxImpr = Math.max(...data.trends.map(t => t.impressions), 1);
+          trendContainer.innerHTML = data.trends.map(t => {
+            const imprHeight = Math.max(Math.round((t.impressions / maxImpr) * 110), 4);
+            const clickHeight = Math.min(t.clicks * 24, 110);
+            return `
+              <div class="flex-1 flex flex-col items-center justify-end h-full min-w-[20px] group relative">
+                <div class="w-full flex items-end justify-center gap-0.5">
+                  <div style="height: ${imprHeight}px" class="w-2 bg-purple-500/40 rounded-t-sm transition-all group-hover:bg-purple-400"></div>
+                  <div style="height: ${clickHeight}px" class="w-2 bg-blue-500 rounded-t-sm transition-all group-hover:bg-blue-400"></div>
+                </div>
+                <div class="absolute -top-10 opacity-0 group-hover:opacity-100 transition-opacity bg-slate-900 border border-slate-700 text-[10px] text-white px-2 py-1 rounded shadow-lg pointer-events-none whitespace-nowrap z-20">
+                  <strong>${t.date}</strong>: ${t.clicks} clicks, ${t.impressions} impr (pos ${t.position.toFixed(1)})
+                </div>
+              </div>
+            `;
+          }).join('');
+        } else {
+          trendContainer.innerHTML = '<div class="text-xs text-slate-400 mx-auto">No daily search data found for this window.</div>';
+        }
+
+        // Queries Table
+        const tblQueries = document.getElementById('tblQueries');
+        const queriesCount = document.getElementById('queriesCount');
+        if (queriesCount) queriesCount.textContent = data.topQueries.length;
+
+        if (data.topQueries.length > 0) {
+          tblQueries.innerHTML = data.topQueries.map(q => `
+            <tr class="hover:bg-slate-750 transition-colors">
+              <td class="py-2.5 px-3 font-medium text-white">${q.query}</td>
+              <td class="py-2.5 px-3 text-right text-blue-400 font-semibold">${q.clicks}</td>
+              <td class="py-2.5 px-3 text-right text-slate-300">${q.impressions}</td>
+              <td class="py-2.5 px-3 text-right text-emerald-400">${(q.ctr * 100).toFixed(1)}%</td>
+              <td class="py-2.5 px-3 text-right text-amber-400 font-mono">${q.position.toFixed(1)}</td>
+            </tr>
+          `).join('');
+        } else {
+          tblQueries.innerHTML = '<tr><td colspan="5" class="py-4 text-center text-slate-400">No search queries recorded yet.</td></tr>';
+        }
+
+        // Pages Table
+        const tblPages = document.getElementById('tblPages');
+        const pagesCount = document.getElementById('pagesCount');
+        if (pagesCount) pagesCount.textContent = data.topPages.length;
+
+        if (data.topPages.length > 0) {
+          tblPages.innerHTML = data.topPages.map(p => `
+            <tr class="hover:bg-slate-750 transition-colors">
+              <td class="py-2.5 px-3 font-mono text-slate-300 break-all max-w-xs truncate" title="${p.page}">${p.page.replace('https://helpit.in', '') || '/'}</td>
+              <td class="py-2.5 px-3 text-right text-blue-400 font-semibold">${p.clicks}</td>
+              <td class="py-2.5 px-3 text-right text-slate-300">${p.impressions}</td>
+              <td class="py-2.5 px-3 text-right text-emerald-400">${(p.ctr * 100).toFixed(1)}%</td>
+              <td class="py-2.5 px-3 text-right text-amber-400 font-mono">${p.position.toFixed(1)}</td>
+            </tr>
+          `).join('');
+        } else {
+          tblPages.innerHTML = '<tr><td colspan="5" class="py-4 text-center text-slate-400">No pages recorded yet.</td></tr>';
+        }
+
+        // Devices
+        const devContainer = document.getElementById('deviceBreakdown');
+        if (data.devices && data.devices.length > 0) {
+          devContainer.innerHTML = data.devices.map(d => `
+            <div class="flex items-center justify-between text-xs p-2.5 bg-slate-900/40 rounded-lg border border-slate-700/60">
+              <span class="font-semibold text-slate-300 uppercase">${d.device}</span>
+              <div class="flex items-center gap-3">
+                <span class="text-blue-400 font-semibold">${d.clicks} clicks</span>
+                <span class="text-slate-400">${d.impressions} impr</span>
+                <span class="text-amber-400 font-mono">pos ${d.position.toFixed(1)}</span>
+              </div>
+            </div>
+          `).join('');
+        } else {
+          devContainer.innerHTML = '<div class="text-xs text-slate-400">No device data available.</div>';
+        }
+
+        // Countries
+        const cContainer = document.getElementById('countryBreakdown');
+        if (data.countries && data.countries.length > 0) {
+          cContainer.innerHTML = data.countries.map(c => `
+            <div class="flex items-center justify-between text-xs p-2.5 bg-slate-900/40 rounded-lg border border-slate-700/60">
+              <span class="font-semibold text-slate-300">${c.country}</span>
+              <div class="flex items-center gap-3">
+                <span class="text-blue-400 font-semibold">${c.clicks} clicks</span>
+                <span class="text-slate-400">${c.impressions} impr</span>
+                <span class="text-amber-400 font-mono">pos ${c.position.toFixed(1)}</span>
+              </div>
+            </div>
+          `).join('');
+        } else {
+          cContainer.innerHTML = '<div class="text-xs text-slate-400">No country data available.</div>';
+        }
+
+      } catch (err) {
+        console.error('Failed to load performance data:', err);
+      } finally {
+        if (spinner) spinner.classList.remove('animate-spin');
+      }
+    }
+
+    // 2. Load SEO Opportunities
+    async function loadOpportunities() {
+      try {
+        const res = await fetch('/api/seo?action=opportunities');
+        const data = await res.json();
+        if (data.error) return;
+
+        // Striking distance
+        const tblStriking = document.getElementById('tblStriking');
+        const strikingCount = document.getElementById('strikingCount');
+        if (strikingCount) strikingCount.textContent = `${data.strikingDistance.length} found`;
+
+        if (data.strikingDistance.length > 0) {
+          tblStriking.innerHTML = data.strikingDistance.map(item => `
+            <tr class="hover:bg-slate-750 transition-colors">
+              <td class="py-2.5 px-3 font-semibold text-white">${item.query}</td>
+              <td class="py-2.5 px-3 font-mono text-slate-300 text-[11px] truncate max-w-xs" title="${item.page}">${item.page.replace('https://helpit.in', '') || '/'}</td>
+              <td class="py-2.5 px-3 text-right text-emerald-400 font-bold font-mono">${item.position}</td>
+              <td class="py-2.5 px-3 text-right text-slate-300">${item.impressions}</td>
+              <td class="py-2.5 px-3 text-slate-400 text-xs">${item.action}</td>
+            </tr>
+          `).join('');
+        } else {
+          tblStriking.innerHTML = '<tr><td colspan="5" class="py-4 text-center text-slate-400">No striking distance keywords currently detected.</td></tr>';
+        }
+
+        // Low CTR Page 1 keywords
+        const tblLowCtr = document.getElementById('tblLowCtr');
+        const lowCtrCount = document.getElementById('lowCtrCount');
+        if (lowCtrCount) lowCtrCount.textContent = `${data.lowCtrKeywords.length} found`;
+
+        if (data.lowCtrKeywords.length > 0) {
+          tblLowCtr.innerHTML = data.lowCtrKeywords.map(item => `
+            <tr class="hover:bg-slate-750 transition-colors">
+              <td class="py-2.5 px-3 font-semibold text-white">${item.query}</td>
+              <td class="py-2.5 px-3 font-mono text-slate-300 text-[11px] truncate max-w-xs" title="${item.page}">${item.page.replace('https://helpit.in', '') || '/'}</td>
+              <td class="py-2.5 px-3 text-right text-amber-400 font-mono">${item.position}</td>
+              <td class="py-2.5 px-3 text-right text-slate-300">${item.impressions}</td>
+              <td class="py-2.5 px-3 text-right text-rose-400 font-semibold">${(item.ctr * 100).toFixed(1)}%</td>
+              <td class="py-2.5 px-3 text-slate-400 text-xs">${item.recommendation}</td>
+            </tr>
+          `).join('');
+        } else {
+          tblLowCtr.innerHTML = '<tr><td colspan="6" class="py-4 text-center text-slate-400">No low CTR keywords found on Page 1.</td></tr>';
+        }
+
+        // Content decay
+        const decayContainer = document.getElementById('contentDecayContainer');
+        const decayCount = document.getElementById('decayCount');
+        if (decayCount) decayCount.textContent = `${data.contentDecay.length} alerts`;
+
+        if (data.contentDecay.length > 0) {
+          decayContainer.innerHTML = data.contentDecay.map(item => `
+            <div class="p-4 bg-slate-900/60 border border-slate-700/80 rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-3 text-xs">
+              <div class="space-y-1">
+                <span class="font-mono text-white text-sm font-semibold">${item.page}</span>
+                <p class="text-slate-400">${item.recommendation}</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="p-2 bg-slate-800 rounded text-center">
+                  <div class="text-[10px] text-slate-400 uppercase">Clicks</div>
+                  <div class="text-rose-400 font-bold">${item.clickChange} (${item.previousClicks} &rarr; ${item.currentClicks})</div>
+                </div>
+                <div class="p-2 bg-slate-800 rounded text-center">
+                  <div class="text-[10px] text-slate-400 uppercase">Impr</div>
+                  <div class="text-rose-400 font-bold">${item.impressionChange} (${item.previousImpressions} &rarr; ${item.currentImpressions})</div>
+                </div>
+              </div>
+            </div>
+          `).join('');
+        } else {
+          decayContainer.innerHTML = '<div class="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs text-emerald-300 text-center font-medium">✅ Excellent! No pages are currently suffering from significant content decay.</div>';
+        }
+
+      } catch (err) {
+        console.error('Failed to load opportunities:', err);
+      }
+    }
+
+    // 3. URL Inspection API Handler
+    const btnRunInspect = document.getElementById('btnRunInspect');
+    const inspectInput = document.getElementById('inspectUrlInput');
+    const inspectSpinner = document.getElementById('inspectSpinner');
+    const inspectCard = document.getElementById('inspectResultCard');
+
+    async function inspectTargetUrl(urlToInspect) {
+      if (!urlToInspect) return;
+      inspectSpinner.classList.remove('hidden');
+      btnRunInspect.disabled = true;
+
+      try {
+        const res = await fetch(`/api/seo?action=url-inspection&url=${encodeURIComponent(urlToInspect)}`);
+        const data = await res.json();
+
+        if (data.error) {
+          alert(`URL Inspection Error: ${data.message}`);
+          return;
+        }
+
+        inspectCard.classList.remove('hidden');
+        document.getElementById('inspUrl').textContent = data.url;
+
+        // Verdict Badge
+        const verdictBadge = document.getElementById('inspVerdictBadge');
+        if (data.verdict === 'PASS') {
+          verdictBadge.className = 'px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-300 border border-emerald-500/30';
+          verdictBadge.textContent = '✅ INDEXED (PASS)';
+        } else {
+          verdictBadge.className = 'px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-rose-500/20 text-rose-300 border border-rose-500/30';
+          verdictBadge.textContent = `⚠️ ${data.verdict}`;
+        }
+
+        document.getElementById('inspCoverageState').textContent = data.coverageState;
+        document.getElementById('inspLastCrawl').textContent = data.lastCrawlTime ? new Date(data.lastCrawlTime).toLocaleString() : 'Not yet crawled';
+        document.getElementById('inspRobotsState').textContent = `${data.robotsTxtState} | ${data.pageFetchState}`;
+
+        // Canonicals
+        document.getElementById('inspUserCanonical').textContent = data.userCanonical || 'None specified';
+        document.getElementById('inspGoogleCanonical').textContent = data.googleCanonical || 'None chosen yet';
+
+        const canStatus = document.getElementById('inspCanonicalStatus');
+        if (data.canonicalMatch) {
+          canStatus.className = 'p-3 rounded-lg text-xs bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 font-medium';
+          canStatus.textContent = '✅ Perfect Canonical Alignment: Google agrees with your user-declared canonical URL.';
+        } else {
+          canStatus.className = 'p-3 rounded-lg text-xs bg-amber-500/10 border border-amber-500/20 text-amber-300 font-medium';
+          canStatus.textContent = '⚠️ Canonical Mismatch: Google selected a different canonical than what was declared in your HTML.';
+        }
+
+      } catch (err) {
+        alert(`Inspection request failed: ${err.message}`);
+      } finally {
+        inspectSpinner.classList.add('hidden');
+        btnRunInspect.disabled = false;
+      }
+    }
+
+    if (btnRunInspect) {
+      btnRunInspect.addEventListener('click', () => {
+        inspectTargetUrl(inspectInput.value.trim());
+      });
+    }
+
+    document.querySelectorAll('.quick-url-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const url = btn.dataset.url;
+        inspectInput.value = url;
+        inspectTargetUrl(url);
+      });
+    });
+
+    // 4. PageSpeed Insights API Handler
+    let activeStrategy = 'mobile';
+    const btnStratMobile = document.getElementById('btnStratMobile');
+    const btnStratDesktop = document.getElementById('btnStratDesktop');
+    const psInput = document.getElementById('psUrlInput');
+    const btnRunPageSpeed = document.getElementById('btnRunPageSpeed');
+    const psSpinner = document.getElementById('psSpinner');
+
+    function setStrategy(strat) {
+      activeStrategy = strat;
+      if (strat === 'mobile') {
+        btnStratMobile.classList.add('bg-brand-600', 'text-white');
+        btnStratMobile.classList.remove('text-slate-400');
+        btnStratDesktop.classList.remove('bg-brand-600', 'text-white');
+        btnStratDesktop.classList.add('text-slate-400');
+      } else {
+        btnStratDesktop.classList.add('bg-brand-600', 'text-white');
+        btnStratDesktop.classList.remove('text-slate-400');
+        btnStratMobile.classList.remove('bg-brand-600', 'text-white');
+        btnStratMobile.classList.add('text-slate-400');
+      }
+    }
+
+    if (btnStratMobile) btnStratMobile.addEventListener('click', () => setStrategy('mobile'));
+    if (btnStratDesktop) btnStratDesktop.addEventListener('click', () => setStrategy('desktop'));
+
+    async function runPageSpeedAudit(targetUrl) {
+      if (!targetUrl) return;
+      psSpinner.classList.remove('hidden');
+      btnRunPageSpeed.disabled = true;
+
+      try {
+        const res = await fetch(`/api/seo?action=pagespeed&url=${encodeURIComponent(targetUrl)}&strategy=${activeStrategy}`);
+        const data = await res.json();
+
+        if (data.error) {
+          alert(`PageSpeed API Error: ${data.message}`);
+          return;
+        }
+
+        // Scores
+        const perfEl = document.getElementById('scorePerf');
+        perfEl.textContent = data.scores.performance;
+        perfEl.className = data.scores.performance >= 90 ? 'mt-3 text-4xl font-extrabold text-emerald-400' : 'mt-3 text-4xl font-extrabold text-amber-400';
+
+        document.getElementById('scoreSeo').textContent = data.scores.seo;
+        document.getElementById('scoreA11y').textContent = data.scores.accessibility;
+        document.getElementById('scoreBp').textContent = data.scores.bestPractices;
+
+        // Web Vitals
+        const v = data.webVitals;
+        document.getElementById('metricLcp').textContent = v.lcp.display;
+        document.getElementById('badgeLcp').textContent = v.lcp.status;
+        document.getElementById('badgeLcp').className = `mt-1 inline-block text-[10px] px-1.5 py-0.5 rounded font-semibold ${v.lcp.status === 'GOOD' ? 'bg-emerald-500/20 text-emerald-300' : 'bg-amber-500/20 text-amber-300'}`;
+
+        document.getElementById('metricCls').textContent = v.cls.display;
+        document.getElementById('badgeCls').textContent = v.cls.status;
+        document.getElementById('badgeCls').className = `mt-1 inline-block text-[10px] px-1.5 py-0.5 rounded font-semibold ${v.cls.status === 'GOOD' ? 'bg-emerald-500/20 text-emerald-300' : 'bg-amber-500/20 text-amber-300'}`;
+
+        document.getElementById('metricFcp').textContent = v.fcp.display;
+        document.getElementById('badgeFcp').textContent = v.fcp.status;
+        document.getElementById('badgeFcp').className = `mt-1 inline-block text-[10px] px-1.5 py-0.5 rounded font-semibold ${v.fcp.status === 'GOOD' ? 'bg-emerald-500/20 text-emerald-300' : 'bg-amber-500/20 text-amber-300'}`;
+
+        document.getElementById('metricTbt').textContent = v.tbt.display;
+        document.getElementById('badgeTbt').textContent = v.tbt.status;
+        document.getElementById('badgeTbt').className = `mt-1 inline-block text-[10px] px-1.5 py-0.5 rounded font-semibold ${v.tbt.status === 'GOOD' ? 'bg-emerald-500/20 text-emerald-300' : 'bg-amber-500/20 text-amber-300'}`;
+
+        document.getElementById('metricSi').textContent = v.speedIndex.display;
+        document.getElementById('badgeSi').textContent = v.speedIndex.status;
+        document.getElementById('badgeSi').className = `mt-1 inline-block text-[10px] px-1.5 py-0.5 rounded font-semibold ${v.speedIndex.status === 'GOOD' ? 'bg-emerald-500/20 text-emerald-300' : 'bg-amber-500/20 text-amber-300'}`;
+
+        document.getElementById('metricInp').textContent = v.inp.display;
+        document.getElementById('badgeInp').textContent = v.inp.status;
+
+        // Recommendations List
+        const recsList = document.getElementById('psRecsList');
+        const recsCount = document.getElementById('recsCount');
+        if (recsCount) recsCount.textContent = `${data.recommendations.length} opportunities`;
+
+        if (data.recommendations.length > 0) {
+          recsList.innerHTML = data.recommendations.map(r => `
+            <div class="p-4 bg-slate-900/60 border border-slate-700/80 rounded-xl space-y-1.5 text-xs">
+              <div class="flex items-center justify-between gap-2">
+                <span class="font-bold text-white text-sm">${r.title}</span>
+                <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-slate-800 text-slate-300 border border-slate-700">${r.category}</span>
+              </div>
+              <p class="text-slate-400">${r.description || ''}</p>
+              ${r.displayValue ? `<div class="font-mono text-amber-400 font-semibold">Estimated Impact: ${r.displayValue}</div>` : ''}
+            </div>
+          `).join('');
+        } else {
+          recsList.innerHTML = '<div class="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs text-emerald-300 text-center font-medium">🎉 Flawless! No major speed or technical bottlenecks detected for this URL.</div>';
+        }
+
+      } catch (err) {
+        alert(`PageSpeed audit failed: ${err.message}`);
+      } finally {
+        psSpinner.classList.add('hidden');
+        btnRunPageSpeed.disabled = false;
+      }
+    }
+
+    if (btnRunPageSpeed) {
+      btnRunPageSpeed.addEventListener('click', () => {
+        runPageSpeedAudit(psInput.value.trim());
+      });
+    }
+
+    document.querySelectorAll('.quick-ps-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const url = btn.dataset.url;
+        psInput.value = url;
+        runPageSpeedAudit(url);
+      });
+    });
+
+    // 5. Sitemaps
+    async function loadSitemaps() {
+      try {
+        const res = await fetch('/api/seo?action=sitemaps');
+        const data = await res.json();
+        if (data.error) return;
+
+        const tbl = document.getElementById('tblSitemaps');
+        if (data.sitemaps.length > 0) {
+          tbl.innerHTML = data.sitemaps.map(s => `
+            <tr class="hover:bg-slate-750 transition-colors">
+              <td class="py-2.5 px-3 font-mono font-semibold text-white">${s.path}</td>
+              <td class="py-2.5 px-3 text-slate-300">${s.lastSubmitted}</td>
+              <td class="py-2.5 px-3 text-slate-300">${s.lastDownloaded}</td>
+              <td class="py-2.5 px-3 text-right text-amber-400 font-semibold">${s.warnings}</td>
+              <td class="py-2.5 px-3 text-right text-rose-400 font-semibold">${s.errors}</td>
+              <td class="py-2.5 px-3">
+                <span class="px-2 py-0.5 rounded text-[11px] font-semibold ${s.errors === 0 ? 'bg-emerald-500/20 text-emerald-300' : 'bg-rose-500/20 text-rose-300'}">
+                  ${s.errors === 0 ? 'Success' : 'Has Errors'}
+                </span>
+              </td>
+            </tr>
+          `).join('');
+        } else {
+          tbl.innerHTML = `
+            <tr>
+              <td colspan="6" class="py-4 text-center text-slate-400">
+                No sitemaps currently registered in Search Console. Click "Submit Sitemap" above to register <code>https://helpit.in/sitemap-index.xml</code>.
+              </td>
+            </tr>
+          `;
+        }
+
+        // Critical pages list
+        const critList = document.getElementById('criticalPagesList');
+        if (data.criticalPagesVerification) {
+          critList.innerHTML = data.criticalPagesVerification.map(p => `
+            <div class="flex items-center justify-between p-2.5 bg-slate-900/50 border border-slate-700/60 rounded-lg text-xs">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                <span class="font-mono text-slate-200">${p.url}</span>
+                <span class="text-slate-400 text-[11px]">(${p.type})</span>
+              </div>
+              <span class="text-emerald-400 font-semibold">Included in Sitemap</span>
+            </div>
+          `).join('');
+        }
+
+      } catch (err) {
+        console.error('Failed to load sitemaps:', err);
+      }
+    }
+
+    const btnSubmitSitemap = document.getElementById('btnSubmitSitemap');
+    if (btnSubmitSitemap) {
+      btnSubmitSitemap.addEventListener('click', async () => {
+        btnSubmitSitemap.disabled = true;
+        btnSubmitSitemap.textContent = 'Submitting...';
+        try {
+          const res = await fetch('/api/seo', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ action: 'submit-sitemap', sitemapUrl: 'https://helpit.in/sitemap-index.xml' })
+          });
+          const data = await res.json();
+          alert(data.message || 'Sitemap submitted!');
+          loadSitemaps();
+        } catch (err) {
+          alert(`Submission failed: ${err.message}`);
+        } finally {
+          btnSubmitSitemap.disabled = false;
+          btnSubmitSitemap.textContent = 'Submit Sitemap to Search Console';
+        }
+      });
+    }
+
+    // Refresh All button
+    const btnRefreshAll = document.getElementById('btnRefreshAll');
+    if (btnRefreshAll) {
+      btnRefreshAll.addEventListener('click', () => {
+        const days = document.getElementById('selPerfDays')?.value || 28;
+        loadPerformanceData(days);
+        loadOpportunities();
+        loadSitemaps();
+      });
+    }
+
+    const selPerfDays = document.getElementById('selPerfDays');
+    if (selPerfDays) {
+      selPerfDays.addEventListener('change', (e) => {
+        loadPerformanceData(e.target.value);
+      });
+    }
+
+    // Initial Load
+    document.addEventListener('DOMContentLoaded', () => {
+      loadPerformanceData(28);
+      loadOpportunities();
+      loadSitemaps();
+      // Preload homepage PageSpeed
+      runPageSpeedAudit('https://helpit.in/');
+    });
+  </script>
+</Base>

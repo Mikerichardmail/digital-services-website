@@ -25,11 +25,12 @@ export default defineConfig({
     tailwind(),
     sitemap({
       filter: (page) => {
-        // Exclude thank-you page, 404, or internal utility/api routes from sitemap
+        // Exclude thank-you page, 404, seo-dashboard, or internal utility/api routes from sitemap
         const isExcluded = 
           page.includes('/thank-you') || 
           page.includes('/404') ||
           page.endsWith('/404.html') ||
+          page.includes('/seo-dashboard') ||
           page.includes('/api/');
         return !isExcluded;
       },

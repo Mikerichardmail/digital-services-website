@@ -1,6 +1,7 @@
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
+import { onRequest as handleSeoApi } from '../functions/api/seo.js';
 
 const PORT = 4321;
 const DIST = path.resolve('dist');
@@ -18,7 +19,40 @@ const MIME_TYPES = {
   '.txt': 'text/plain; charset=utf-8'
 };
 
-const server = http.createServer((req, res) => {
+const server = http.createServer(async (req, res) => {
+  // Handle SEO API
+  if (req.url.startsWith('/api/seo')) {
+    try {
+      const buffers = [];
+      for await (const chunk of req) {
+        buffers.push(chunk);
+      }
+      const rawBody = Buffer.concat(buffers);
+      const url = new URL(req.url, `http://${req.headers.host || 'localhost:4321'}`);
+      
+      const webReq = new Request(url.toString(), {
+        method: req.method,
+        headers: req.headers,
+        body: req.method !== 'GET' && req.method !== 'HEAD' && rawBody.length > 0 ? rawBody : undefined
+      });
+
+      const response = await handleSeoApi({ request: webReq, env: process.env });
+      const respHeaders = {};
+      for (const [k, v] of response.headers.entries()) {
+        respHeaders[k] = v;
+      }
+      res.writeHead(response.status, respHeaders);
+      const body = await response.text();
+      res.end(body);
+      return;
+    } catch (err) {
+      console.error('[preview-server] API error:', err);
+      res.writeHead(500, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: true, message: err.message }));
+      return;
+    }
+  }
+
   let reqPath = req.url.split('?')[0];
 
   // Decode URI component
