@@ -2,6 +2,7 @@ name = "digital-services-website"
 main = "worker.js"
 compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
+workers_dev = true
 
 # Cloudflare Workers Static Assets
 # Serves dist/ directory and provides env.ASSETS
