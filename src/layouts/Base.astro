@@ -47,10 +47,19 @@ const defaultSchema = {
     "closes": "21:00"
   }
 };
+
+const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '';
+const websiteSchema = isHomepage ? {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "HelpIt",
+  "alternateName": ["Help It", "HelpIt Digital Solutions"],
+  "url": "https://helpit.in/"
+} : null;
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en-IN" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -82,13 +91,18 @@ const defaultSchema = {
     <link rel="preconnect" href="https://wa.me" crossorigin />
 
     <!-- Favicon & Touch Icons -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <link rel="shortcut icon" href="/favicon-32x32.png" />
     <meta name="theme-color" content="#2563eb" />
 
     <!-- Structured Data (JSON-LD) -->
+    {websiteSchema && (
+      <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+    )}
     {Array.isArray(schema) ? (
       schema.map((s) => (
         <script type="application/ld+json" set:html={JSON.stringify(s)} />
@@ -98,8 +112,14 @@ const defaultSchema = {
     )}
   </head>
   <body class="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans antialiased selection:bg-brand-500 selection:text-white pb-16 md:pb-0">
+    <a 
+      href="#main-content" 
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-brand-600 focus:text-white focus:rounded-lg focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500"
+    >
+      Skip to main content
+    </a>
     <Header />
-    <main class="flex-grow">
+    <main id="main-content" tabindex="-1" class="flex-grow focus:outline-none">
       <slot />
     </main>
     <Footer />

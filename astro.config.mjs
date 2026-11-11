@@ -57,11 +57,13 @@ export default defineConfig({
         );
 
         // Apply truthful, content-accurate W3C lastmod dates & tiered priority for search engines
+        const updateDate = new Date('2026-11-11');
+
         if (item.url === 'https://helpit.in/' || item.url === 'https://helpit.in/services/') {
           // Tier 1: Core Hub & High-Converting Directory
           item.priority = 1.0;
           item.changefreq = 'weekly';
-          item.lastmod = new Date('2026-10-19');
+          item.lastmod = updateDate;
         } else if (
           item.url.includes('/solutions/') || 
           item.url.includes('/instagram-views/') || 
@@ -70,12 +72,12 @@ export default defineConfig({
           // Tier 2: Targeted Solution Landing Pages (High-Intent SEO)
           item.priority = 0.9;
           item.changefreq = 'weekly';
-          item.lastmod = new Date('2026-10-19');
+          item.lastmod = updateDate;
         } else if (isCoreServiceCategory) {
           // Tier 3: 8 Core Service Categories
           item.priority = 0.8;
           item.changefreq = 'weekly';
-          item.lastmod = new Date('2026-10-19');
+          item.lastmod = updateDate;
         } else if (
           item.url.includes('/pricing/') || 
           item.url.includes('/locations/') ||
@@ -87,7 +89,7 @@ export default defineConfig({
           // Tier 4: Locations & Commercial Pages
           item.priority = 0.7;
           item.changefreq = 'monthly';
-          item.lastmod = new Date('2026-10-18');
+          item.lastmod = updateDate;
         } else if (
           item.url.includes('/about/') || 
           item.url.includes('/contact/') || 
@@ -96,7 +98,7 @@ export default defineConfig({
           // Tier 5: About & Portfolio
           item.priority = 0.5;
           item.changefreq = 'monthly';
-          item.lastmod = new Date('2026-10-18');
+          item.lastmod = updateDate;
         } else if (
           item.url.includes('/privacy/') || 
           item.url.includes('/terms/') || 
@@ -106,12 +108,12 @@ export default defineConfig({
           // Tier 6: Legal & Compliance Policies
           item.priority = 0.3;
           item.changefreq = 'yearly';
-          item.lastmod = new Date('2026-10-18');
+          item.lastmod = updateDate;
         } else {
           // Legacy service categories & secondary archives
           item.priority = 0.6;
           item.changefreq = 'monthly';
-          item.lastmod = new Date('2026-10-18');
+          item.lastmod = updateDate;
         }
 
         return item;

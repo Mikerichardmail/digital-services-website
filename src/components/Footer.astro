@@ -18,6 +18,10 @@ const primaryCategories = categories.filter(c => !c.isLegacy);
           <img 
             src="/icon.png" 
             alt={site.brandName} 
+            width="36" 
+            height="36" 
+            loading="lazy" 
+            decoding="async" 
             class="w-9 h-9 rounded-xl object-contain bg-white" 
           />
           <span class="text-xl font-bold text-white tracking-tight">{site.brandName}</span>
